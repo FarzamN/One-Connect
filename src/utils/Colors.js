@@ -3,4 +3,5 @@ export const Color = {
   borderColor: '#CCCCCC',
   placeholderTextColor: '#838383',
   White: '#fff',
+  Black: '#000'
 };

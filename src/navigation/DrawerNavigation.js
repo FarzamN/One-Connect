@@ -1,17 +1,15 @@
 import React from 'react';
-import {StyleSheet, Image, View} from 'react-native';
+import { StyleSheet, Image, View } from 'react-native';
 
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import Ionicons from 'react-native-vector-icons/Ionicons';
-import Profile from '../screens/users/Profile';
-import {NavigationContainer} from '@react-navigation/native';
+import { NavigationContainer } from '@react-navigation/native';
 import 'react-native-gesture-handler';
-import {createDrawerNavigator} from '@react-navigation/drawer';
+import { createDrawerNavigator } from '@react-navigation/drawer';
 import UserNavigation from './UserNavigation';
-import DrawerContainer from './DrawerContainer';
-import {Color} from '../utils/Colors';
+import DrawerContainer from '../screens/DrawerContainer';
+import { Color } from '../utils/Colors';
 import AuthNavigation from './AuthNavigation';
-
 export const DrawerNavigation = () => {
   const Drawer = createDrawerNavigator();
   return (
@@ -27,19 +25,19 @@ export const DrawerNavigation = () => {
           marginLeft: -15,
         },
       }}
-      initialRouteName="Dashboard"
+      initialRouteName="map"
       drawerContent={props => <DrawerContainer {...props} />}>
       <Drawer.Screen
-        name="Dashboard"
+        name="map"
         component={UserNavigation}
         options={{
-          title: 'Dashboard',
+          title: 'map',
           drawerIcon: () => (
             <Ionicons name="md-home" size={20} color={Color.Main} />
           ),
         }}
       />
-      <Drawer.Screen
+      {/* <Drawer.Screen
         options={{
           title: 'Profile',
           drawerIcon: () => (
@@ -48,7 +46,7 @@ export const DrawerNavigation = () => {
         }}
         name="Profile"
         component={Profile}
-      />
+      /> */}
     </Drawer.Navigator>
     // </NavigationContainer>
   );

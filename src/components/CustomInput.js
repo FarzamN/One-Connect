@@ -1,5 +1,5 @@
-import React, {forwardRef, useState} from 'react';
-import {useController, useForm} from 'react-hook-form';
+import React, { forwardRef, useState } from 'react';
+import { useController, useForm } from 'react-hook-form';
 import {
   StyleSheet,
   InputField,
@@ -9,18 +9,17 @@ import {
   TouchableOpacity,
   Text,
 } from 'react-native';
-import {moderateScale, scale, verticalScale} from 'react-native-size-matters';
+import { moderateScale, scale, verticalScale } from 'react-native-size-matters';
 import Zocial from 'react-native-vector-icons/Zocial';
 import Fontisto from 'react-native-vector-icons/Fontisto';
 
 const CustomInput = forwardRef((props, ref) => {
-  const {field} = useController({
+  const { field } = useController({
     control: props.control,
     defaultValue: props.defaultValue || '',
     name: props.name,
     rules: props.rules,
   });
-  // const [password, setPassword] = useState('');
   return (
     <View style={[styles.smallbox, props.style, props.Hello]}>
       <TextInput
@@ -49,10 +48,9 @@ const CustomInput = forwardRef((props, ref) => {
 
 const styles = StyleSheet.create({
   InputStyles: {
-    height: scale(30),
+    height: scale(40),
     borderRadius: 12,
     alignItems: 'center',
-    // paddingHorizontal: scale(15),
     backgroundColor: '#FFF',
     color: 'black',
   },
