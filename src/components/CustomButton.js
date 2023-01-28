@@ -6,9 +6,7 @@ import LinearGradient from 'react-native-linear-gradient';
 const CustomButton = props => {
   return (
     <View>
-      <TouchableOpacity
-        activeOpacity={props.activeOpacity}
-        onPress={props.onPress}>
+      <TouchableOpacity activeOpacity={0.7} onPress={props.onPress}>
         <LinearGradient
           start={{x: 0, y: 0}}
           end={{x: 1, y: 0}}
@@ -36,6 +34,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     borderRadius: 15,
     marginTop: scale(15),
+    alignSelf: 'center',
   },
 
   font: {

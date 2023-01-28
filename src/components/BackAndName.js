@@ -1,10 +1,10 @@
 import React from 'react';
-import { StyleSheet, Image, TouchableOpacity, View, Text } from 'react-native';
-import { scale, verticalScale } from 'react-native-size-matters';
+import {StyleSheet, TouchableOpacity, View, Text} from 'react-native';
+import {scale, verticalScale} from 'react-native-size-matters';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import Feather from 'react-native-vector-icons/Feather';
 
-import { Color } from '../utils/Colors';
+import {Color} from '../utils/Colors';
 
 const BackAndName = props => {
   return (
@@ -17,24 +17,25 @@ const BackAndName = props => {
       </TouchableOpacity>
       <Text style={[styles.font, props.textStyle]}>{props.title}</Text>
       <View style={styles.Menu}>
-        <Feather name={'menu'} size={30} color={Color.White} />
+        <Feather name={'menu'} size={30} color={props.Menucolor} />
       </View>
     </View>
   );
 };
 const styles = StyleSheet.create({
   Container: {
-    backgroundColor: '#fff',
+    backgroundColor: Color.White,
     padding: scale(15),
-    height: 70,
+    height: verticalScale(80),
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
   },
 
   font: {
-    color: '#000',
-    fontSize: scale(16),
+    color: Color.Black,
+    fontSize: scale(18),
+    fontWeight: '700',
     fontFamily: 'Inter-Bold',
     textTransform: 'uppercase',
   },
