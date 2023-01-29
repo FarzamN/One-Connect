@@ -1,10 +1,10 @@
 import React from 'react';
-import {StyleSheet, Image, TouchableOpacity, View} from 'react-native';
-import {scale, verticalScale} from 'react-native-size-matters';
+import { StyleSheet, Image, TouchableOpacity, View } from 'react-native';
+import { scale, verticalScale } from 'react-native-size-matters';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import Entypo from 'react-native-vector-icons/Entypo';
 
-import {Color} from '../utils/Colors';
+import { Color } from '../utils/Colors';
 
 const BackWithMenu = props => {
   return (
@@ -13,7 +13,7 @@ const BackWithMenu = props => {
         activeOpacity={0.8}
         onPress={props.onPress}
         style={styles.Menu}>
-        <Entypo name={'menu'} size={40} color={Color.White} />
+        <Entypo name={'menu'} size={30} color={Color.White} />
       </TouchableOpacity>
 
       <View>
@@ -29,7 +29,7 @@ const BackWithMenu = props => {
         <MaterialCommunityIcons
           style={styles.FontAwesomeArrow}
           name={'bell-badge-outline'}
-          size={40}
+          size={30}
           color={Color.White}
         />
       </TouchableOpacity>

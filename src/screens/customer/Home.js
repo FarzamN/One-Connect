@@ -1,22 +1,23 @@
 import React from 'react';
-import {StyleSheet, SafeAreaView, View, Text} from 'react-native';
+import { StyleSheet, SafeAreaView, View, Text } from 'react-native';
 import BackWithMenu from '../../components/BackWithMenu';
 import CustomButton from '../../components/CustomButton';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 // import Map from '../../components/MapFolder/Map';
 import Swiper from 'react-native-swiper';
-import {Color} from '../../utils/Colors';
-const Home = ({navigation}) => {
+import { Color } from '../../utils/Colors';
+const Home = ({ navigation }) => {
   return (
     <SafeAreaView style={styles.container}>
-      <BackWithMenu />
+      <BackWithMenu
+        onPress={() => navigation.openDrawer()} />
       {/* <Map /> */}
       <CustomButton
         onPress={() => navigation.navigate('vehicalselection')}
-        containerStyle={{width: '90%', alignSelf: 'center'}}
+        containerStyle={{ width: '90%', alignSelf: 'center' }}
         title={'Next'}
       />
-      <Swiper
+      {/* <Swiper
         nextButton={
           <Text style={styles.buttonText}>
             <AntDesign name={'caretright'} />
@@ -40,15 +41,15 @@ const Home = ({navigation}) => {
         <View style={styles.slide3}>
           <Text style={styles.text}>And simple</Text>
         </View>
-      </Swiper>
+      </Swiper> */}
     </SafeAreaView>
   );
 };
 
 const styles = StyleSheet.create({
-  container: {flex: 1, backgroundColor: Color.White},
+  container: { flex: 1, backgroundColor: Color.White },
 
-  wrapper: {width: '90%', alignSelf: 'center'},
+  wrapper: { width: '90%', alignSelf: 'center' },
   slide1: {
     flex: 1,
     justifyContent: 'center',

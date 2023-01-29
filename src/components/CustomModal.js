@@ -1,9 +1,9 @@
-import React, {useState} from 'react';
-import {StyleSheet, Text, View, Image} from 'react-native';
+import React, { useState } from 'react';
+import { StyleSheet, Text, View, Image } from 'react-native';
 import Modal from 'react-native-modal';
-import {verticalScale, scale, moderateScale} from 'react-native-size-matters';
+import { verticalScale, scale, moderateScale } from 'react-native-size-matters';
 import CustomStarRating from './CustomStarRating';
-import {Color} from '../utils/Colors';
+import { Color } from '../utils/Colors';
 import CustomButton from './CustomButton';
 
 const CustomModal = props => {
@@ -13,10 +13,11 @@ const CustomModal = props => {
         <Text style={[styles.Modal_Text, props.Modal_Text_Restyle]}>
           {props.Modal_Text}
         </Text>
-        <Image
+        {props.image ? <Image style={styles.image} source={props.image} /> : null}
+        {/* <Image
           style={styles.image}
           source={require('../assets/Images/dpone.png')}
-        />
+        /> */}
         <Text style={[styles.Modal_Name, props.Modal_Name_Restyle]}>
           {props.Name}
         </Text>
@@ -33,7 +34,7 @@ const CustomModal = props => {
           {props.Long_Text}
         </Text>
         <CustomButton
-          containerStyle={{marginTop: scale(30), width: '85%'}}
+          containerStyle={{ marginTop: scale(30), width: '85%' }}
           title="Book Now"
         />
       </View>
@@ -48,13 +49,13 @@ const styles = StyleSheet.create({
     backgroundColor: Color.White,
     marginTop: scale(20),
     borderRadius: 20,
-    paddingTop: verticalScale(15),
+    // paddingTop: verticalScale(15),
     alignItems: 'center',
     paddingVertical: moderateScale(50),
-    paddingHorizontal: moderateScale(20),
+    paddingHorizontal: moderateScale(30),
   },
   Modal_Text: {
-    fontSize: scale(20),
+    fontSize: scale(30),
     color: Color.Black,
     fontWeight: '600',
   },
@@ -70,12 +71,13 @@ const styles = StyleSheet.create({
     textAlign: 'center',
   },
   Modal_Long_Text: {
-    fontSize: scale(13),
+    fontSize: scale(14),
     color: Color.placeholderTextColor,
+    paddingTop: verticalScale(10)
   },
   image: {
-    width: scale(100),
-    height: scale(100),
+    width: scale(130),
+    height: scale(130),
     marginVertical: scale(20),
   },
 });

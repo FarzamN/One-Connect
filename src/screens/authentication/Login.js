@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import {
   SafeAreaView,
   StyleSheet,
@@ -10,20 +10,20 @@ import {
   Platform,
   KeyboardAvoidingView,
 } from 'react-native';
-import {moderateScale, scale, verticalScale} from 'react-native-size-matters';
+import { moderateScale, scale, verticalScale } from 'react-native-size-matters';
 import InputFields from '../../components/InputFields';
-import {useForm} from 'react-hook-form';
-import {Color} from '../../utils/Colors';
+import { useForm } from 'react-hook-form';
+import { Color } from '../../utils/Colors';
 import CustomButton from '../../components/CustomButton';
 import CustomLoginButton from '../../components/CustomLoginButton';
 
-const Login = ({navigation}) => {
+const Login = ({ navigation }) => {
   const [index, setIndex] = useState(99);
   const {
     control,
     handleSubmit,
-    formState: {errors, isValid},
-  } = useForm({mode: 'all'});
+    formState: { errors, isValid },
+  } = useForm({ mode: 'all' });
   return (
     <SafeAreaView style={styles.Container}>
       <ScrollView showsVerticalScrollIndicator={false}>
@@ -48,19 +48,19 @@ const Login = ({navigation}) => {
             InputContainerStyle={
               index === 0
                 ? {
-                    borderTopWidth: 0,
-                    borderRightWidth: 0,
-                    borderLeftWidth: 0,
-                    borderBottomWidth: 1,
-                    borderBottomColor: Color.Main,
-                  }
+                  borderTopWidth: 0,
+                  borderRightWidth: 0,
+                  borderLeftWidth: 0,
+                  borderBottomWidth: 1,
+                  borderBottomColor: Color.Main,
+                }
                 : {
-                    borderTopWidth: 0,
-                    borderRightWidth: 0,
-                    borderLeftWidth: 0,
-                    borderBottomWidth: 1,
-                    borderBottomColor: Color.borderColor,
-                  }
+                  borderTopWidth: 0,
+                  borderRightWidth: 0,
+                  borderLeftWidth: 0,
+                  borderBottomWidth: 1,
+                  borderBottomColor: Color.borderColor,
+                }
             }
             control={control}
             IconName={'user'}
@@ -84,19 +84,19 @@ const Login = ({navigation}) => {
               InputContainerStyle={
                 index === 1
                   ? {
-                      borderTopWidth: 0,
-                      borderRightWidth: 0,
-                      borderLeftWidth: 0,
-                      borderBottomWidth: 1,
-                      borderBottomColor: Color.Main,
-                    }
+                    borderTopWidth: 0,
+                    borderRightWidth: 0,
+                    borderLeftWidth: 0,
+                    borderBottomWidth: 1,
+                    borderBottomColor: Color.Main,
+                  }
                   : {
-                      borderTopWidth: 0,
-                      borderRightWidth: 0,
-                      borderLeftWidth: 0,
-                      borderBottomWidth: 1,
-                      borderBottomColor: Color.borderColor,
-                    }
+                    borderTopWidth: 0,
+                    borderRightWidth: 0,
+                    borderLeftWidth: 0,
+                    borderBottomWidth: 1,
+                    borderBottomColor: Color.borderColor,
+                  }
               }
               IconName={'lock'}
               control={control}
@@ -125,7 +125,7 @@ const Login = ({navigation}) => {
           />
           <TouchableOpacity
             onPress={() => navigation.navigate('forgetpass')}
-            style={[styles.FPassCon, {marginTop: scale(10)}]}>
+            style={[styles.FPassCon, { marginTop: scale(10) }]}>
             <Text
               style={{
                 fontSize: scale(16),
@@ -181,7 +181,7 @@ const Login = ({navigation}) => {
             title={'Create an accout'}
           />
         </View>
-        <View style={{height: verticalScale(50)}}></View>
+        <View style={{ height: verticalScale(50) }}></View>
       </ScrollView>
     </SafeAreaView>
   );

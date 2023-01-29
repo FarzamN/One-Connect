@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import {
   StyleSheet,
   Text,
@@ -7,9 +7,9 @@ import {
   Image,
   TouchableOpacity,
 } from 'react-native';
-import {moderateScale, scale} from 'react-native-size-matters';
-import {Alert} from 'react-native/Libraries/Alert/Alert';
-import {Color} from '../../utils/Colors';
+import { moderateScale, scale } from 'react-native-size-matters';
+import { Alert } from 'react-native/Libraries/Alert/Alert';
+import { Color } from '../../utils/Colors';
 import CustomModal from '../CustomModal';
 import CustomStarRating from '../CustomStarRating';
 
@@ -71,19 +71,19 @@ const Item = ({
         flexDirection: 'row',
         paddingVertical: moderateScale(20),
       }}>
-      <View style={{width: '50%', alignItems: 'center'}}>
+      <View style={{ width: '50%', alignItems: 'center' }}>
         <Image style={styles.userImg} source={item.img} />
       </View>
-      <View style={{width: '50%', paddingHorizontal: moderateScale(30)}}>
+      <View style={{ width: '50%', paddingHorizontal: moderateScale(30) }}>
         <Text style={styles.Text}>{item.Name}</Text>
         <Text style={styles.Text}>{item.Km}</Text>
         <Text style={styles.Text}>{item.Price}</Text>
-        <View style={{width: '50%'}}>
+        <View style={{ width: '50%' }}>
           <CustomStarRating starSize={20} />
         </View>
       </View>
     </View>
-    <View style={{flexDirection: 'row'}}>
+    <View style={{ flexDirection: 'row' }}>
       <TouchableOpacity
         onPress={onPressMore}
         style={{
@@ -100,10 +100,10 @@ const Item = ({
             borderRightWidth: 1,
             borderRightColor: Color.borderColor,
           },
-          {backgroundColor},
+          { backgroundColor },
         ]}
         onPress={onPress}>
-        <Text style={[styles.btnText, {color: textColor}]}>Book Now</Text>
+        <Text style={[styles.btnText, { color: textColor }]}>Book Now</Text>
       </TouchableOpacity>
     </View>
   </View>
@@ -115,7 +115,7 @@ const CustomMechanicCard = () => {
   const toggleModal = () => {
     setModalVisible(!isModalVisible);
   };
-  const renderItem = ({item}) => {
+  const renderItem = ({ item }) => {
     const backgroundColor = item.id === selectedId ? Color.Main : Color.White;
     const color = item.id === selectedId ? Color.White : Color.Main;
 
@@ -143,6 +143,7 @@ const CustomMechanicCard = () => {
       />
       {showModal == false ? (
         <CustomModal
+          source={require('../../assets/Images/dpone.png')}
           Long_Text="Lorem ipsum dolor sit amet, consectetur 
         adipiscing elit, sed do eiusmod tempor "
           Name="John Elliot"

@@ -9,12 +9,12 @@ import {
 } from 'react-native';
 
 import Feather from 'react-native-vector-icons/Feather';
-import {useController} from 'react-hook-form';
-import React, {forwardRef, useState} from 'react';
-import {Color} from '../utils/Colors';
+import { useController } from 'react-hook-form';
+import React, { forwardRef, useState } from 'react';
+import { Color } from '../utils/Colors';
 
 const Input = forwardRef((props, ref) => {
-  const {field} = useController({
+  const { field } = useController({
     control: props.control,
     defaultValue: props.defaultValue || '',
     name: props.name,
@@ -27,7 +27,7 @@ const Input = forwardRef((props, ref) => {
       <View style={[styles.smallbox, props.InputContainerStyle]}>
         <Feather name={props.IconName} color={Color.Main} size={25} />
         <TextInput
-          style={[styles.input, props.style, {width: '100%'}]}
+          style={[styles.input, props.style, { width: '100%' }]}
           placeholderTextColor={Color.placeholderTextColor}
           onFocus={props.onFocus}
           value={field.value}
