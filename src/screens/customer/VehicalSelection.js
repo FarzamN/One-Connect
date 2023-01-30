@@ -10,11 +10,12 @@ const VehicalSelection = ({navigation}) => {
   return (
     <SafeAreaView style={styles.container}>
       <BackAndName
+        onPress={() => navigation.goBack()}
         title={'Vehicle Selection'}
         color={Color.Black}
         Menucolor={Color.White}
       />
-      <CustomVehicalCard />
+      <CustomVehicalCard select="Select" />
       <CustomButton
         onPress={() => navigation.navigate('availablemechanics')}
         containerStyle={{

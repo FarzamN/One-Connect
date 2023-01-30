@@ -1,26 +1,24 @@
-import {StyleSheet, Text, View, TouchableOpacity} from 'react-native';
+import {StyleSheet, Text, TouchableOpacity} from 'react-native';
 import React from 'react';
 import {scale, moderateScale} from 'react-native-size-matters';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import LinearGradient from 'react-native-linear-gradient';
 const CustomButton = props => {
   return (
-    <View>
-      <TouchableOpacity activeOpacity={0.7} onPress={props.onPress}>
-        <LinearGradient
-          start={{x: 0, y: 0}}
-          end={{x: 1, y: 0}}
-          colors={['#E70100', '#DD0101', '#CA0101', '#BA0101']}
-          style={[
-            styles.containerStyle,
-            props.containerStyle,
-            {flexDirection: 'row', justifyContent: 'space-between'},
-          ]}>
-          <Text style={[styles.font, props.textStyle]}>{props.title}</Text>
-          <AntDesign name={'arrowright'} size={30} color={'white'} />
-        </LinearGradient>
-      </TouchableOpacity>
-    </View>
+    <TouchableOpacity activeOpacity={0.7} onPress={props.onPress}>
+      <LinearGradient
+        start={{x: 0, y: 0}}
+        end={{x: 1, y: 0}}
+        colors={['#E70100', '#DD0101', '#CA0101', '#BA0101']}
+        style={[
+          styles.containerStyle,
+          props.containerStyle,
+          {flexDirection: 'row', justifyContent: 'space-between'},
+        ]}>
+        <Text style={[styles.font, props.textStyle]}>{props.title}</Text>
+        <AntDesign name={'arrowright'} size={30} color={'white'} />
+      </LinearGradient>
+    </TouchableOpacity>
   );
 };
 

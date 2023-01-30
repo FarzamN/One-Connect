@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
-import { StyleSheet, Text, View, Image } from 'react-native';
+import React, {useState} from 'react';
+import {StyleSheet, Text, View, Image} from 'react-native';
 import Modal from 'react-native-modal';
-import { verticalScale, scale, moderateScale } from 'react-native-size-matters';
+import {verticalScale, scale, moderateScale} from 'react-native-size-matters';
 import CustomStarRating from './CustomStarRating';
-import { Color } from '../utils/Colors';
+import {Color} from '../utils/Colors';
 import CustomButton from './CustomButton';
 
 const CustomModal = props => {
@@ -13,11 +13,10 @@ const CustomModal = props => {
         <Text style={[styles.Modal_Text, props.Modal_Text_Restyle]}>
           {props.Modal_Text}
         </Text>
-        {props.image ? <Image style={styles.image} source={props.image} /> : null}
-        {/* <Image
+        <Image
           style={styles.image}
           source={require('../assets/Images/dpone.png')}
-        /> */}
+        />
         <Text style={[styles.Modal_Name, props.Modal_Name_Restyle]}>
           {props.Name}
         </Text>
@@ -34,7 +33,7 @@ const CustomModal = props => {
           {props.Long_Text}
         </Text>
         <CustomButton
-          containerStyle={{ marginTop: scale(30), width: '85%' }}
+          containerStyle={{marginTop: scale(30), width: '85%'}}
           title="Book Now"
         />
       </View>
@@ -73,7 +72,7 @@ const styles = StyleSheet.create({
   Modal_Long_Text: {
     fontSize: scale(14),
     color: Color.placeholderTextColor,
-    paddingTop: verticalScale(10)
+    paddingTop: verticalScale(10),
   },
   image: {
     width: scale(130),

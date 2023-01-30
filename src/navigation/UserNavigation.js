@@ -1,28 +1,35 @@
 import React from 'react';
-import { } from 'react-native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import {} from 'react-native';
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import 'react-native-gesture-handler';
 import VehicalSelection from '../screens/customer/VehicalSelection';
 import AvailableMechanics from '../screens/customer/AvailableMechanics';
 import Home from '../screens/customer/Home';
 import Progress from '../screens/customer/Progress';
 import Bill from '../screens/customer/Bill';
-
+import AddVehicles from '../screens/customer/AddVehicles.js';
+import EditVehicles from '../screens/customer/EditVehicles';
+import BankDetail from '../screens/customer/BankDetail';
+import Transactions from '../screens/customer/Transactions';
+import Notification from '../screens/customer/Notification.js';
 
 const Stack = createNativeStackNavigator();
 const UserNavigation = () => {
   return (
-
     <Stack.Navigator
       initialRouteName="home"
-      screenOptions={{ headerShown: false }}>
+      screenOptions={{headerShown: false}}>
       <Stack.Screen name="home" component={Home} />
+      <Stack.Screen name="notification" component={Notification} />
       <Stack.Screen name="vehicalselection" component={VehicalSelection} />
       <Stack.Screen name="availablemechanics" component={AvailableMechanics} />
       <Stack.Screen name="progress" component={Progress} />
       <Stack.Screen name="bill" component={Bill} />
+      <Stack.Screen name="addvehicles" component={AddVehicles} />
+      <Stack.Screen name="editvehicles" component={EditVehicles} />
+      <Stack.Screen name="bankdetail" component={BankDetail} />
+      <Stack.Screen name="transactions" component={Transactions} />
     </Stack.Navigator>
-
   );
 };
 

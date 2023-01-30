@@ -3,5 +3,6 @@ export const Color = {
   borderColor: '#CCCCCC',
   placeholderTextColor: '#838383',
   White: '#fff',
-  Black: '#000'
+  Black: '#000',
+  greyfont: '  #414D5B',
 };

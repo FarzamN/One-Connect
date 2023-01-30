@@ -3,11 +3,14 @@ import {
   StyleSheet,
   Text,
   View,
-  Image,
+  SafeAreaView,
+  TextInput,
   TouchableOpacity,
+  Image,
   FlatList,
 } from 'react-native';
-import {moderateScale, scale} from 'react-native-size-matters';
+import {moderateScale, scale, verticalScale} from 'react-native-size-matters';
+import BackAndName from '../../components/BackAndName';
 import {Color} from '../../utils/Colors';
 
 const DATA = [
@@ -54,8 +57,8 @@ const DATA = [
     img: require('../../assets/Images/car.png'),
   },
 ];
-const Item = ({item, onPress, borderColor, props}) => (
-  <View style={[styles.mainBox, {borderColor}]}>
+const Item = ({item, onPress}) => (
+  <View style={styles.mainBox}>
     <View
       style={{
         flexDirection: 'row',
@@ -81,38 +84,79 @@ const Item = ({item, onPress, borderColor, props}) => (
           borderColor: Color.borderColor,
           paddingVertical: moderateScale(3),
         }}>
-        {props.select}
+        Edit
       </Text>
     </TouchableOpacity>
   </View>
 );
-const CustomVehicalCard = props => {
-  const [selectedId, setSelectedId] = useState();
-
+const AddEditVehicles = ({navigation}) => {
   const renderItem = ({item}) => {
-    const borderColor = item.id === selectedId ? Color.Main : Color.borderColor;
-
     return (
-      <Item
-        item={item}
-        onPress={() => setSelectedId(item.id)}
-        borderColor={borderColor}
-        props={props}
-      />
+      <Item item={item} onPress={() => navigation.navigate('editvehicles')} />
     );
   };
   return (
-    <FlatList
-      showsVerticalScrollIndicator={false}
-      data={DATA}
-      renderItem={renderItem}
-      keyExtractor={item => item.id}
-      extraData={selectedId}
-    />
+    <SafeAreaView style={styles.container}>
+      <BackAndName title="Vehicles" color={Color.Black} />
+      <FlatList
+        showsVerticalScrollIndicator={false}
+        data={DATA}
+        renderItem={renderItem}
+        keyExtractor={item => item.id}
+        // extraData={selectedId}
+      />
+      <View style={styles.AddBox}>
+        <Text style={styles.Add}>Add Another Vehicle</Text>
+        <View style={styles.row}>
+          <TextInput style={styles.input} placeholder="Registration ID..." />
+          <TouchableOpacity
+            onPress={() => navigation.navigate('addvehicles')}
+            style={styles.AddBtnBox}>
+            <Text style={styles.AddBtn}>Add</Text>
+          </TouchableOpacity>
+        </View>
+      </View>
+    </SafeAreaView>
   );
 };
 
 const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: Color.White,
+  },
+  AddBox: {
+    marginHorizontal: scale(20),
+  },
+  Add: {
+    color: Color.Black,
+    fontSize: scale(15),
+    fontWeight: '600',
+  },
+
+  row: {
+    flexDirection: 'row',
+    height: verticalScale(50),
+    margin: scale(10),
+    borderWidth: 1,
+    borderRadius: 10,
+    borderColor: Color.borderColor,
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    paddingHorizontal: moderateScale(20),
+  },
+  AddBtn: {
+    color: Color.Main,
+  },
+  AddBtnBox: {
+    borderWidth: 1,
+    borderColor: Color.Main,
+    borderRadius: 10,
+    width: scale(50),
+    height: scale(30),
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
   TextOne: {
     fontSize: scale(16),
     fontWeight: '600',
@@ -124,6 +168,7 @@ const styles = StyleSheet.create({
   },
   mainBox: {
     borderWidth: 1,
+    borderColor: Color.borderColor,
     marginVertical: scale(8),
     width: '90%',
     alignSelf: 'center',
@@ -134,4 +179,5 @@ const styles = StyleSheet.create({
     height: scale(70),
   },
 });
-export default CustomVehicalCard;
+
+export default AddEditVehicles;

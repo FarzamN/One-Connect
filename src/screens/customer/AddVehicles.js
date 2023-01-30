@@ -7,23 +7,16 @@ import {Color} from '../../utils/Colors';
 import CustomVehiclesBox from '../../components/CustomVehiclesBox';
 import CustomButton from '../../components/CustomButton';
 
-const EditVehicles = ({navigation}) => {
+const AddVehicles = ({navigation}) => {
   return (
     <SafeAreaView style={styles.Container}>
-      <BackAndName onPress={() => navigation.goBack()} title="Edit Vehicles" />
-
+      <BackAndName onPress={() => navigation.goBack()} title="Add Vehicles" />
       <CustomVehiclesBox
-        New_Vehicle="Edit Vehicle"
+        New_Vehicle="Add New Vehicle"
         LongText="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor "
       />
-
       <CustomButton
-        title="Save changes"
-        textStyle={{fontSize: scale(16)}}
-        containerStyle={{width: '90%'}}
-      />
-      <CustomButton
-        title="DELETE VEHICLE"
+        title="Add Vehicles"
         textStyle={{fontSize: scale(16)}}
         containerStyle={{width: '90%'}}
       />
@@ -38,4 +31,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default EditVehicles;
+export default AddVehicles;

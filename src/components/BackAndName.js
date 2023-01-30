@@ -17,7 +17,7 @@ const BackAndName = props => {
       </TouchableOpacity>
       <Text style={[styles.font, props.textStyle]}>{props.title}</Text>
       <View style={styles.Menu}>
-        <Feather name={'menu'} size={30} color={props.Menucolor} />
+        <Feather name={'menu'} size={30} color={'#fff'} />
       </View>
     </View>
   );
@@ -37,7 +37,7 @@ const styles = StyleSheet.create({
     fontSize: scale(18),
     fontWeight: '700',
     fontFamily: 'Inter-Bold',
-    textTransform: 'uppercase',
+    textTransform: 'capitalize',
   },
 });
 
