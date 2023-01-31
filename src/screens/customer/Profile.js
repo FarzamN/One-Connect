@@ -8,7 +8,7 @@ import {useForm} from 'react-hook-form';
 import CustomButton from '../../components/CustomButton';
 import ImagePicker from '../../components/ImagePicker/WithCamera';
 
-const Profile = () => {
+const Profile = ({navigation}) => {
   const [index, setIndex] = useState(99);
   const {
     control,
@@ -17,8 +17,14 @@ const Profile = () => {
   } = useForm({mode: 'all'});
   return (
     <SafeAreaView style={styles.container}>
-      <BackAndName color={Color.Black} title="Profile" />
+      <BackAndName
+        onPress={() => navigation.goBack()}
+        color={Color.Black}
+        title="Profile"
+      />
+
       <ImagePicker />
+
       <CustomInput
         onFocus={() => {
           setIndex(0);

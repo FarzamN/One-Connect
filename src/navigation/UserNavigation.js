@@ -10,7 +10,7 @@ import Bill from '../screens/customer/Bill';
 import AddVehicles from '../screens/customer/AddVehicles.js';
 import EditVehicles from '../screens/customer/EditVehicles';
 import BankDetail from '../screens/customer/BankDetail';
-import Transactions from '../screens/customer/Transactions';
+import MainTransactions from '../screens/customer/MainTransactions';
 import Notification from '../screens/customer/Notification.js';
 
 const Stack = createNativeStackNavigator();
@@ -28,7 +28,7 @@ const UserNavigation = () => {
       <Stack.Screen name="addvehicles" component={AddVehicles} />
       <Stack.Screen name="editvehicles" component={EditVehicles} />
       <Stack.Screen name="bankdetail" component={BankDetail} />
-      <Stack.Screen name="transactions" component={Transactions} />
+      <Stack.Screen name="maintransactions" component={MainTransactions} />
     </Stack.Navigator>
   );
 };

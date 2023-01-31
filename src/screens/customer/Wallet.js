@@ -130,7 +130,8 @@ const Wallet = ({navigation}) => {
           marginTop: scale(20),
         }}>
         <Text style={styles.History}> Transactions History</Text>
-        <TouchableOpacity onPress={() => navigation.navigate('transactions')}>
+        <TouchableOpacity
+          onPress={() => navigation.navigate('maintransactions')}>
           <Text style={styles.Show_all}>Show all</Text>
         </TouchableOpacity>
       </View>

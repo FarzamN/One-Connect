@@ -4,14 +4,40 @@ import {useForm} from 'react-hook-form';
 import CustomInput from './CustomInput';
 import {Color} from '../utils/Colors';
 import {moderateScale, scale, verticalScale} from 'react-native-size-matters';
-
+import {launchImageLibrary} from 'react-native-image-picker';
 const CustomVehiclesBox = props => {
   const [index, setIndex] = useState(99);
+  const [saveimage, setsaveimage] = useState();
+  const [show, setShow] = useState(true);
   const {
     control,
     handleSubmit,
     formState: {errors, isValid},
   } = useForm({mode: 'all'});
+  const photosave = () => {
+    let options = {
+      storageOptions: {
+        mediaType: 'photo',
+        path: 'image',
+        includeExtra: true,
+      },
+      selectionLimit: 1,
+    };
+
+    launchImageLibrary(options, res => {
+      if (res.didCancel) {
+        console.log('nhh hay ez piasa');
+      } else if (res.error) {
+        console.log('nhh hay ez piasa bro');
+      } else if (res.customButton) {
+        alert(res.customButton);
+      } else {
+        setsaveimage(res.assets?.[0]?.uri);
+        setShow(false);
+      }
+    });
+  };
+
   return (
     <View style={styles.WorkContainer}>
       <Text style={styles.New_Vehicle}>{props.New_Vehicle}</Text>
@@ -148,7 +174,7 @@ const CustomVehiclesBox = props => {
         placeholder="Vin number"
         placeholderTextColor={'#32323266'}
       />
-      <TouchableOpacity style={styles.pickImageBox}>
+      <TouchableOpacity onPress={() => photosave()} style={styles.pickImageBox}>
         <Text style={styles.Add_Image_Text}>Add Image</Text>
       </TouchableOpacity>
     </View>
