@@ -33,6 +33,15 @@ const styles = StyleSheet.create({
     borderRadius: 15,
     marginTop: scale(5),
     alignSelf: 'center',
+    shadowColor: '#EBDCF5',
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 3.84,
+
+    elevation: 5,
   },
 
   font: {

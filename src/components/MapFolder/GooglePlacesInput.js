@@ -44,11 +44,12 @@ const styles = StyleSheet.create({
     resizeMode: 'contain',
   },
   input: {
+    // borderWidth: 1,
     color: 'black',
     fontWeight: '600',
     width: '100%',
     textInputContainer: {
-      backgroundColor: 'black',
+      backgroundColor: '#000',
     },
   },
 });

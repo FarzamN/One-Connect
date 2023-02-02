@@ -1,18 +1,12 @@
-import {
-  SafeAreaView,
-  StyleSheet,
-  Text,
-  View,
-  PermissionsAndroid,
-} from 'react-native';
+import {SafeAreaView, StyleSheet, View, PermissionsAndroid} from 'react-native';
 import React, {useState} from 'react';
-
 import {Marker} from 'react-native-maps';
 import MapView, {PROVIDER_GOOGLE, Callout} from 'react-native-maps';
 import CustomButton from '../../components/CustomButton';
-import {scale} from 'react-native-size-matters';
+import {moderateScale, scale} from 'react-native-size-matters';
 import BackWithMenu from '../../components/BackWithMenu';
 import GooglePlacesInput from '../../components/MapFolder/GooglePlacesInput';
+import BottomTab from '../../components/BottomTab';
 
 const requestCameraPermission = async () => {
   try {
@@ -98,15 +92,17 @@ const Home = ({navigation}) => {
         <View
           style={{
             position: 'absolute',
-            bottom: 20,
+            bottom: scale(100),
             alignSelf: 'center',
             width: '100%',
           }}>
           <CustomButton
+            containerStyle={{width: '90%', paddingVertical: moderateScale(15)}}
             onPress={() => navigation.navigate('vehicalselection')}
             title="next"
           />
         </View>
+        <BottomTab />
       </View>
     </SafeAreaView>
   );
@@ -123,6 +119,11 @@ const styles = StyleSheet.create({
     height: '100%',
     width: '100%',
     zIndex: -17,
+  },
+  text: {
+    color: '#fff',
+    fontSize: 30,
+    fontWeight: 'bold',
   },
 });
 export default Home;
