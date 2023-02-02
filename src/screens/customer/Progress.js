@@ -16,11 +16,7 @@ import {Color} from '../../utils/Colors';
 const Progress = ({navigation}) => {
   return (
     <SafeAreaView style={styles.continer}>
-      <BackAndName
-        onPress={() => navigation.goBack()}
-        color={Color.Black}
-        title="Progress"
-      />
+      <BackAndName onPress={() => navigation.goBack()} title="Progress" />
 
       <View style={styles.CardContainer}>
         <Image
@@ -30,7 +26,9 @@ const Progress = ({navigation}) => {
         <View style={styles.CardBox}>
           <Text style={styles.Text}>Name of Mechanic</Text>
           <Text style={styles.Text}>Location</Text>
-          <CustomStarRating starSize={15} />
+          <View style={{width: '60%'}}>
+            <CustomStarRating starSize={18} />
+          </View>
         </View>
       </View>
       <ScrollView>

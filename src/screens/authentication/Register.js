@@ -249,7 +249,6 @@ const Register = ({navigation}) => {
             <Text
               style={{
                 color: Color.placeholderTextColor,
-                fontFamily: 'Poppins-Medium',
                 fontSize: scale(12),
                 paddingTop: moderateScale(5),
               }}>
@@ -257,13 +256,13 @@ const Register = ({navigation}) => {
             </Text>
           </View>
           <CustomButton
+            containerStyle={{width: '90%', marginTop: scale(10)}}
             onPress={() => navigation.navigate('otp')}
             title={'Register'}
           />
           <Text
             style={{
               color: Color.placeholderTextColor,
-              fontFamily: 'Poppins-Medium',
               fontSize: scale(12),
               alignSelf: 'center',
               paddingTop: scale(8),

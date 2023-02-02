@@ -37,7 +37,7 @@ const DATA = [
     Timing: '03:15:10',
   },
 ];
-const Summary = () => {
+const Summary = ({navigation}) => {
   const Item = ({title, Timing, type}) => (
     <TouchableOpacity style={styles.CardBox}>
       <View style={{width: '80%'}}>
@@ -49,7 +49,7 @@ const Summary = () => {
   );
   return (
     <SafeAreaView style={styles.Container}>
-      <BackAndName title="Summary" />
+      <BackAndName onPress={() => navigation.goBack()} title="Summary" />
       <FlatList
         scrollEnabled={true}
         showsVerticalScrollIndicator={false}

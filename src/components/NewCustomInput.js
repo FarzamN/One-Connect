@@ -54,7 +54,6 @@ const styles = StyleSheet.create({
     backgroundColor: 'red',
   },
   TextStyle: {
-    fontFamily: 'open sans',
     fontSize: moderateScale(14),
     fontStyle: 'normal',
     fontWeight: '600',

@@ -22,18 +22,18 @@ export default CustomLoginButton;
 
 const styles = StyleSheet.create({
   containerStyle: {
-    width: '100%',
-    padding: moderateScale(15),
+    width: '90%',
+    paddingVertical: moderateScale(10),
     alignItems: 'center',
     justifyContent: 'center',
     borderRadius: 50,
     marginTop: scale(15),
+    alignSelf: 'center',
   },
 
   font: {
     color: '#fff',
-    fontSize: scale(20),
-    fontFamily: 'Inter-Bold',
+    fontSize: scale(17),
     textTransform: 'uppercase',
     // textAlign: 'center',
   },

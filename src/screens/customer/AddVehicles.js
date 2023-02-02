@@ -1,5 +1,5 @@
 import React from 'react';
-import {StyleSheet, Text, View, SafeAreaView} from 'react-native';
+import {StyleSheet, ScrollView, SafeAreaView} from 'react-native';
 import {scale} from 'react-native-size-matters';
 import BackAndName from '../../components/BackAndName';
 import {Color} from '../../utils/Colors';
@@ -11,15 +11,17 @@ const AddVehicles = ({navigation}) => {
   return (
     <SafeAreaView style={styles.Container}>
       <BackAndName onPress={() => navigation.goBack()} title="Add Vehicles" />
-      <CustomVehiclesBox
-        New_Vehicle="Add New Vehicle"
-        LongText="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor "
-      />
-      <CustomButton
-        title="Add Vehicles"
-        textStyle={{fontSize: scale(16)}}
-        containerStyle={{width: '90%'}}
-      />
+      <ScrollView showsVerticalScrollIndicator={false}>
+        <CustomVehiclesBox
+          New_Vehicle="Add New Vehicle"
+          LongText="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor "
+        />
+        <CustomButton
+          title="Add Vehicles"
+          textStyle={{fontSize: scale(16)}}
+          containerStyle={{width: '90%'}}
+        />
+      </ScrollView>
     </SafeAreaView>
   );
 };
@@ -27,7 +29,7 @@ const AddVehicles = ({navigation}) => {
 const styles = StyleSheet.create({
   Container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: Color.White,
   },
 });
 

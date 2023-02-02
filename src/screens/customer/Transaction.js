@@ -38,7 +38,6 @@ const styles = StyleSheet.create({
   },
   Texts: {
     fontSize: 12,
-    fontFamily: 'inter',
     fontStyle: 'normal',
     color: 'black',
     opacity: 0.6,
@@ -46,7 +45,6 @@ const styles = StyleSheet.create({
   MRText: {
     fontSize: 12,
     color: '#435CA8',
-    fontFamily: 'inter',
     fontStyle: 'normal',
     fontWeight: '700',
   },
@@ -60,7 +58,6 @@ const styles = StyleSheet.create({
   },
   income: {
     color: '#17D85C',
-    fontFamily: 'mulish',
     fontStyle: 'normal',
     fontSize: moderateScale(16),
     fontWeight: '700',

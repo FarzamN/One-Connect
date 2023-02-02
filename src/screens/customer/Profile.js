@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {StyleSheet, Text, View, SafeAreaView} from 'react-native';
+import {StyleSheet, ScrollView, View, SafeAreaView} from 'react-native';
 import BackAndName from '../../components/BackAndName';
 import {Color} from '../../utils/Colors';
 import CustomInput from '../../components/CustomInput';
@@ -22,98 +22,99 @@ const Profile = ({navigation}) => {
         color={Color.Black}
         title="Profile"
       />
+      <ScrollView showsVerticalScrollIndicator={false}>
+        <ImagePicker />
 
-      <ImagePicker />
-
-      <CustomInput
-        onFocus={() => {
-          setIndex(0);
-        }}
-        style={
-          index === 0
-            ? {
-                borderWidth: 1,
-                borderColor: Color.Main,
-                borderRadius: 10,
-              }
-            : {
-                borderWidth: 1,
-                borderColor: Color.borderColor,
-                borderRadius: 10,
-              }
-        }
-        control={control}
-        keyboardType="email-address"
-        name="f_name"
-        rules={{
-          required: 'email is required',
-          value: /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/,
-          message: 'Enter a valid email',
-        }}
-        placeholder="First Name"
-        placeholderTextColor={'#32323266'}
-      />
-      <CustomInput
-        onFocus={() => {
-          setIndex(2);
-        }}
-        style={
-          index === 2
-            ? {
-                borderWidth: 1,
-                borderColor: Color.Main,
-                borderRadius: 10,
-              }
-            : {
-                borderWidth: 1,
-                borderColor: Color.borderColor,
-                borderRadius: 10,
-              }
-        }
-        control={control}
-        keyboardType="email-address"
-        name="l_name"
-        rules={{
-          required: 'email is required',
-          value: /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/,
-          message: 'Enter a valid email',
-        }}
-        placeholder="Last Name"
-        placeholderTextColor={'#32323266'}
-      />
-      <CustomInput
-        onFocus={() => {
-          setIndex(3);
-        }}
-        style={
-          index === 3
-            ? {
-                borderWidth: 1,
-                borderColor: Color.Main,
-                borderRadius: 10,
-              }
-            : {
-                borderWidth: 1,
-                borderColor: Color.borderColor,
-                borderRadius: 10,
-              }
-        }
-        control={control}
-        keyboardType="email-address"
-        name="email"
-        rules={{
-          required: 'email is required',
-          value: /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/,
-          message: 'Enter a valid email',
-        }}
-        placeholder="Email"
-        placeholderTextColor={'#32323266'}
-      />
-      <CustomButton
-        textStyle={{fontSize: scale(18)}}
-        containerStyle={{width: '85%', padding: moderateScale(10)}}
-        title="Save Changes"
-      />
+        <CustomInput
+          onFocus={() => {
+            setIndex(0);
+          }}
+          style={
+            index === 0
+              ? {
+                  borderWidth: 1,
+                  borderColor: Color.Main,
+                  borderRadius: 10,
+                }
+              : {
+                  borderWidth: 1,
+                  borderColor: Color.borderColor,
+                  borderRadius: 10,
+                }
+          }
+          control={control}
+          keyboardType="email-address"
+          name="f_name"
+          rules={{
+            required: 'email is required',
+            value: /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/,
+            message: 'Enter a valid email',
+          }}
+          placeholder="First Name"
+          placeholderTextColor={'#32323266'}
+        />
+        <CustomInput
+          onFocus={() => {
+            setIndex(2);
+          }}
+          style={
+            index === 2
+              ? {
+                  borderWidth: 1,
+                  borderColor: Color.Main,
+                  borderRadius: 10,
+                }
+              : {
+                  borderWidth: 1,
+                  borderColor: Color.borderColor,
+                  borderRadius: 10,
+                }
+          }
+          control={control}
+          keyboardType="email-address"
+          name="l_name"
+          rules={{
+            required: 'email is required',
+            value: /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/,
+            message: 'Enter a valid email',
+          }}
+          placeholder="Last Name"
+          placeholderTextColor={'#32323266'}
+        />
+        <CustomInput
+          onFocus={() => {
+            setIndex(3);
+          }}
+          style={
+            index === 3
+              ? {
+                  borderWidth: 1,
+                  borderColor: Color.Main,
+                  borderRadius: 10,
+                }
+              : {
+                  borderWidth: 1,
+                  borderColor: Color.borderColor,
+                  borderRadius: 10,
+                }
+          }
+          control={control}
+          keyboardType="email-address"
+          name="email"
+          rules={{
+            required: 'email is required',
+            value: /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/,
+            message: 'Enter a valid email',
+          }}
+          placeholder="Email"
+          placeholderTextColor={'#32323266'}
+        />
+        <CustomButton
+          textStyle={{fontSize: scale(18)}}
+          containerStyle={{width: '85%', padding: moderateScale(10)}}
+          title="Save Changes"
+        />
+      </ScrollView>
     </SafeAreaView>
   );
 };

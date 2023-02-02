@@ -97,7 +97,7 @@ const AddEditVehicles = ({navigation}) => {
   };
   return (
     <SafeAreaView style={styles.container}>
-      <BackAndName title="Vehicles" color={Color.Black} />
+      <BackAndName onPress={() => navigation.goBack()} title="Vehicles" />
       <FlatList
         showsVerticalScrollIndicator={false}
         data={DATA}

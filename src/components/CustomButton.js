@@ -1,7 +1,7 @@
 import {StyleSheet, Text, TouchableOpacity} from 'react-native';
 import React from 'react';
 import {scale, moderateScale} from 'react-native-size-matters';
-import AntDesign from 'react-native-vector-icons/AntDesign';
+import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import LinearGradient from 'react-native-linear-gradient';
 const CustomButton = props => {
   return (
@@ -16,7 +16,7 @@ const CustomButton = props => {
           {flexDirection: 'row', justifyContent: 'space-between'},
         ]}>
         <Text style={[styles.font, props.textStyle]}>{props.title}</Text>
-        <AntDesign name={'arrowright'} size={30} color={'white'} />
+        <FontAwesome name={'long-arrow-right'} size={25} color={'white'} />
       </LinearGradient>
     </TouchableOpacity>
   );
@@ -26,19 +26,18 @@ export default CustomButton;
 
 const styles = StyleSheet.create({
   containerStyle: {
-    width: '100%',
-    padding: moderateScale(15),
+    width: '80%',
+    padding: moderateScale(12),
     alignItems: 'center',
     justifyContent: 'center',
     borderRadius: 15,
-    marginTop: scale(15),
+    marginTop: scale(5),
     alignSelf: 'center',
   },
 
   font: {
     color: '#fff',
-    fontSize: scale(20),
-    fontFamily: 'Inter-Bold',
+    fontSize: scale(15),
     textTransform: 'uppercase',
   },
 });

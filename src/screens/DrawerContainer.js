@@ -1,5 +1,5 @@
 import React from 'react';
-import { SafeAreaView, StyleSheet, Image, Text, View } from 'react-native';
+import {SafeAreaView, StyleSheet, Image, Text, View} from 'react-native';
 import Entypo from 'react-native-vector-icons/Ionicons';
 import LinearGradient from 'react-native-linear-gradient';
 import {
@@ -7,12 +7,14 @@ import {
   DrawerItemList,
   DrawerItem,
 } from '@react-navigation/drawer';
-import { Color } from '../utils/Colors';
-import { scale } from 'react-native-size-matters';
+import {Color} from '../utils/Colors';
+import {scale} from 'react-native-size-matters';
+import {useNavigation} from '@react-navigation/native';
 
 const DrawerContainer = props => {
+  const navigation = useNavigation();
   return (
-    <SafeAreaView style={{ flex: 1, backgroundColor: '#fff' }}>
+    <SafeAreaView style={{flex: 1, backgroundColor: '#fff'}}>
       <View style={styles.linearGradient}>
         <Image
           source={require('../assets/Images/mainlogo.png')}
@@ -22,10 +24,11 @@ const DrawerContainer = props => {
       <DrawerContentScrollView {...props}>
         <DrawerItemList {...props} />
         <DrawerItem
-          style={{ backgroundColor: 'white' }}
+          style={{backgroundColor: 'white'}}
           icon={() => <Entypo color={Color.Main} size={20} name={'log-out'} />}
-          labelStyle={{ color: '#1f1f1f', marginLeft: -15 }}
+          labelStyle={{color: '#1f1f1f', marginLeft: -15}}
           label="Log Out"
+          onPress={() => navigation.navigate('login')}
         />
       </DrawerContentScrollView>
 
@@ -53,8 +56,6 @@ const DrawerContainer = props => {
         }}>
         Version 1.0
       </Text>
-
-
     </SafeAreaView>
   );
 };
@@ -64,7 +65,7 @@ const styles = StyleSheet.create({
     backgroundColor: Color.Main,
     borderBottomRightRadius: 50,
     paddingTop: 30,
-    paddingBottom: 50
+    paddingBottom: 50,
   },
   sideMenuProfileIcon: {
     width: 140,

@@ -38,7 +38,7 @@ const DATA = [
   },
 ];
 
-const OngoingJob = () => {
+const OngoingJob = ({navigation}) => {
   const Item = ({title, Timing, type}) => (
     <TouchableOpacity style={styles.CardBox}>
       <View style={{width: '80%'}}>
@@ -50,7 +50,7 @@ const OngoingJob = () => {
   );
   return (
     <SafeAreaView style={styles.Container}>
-      <BackAndName title="Ongoing Jobs" />
+      <BackAndName onPress={() => navigation.goBack()} title="Ongoing Jobs" />
       <FlatList
         scrollEnabled={true}
         showsVerticalScrollIndicator={false}

@@ -1,64 +1,128 @@
-import React from 'react';
-import {StyleSheet, SafeAreaView, View, Text} from 'react-native';
-import BackWithMenu from '../../components/BackWithMenu';
+import {
+  SafeAreaView,
+  StyleSheet,
+  Text,
+  View,
+  PermissionsAndroid,
+} from 'react-native';
+import React, {useState} from 'react';
+
+import {Marker} from 'react-native-maps';
+import MapView, {PROVIDER_GOOGLE, Callout} from 'react-native-maps';
 import CustomButton from '../../components/CustomButton';
-import AntDesign from 'react-native-vector-icons/AntDesign';
-import Map from '../../components/MapFolder/Map';
-import Swiper from 'react-native-swiper';
-import {Color} from '../../utils/Colors';
+import {scale} from 'react-native-size-matters';
+import BackWithMenu from '../../components/BackWithMenu';
+import GooglePlacesInput from '../../components/MapFolder/GooglePlacesInput';
+
+const requestCameraPermission = async () => {
+  try {
+    const granted = await PermissionsAndroid.request(
+      PermissionsAndroid.PERMISSIONS.ACCESS_FINE_LOCATION,
+      {
+        title: 'Cool Photo App Camera Permission',
+        message:
+          'Cool Photo App needs access to your camera ' +
+          'so you can take awesome pictures.',
+        buttonNeutral: 'Ask Me Later',
+        buttonNegative: 'Cancel',
+        buttonPositive: 'OK',
+      },
+    );
+    if (granted === PermissionsAndroid.RESULTS.GRANTED) {
+      console.log('You can use the camera');
+    } else {
+      console.log('Camera permission denied');
+    }
+  } catch (err) {
+    console.warn(err);
+  }
+};
+
 const Home = ({navigation}) => {
+  const [Pin, setPin] = useState({
+    latitude: 37.78825,
+    longitude: -122.4324,
+  });
   return (
-    <SafeAreaView style={styles.container}>
-      <BackWithMenu
-        onPress_back={() => navigation.navigate('notification')}
-        onPress={() => navigation.openDrawer()}
-      />
-
-      <Map />
-
-      <CustomButton
-        onPress={() => navigation.navigate('vehicalselection')}
-        containerStyle={{
-          width: '90%',
-          alignSelf: 'center',
-          backgroundColor: '#000',
-        }}
-        title={'Next'}
-      />
+    <SafeAreaView>
+      <View>
+        <MapView
+          onPress={requestCameraPermission}
+          style={styles.mapStyle}
+          showsUserLocation={false}
+          zoomEnabled={true}
+          // zoomControlEnabled={true}
+          provider={PROVIDER_GOOGLE}
+          initialRegion={{
+            latitude: 37.78825,
+            longitude: -122.4324,
+            latitudeDelta: 0.0922,
+            longitudeDelta: 0.0421,
+          }}>
+          <Marker
+            coordinate={Pin}
+            draggable={true}
+            pinColor="red"
+            onDragStart={e => {
+              console.log('helo map', e.nativeEvent.coordinate);
+            }}
+            onDragEnd={e => {
+              setPin({
+                latitude: e.nativeEvent.coordinate.latitude,
+                longitude: e.nativeEvent.coordinate.longitude,
+              });
+              console.log('helo map');
+            }}></Marker>
+        </MapView>
+        <View
+          style={{
+            position: 'absolute',
+            top: 0,
+            alignSelf: 'center',
+            width: '100%',
+          }}>
+          <BackWithMenu
+            onPress_back={() => navigation.navigate('notification')}
+            onPress={() => navigation.openDrawer()}
+          />
+        </View>
+        <View
+          style={{
+            position: 'absolute',
+            top: scale(100),
+            alignSelf: 'center',
+            width: '80%',
+          }}>
+          <GooglePlacesInput placeholder="location" />
+        </View>
+        <View
+          style={{
+            position: 'absolute',
+            bottom: 20,
+            alignSelf: 'center',
+            width: '100%',
+          }}>
+          <CustomButton
+            onPress={() => navigation.navigate('vehicalselection')}
+            title="next"
+          />
+        </View>
+      </View>
     </SafeAreaView>
   );
 };
 
 const styles = StyleSheet.create({
-  container: {flex: 1, backgroundColor: Color.White},
-
-  wrapper: {width: '90%', alignSelf: 'center'},
-  slide1: {
+  MainContainer: {
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#9DD6EB',
+    backgroundColor: 'white',
   },
-  slide2: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#97CAE5',
-  },
-  slide3: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#92BBD9',
-  },
-  text: {
-    color: '#fff',
-    fontSize: 30,
-    fontWeight: 'bold',
-  },
-  buttonText: {
-    color: Color.Main,
+  mapStyle: {
+    height: '100%',
+    width: '100%',
+    zIndex: -17,
   },
 });
-
 export default Home;

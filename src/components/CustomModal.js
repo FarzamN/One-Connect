@@ -48,8 +48,6 @@ const styles = StyleSheet.create({
     backgroundColor: Color.White,
     marginTop: scale(20),
     borderRadius: 20,
-    // paddingTop: verticalScale(15),
-    alignItems: 'center',
     paddingVertical: moderateScale(50),
     paddingHorizontal: moderateScale(30),
   },
@@ -57,11 +55,13 @@ const styles = StyleSheet.create({
     fontSize: scale(30),
     color: Color.Black,
     fontWeight: '600',
+    textAlign: 'center',
   },
   Modal_Name: {
     fontSize: scale(20),
     color: Color.Black,
     fontWeight: '700',
+    textAlign: 'center',
   },
   Details: {
     fontSize: scale(20),
@@ -70,14 +70,16 @@ const styles = StyleSheet.create({
     textAlign: 'center',
   },
   Modal_Long_Text: {
-    fontSize: scale(14),
+    fontSize: scale(13),
     color: Color.placeholderTextColor,
     paddingTop: verticalScale(10),
+    textAlign: 'center',
   },
   image: {
     width: scale(130),
     height: scale(130),
     marginVertical: scale(20),
+    alignSelf: 'center',
   },
 });
 

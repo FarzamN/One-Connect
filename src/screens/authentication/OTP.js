@@ -66,6 +66,7 @@ const OTP = ({navigation}) => {
         )}
       />
       <CustomButton
+        containerStyle={{width: '100%', paddingVertical: moderateScale(15)}}
         onPress={() => navigation.navigate('login')}
         title={'Conform'}
       />
@@ -79,7 +80,6 @@ const OTP = ({navigation}) => {
         <Text
           style={{
             color: Color.placeholderTextColor,
-            fontFamily: 'Poppins-Medium',
             fontSize: scale(14),
             alignSelf: 'center',
             paddingTop: scale(8),

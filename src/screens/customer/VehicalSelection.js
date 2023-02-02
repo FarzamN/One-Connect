@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import {StyleSheet, SafeAreaView} from 'react-native';
 import BackAndName from '../../components/BackAndName';
 import CustomButton from '../../components/CustomButton';

@@ -48,6 +48,7 @@ const CustomInput = forwardRef((props, ref) => {
 
 const styles = StyleSheet.create({
   InputStyles: {
+    width: '100%',
     height: scale(40),
     borderRadius: 12,
     alignItems: 'center',

@@ -13,7 +13,7 @@ const BackAndName = props => {
         onPress={props.onPress}
         activeOpacity={0.5}
         style={[styles.arrow, props.restyle]}>
-        <AntDesign name={'arrowleft'} size={25} color={props.color} />
+        <AntDesign name={'arrowleft'} size={25} color={Color.Black} />
       </TouchableOpacity>
       <Text style={[styles.font, props.textStyle]}>{props.title}</Text>
       <View style={styles.Menu}>
@@ -36,7 +36,6 @@ const styles = StyleSheet.create({
     color: Color.Black,
     fontSize: scale(18),
     fontWeight: '700',
-    fontFamily: 'Inter-Bold',
     textTransform: 'capitalize',
   },
 });

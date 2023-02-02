@@ -45,11 +45,11 @@ const ForgetPass = ({navigation}) => {
       </Text>
       <CustomInput
         style={{
-          width: '99%',
-          height: verticalScale(65),
+          width: '90%',
+          height: verticalScale(50),
           borderWidth: 1,
           borderColor: Color.Main,
-          borderRadius: 20,
+          borderRadius: 15,
           marginBottom: scale(20),
           marginTop: scale(20),
           paddingHorizontal: moderateScale(20),
@@ -66,6 +66,9 @@ const ForgetPass = ({navigation}) => {
         placeholderTextColor={'#32323266'}
       />
       <CustomButton
+        containerStyle={{
+          width: '90%',
+        }}
         onPress={() => navigation.navigate('login')}
         title={'Verify'}
       />
@@ -79,7 +82,6 @@ const ForgetPass = ({navigation}) => {
         <Text
           style={{
             color: Color.placeholderTextColor,
-            fontFamily: 'Poppins-Medium',
             fontSize: scale(14),
             alignSelf: 'center',
             paddingTop: scale(8),

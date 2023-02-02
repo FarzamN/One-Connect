@@ -4,9 +4,10 @@ import {
   View,
   SafeAreaView,
   TouchableOpacity,
+  ScrollView,
 } from 'react-native';
 import React, {useState} from 'react';
-import {moderateScale, scale, verticalScale} from 'react-native-size-matters';
+import {scale, verticalScale} from 'react-native-size-matters';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import Feather from 'react-native-vector-icons/Feather';
 import {Color} from '../../utils/Colors';
@@ -34,135 +35,137 @@ const BankDetail = ({navigation}) => {
           <Feather name={'menu'} size={30} color={Color.Main} />
         </View>
       </View>
-      <CustomInput
-        onFocus={() => {
-          setIndex(0);
-        }}
-        style={
-          index === 0
-            ? {
-                borderTopWidth: 0,
-                borderRightWidth: 0,
-                borderLeftWidth: 0,
-                borderBottomWidth: 1,
-                borderBottomColor: Color.Main,
-              }
-            : {
-                borderTopWidth: 0,
-                borderRightWidth: 0,
-                borderLeftWidth: 0,
-                borderBottomWidth: 1,
-                borderBottomColor: Color.borderColor,
-              }
-        }
-        control={control}
-        keyboardType="email-address"
-        name="bank_name"
-        rules={{
-          required: 'email is required',
-          value: /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/,
-          message: 'Enter a valid email',
-        }}
-        placeholder="Name of the bank"
-        placeholderTextColor={'#32323266'}
-      />
-      <CustomInput
-        onFocus={() => {
-          setIndex(2);
-        }}
-        style={
-          index === 2
-            ? {
-                borderTopWidth: 0,
-                borderRightWidth: 0,
-                borderLeftWidth: 0,
-                borderBottomWidth: 1,
-                borderBottomColor: Color.Main,
-              }
-            : {
-                borderTopWidth: 0,
-                borderRightWidth: 0,
-                borderLeftWidth: 0,
-                borderBottomWidth: 1,
-                borderBottomColor: Color.borderColor,
-              }
-        }
-        control={control}
-        keyboardType="email-address"
-        name="l_name"
-        rules={{
-          required: 'email is required',
-          value: /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/,
-          message: 'Enter a valid email',
-        }}
-        placeholder="Last Name"
-        placeholderTextColor={'#32323266'}
-      />
-      <CustomInput
-        onFocus={() => {
-          setIndex(3);
-        }}
-        style={
-          index === 3
-            ? {
-                borderTopWidth: 0,
-                borderRightWidth: 0,
-                borderLeftWidth: 0,
-                borderBottomWidth: 1,
-                borderBottomColor: Color.Main,
-              }
-            : {
-                borderTopWidth: 0,
-                borderRightWidth: 0,
-                borderLeftWidth: 0,
-                borderBottomWidth: 1,
-                borderBottomColor: Color.borderColor,
-              }
-        }
-        control={control}
-        keyboardType="email-address"
-        name="email"
-        rules={{
-          required: 'email is required',
-          value: /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/,
-          message: 'Enter a valid email',
-        }}
-        placeholder="Email"
-        placeholderTextColor={'#32323266'}
-      />
-      <CustomInput
-        onFocus={() => {
-          setIndex(4);
-        }}
-        style={
-          index === 4
-            ? {
-                borderTopWidth: 0,
-                borderRightWidth: 0,
-                borderLeftWidth: 0,
-                borderBottomWidth: 1,
-                borderBottomColor: Color.Main,
-              }
-            : {
-                borderTopWidth: 0,
-                borderRightWidth: 0,
-                borderLeftWidth: 0,
-                borderBottomWidth: 1,
-                borderBottomColor: Color.borderColor,
-              }
-        }
-        control={control}
-        keyboardType="email-address"
-        name="phone_number"
-        rules={{
-          required: 'email is required',
-          value: /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/,
-          message: 'Enter a valid email',
-        }}
-        placeholder="Phone Number"
-        placeholderTextColor={'#32323266'}
-      />
-      <CustomButton containerStyle={{width: '90%'}} title={'ADD'} />
+      <ScrollView showsVerticalScrollIndicator={false}>
+        <CustomInput
+          onFocus={() => {
+            setIndex(0);
+          }}
+          style={
+            index === 0
+              ? {
+                  borderTopWidth: 0,
+                  borderRightWidth: 0,
+                  borderLeftWidth: 0,
+                  borderBottomWidth: 1,
+                  borderBottomColor: Color.Main,
+                }
+              : {
+                  borderTopWidth: 0,
+                  borderRightWidth: 0,
+                  borderLeftWidth: 0,
+                  borderBottomWidth: 1,
+                  borderBottomColor: Color.borderColor,
+                }
+          }
+          control={control}
+          keyboardType="email-address"
+          name="bank_name"
+          rules={{
+            required: 'email is required',
+            value: /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/,
+            message: 'Enter a valid email',
+          }}
+          placeholder="Name of the bank"
+          placeholderTextColor={'#32323266'}
+        />
+        <CustomInput
+          onFocus={() => {
+            setIndex(2);
+          }}
+          style={
+            index === 2
+              ? {
+                  borderTopWidth: 0,
+                  borderRightWidth: 0,
+                  borderLeftWidth: 0,
+                  borderBottomWidth: 1,
+                  borderBottomColor: Color.Main,
+                }
+              : {
+                  borderTopWidth: 0,
+                  borderRightWidth: 0,
+                  borderLeftWidth: 0,
+                  borderBottomWidth: 1,
+                  borderBottomColor: Color.borderColor,
+                }
+          }
+          control={control}
+          keyboardType="email-address"
+          name="l_name"
+          rules={{
+            required: 'email is required',
+            value: /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/,
+            message: 'Enter a valid email',
+          }}
+          placeholder="Last Name"
+          placeholderTextColor={'#32323266'}
+        />
+        <CustomInput
+          onFocus={() => {
+            setIndex(3);
+          }}
+          style={
+            index === 3
+              ? {
+                  borderTopWidth: 0,
+                  borderRightWidth: 0,
+                  borderLeftWidth: 0,
+                  borderBottomWidth: 1,
+                  borderBottomColor: Color.Main,
+                }
+              : {
+                  borderTopWidth: 0,
+                  borderRightWidth: 0,
+                  borderLeftWidth: 0,
+                  borderBottomWidth: 1,
+                  borderBottomColor: Color.borderColor,
+                }
+          }
+          control={control}
+          keyboardType="email-address"
+          name="email"
+          rules={{
+            required: 'email is required',
+            value: /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/,
+            message: 'Enter a valid email',
+          }}
+          placeholder="Email"
+          placeholderTextColor={'#32323266'}
+        />
+        <CustomInput
+          onFocus={() => {
+            setIndex(4);
+          }}
+          style={
+            index === 4
+              ? {
+                  borderTopWidth: 0,
+                  borderRightWidth: 0,
+                  borderLeftWidth: 0,
+                  borderBottomWidth: 1,
+                  borderBottomColor: Color.Main,
+                }
+              : {
+                  borderTopWidth: 0,
+                  borderRightWidth: 0,
+                  borderLeftWidth: 0,
+                  borderBottomWidth: 1,
+                  borderBottomColor: Color.borderColor,
+                }
+          }
+          control={control}
+          keyboardType="email-address"
+          name="phone_number"
+          rules={{
+            required: 'email is required',
+            value: /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/,
+            message: 'Enter a valid email',
+          }}
+          placeholder="Phone Number"
+          placeholderTextColor={'#32323266'}
+        />
+        <CustomButton containerStyle={{width: '90%'}} title={'ADD'} />
+      </ScrollView>
     </SafeAreaView>
   );
 };
@@ -181,7 +184,6 @@ const styles = StyleSheet.create({
     color: Color.White,
     fontSize: scale(18),
     fontWeight: '700',
-    fontFamily: 'Inter-Bold',
     textTransform: 'capitalize',
   },
 });

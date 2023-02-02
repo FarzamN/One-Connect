@@ -213,9 +213,8 @@ const styles = StyleSheet.create({
   profile: {
     textAlign: 'center',
     fontSize: scale(30),
-    color: Color.black,
+    color: Color.Black,
     fontWeight: '700',
-    fontFamily: 'Inter',
     width: '70%',
   },
   circle: {
@@ -225,7 +224,7 @@ const styles = StyleSheet.create({
     borderRadius: 100,
     alignSelf: 'center',
     borderWidth: 1,
-    borderColor: 'black',
+    borderColor: Color.Black,
   },
   ModalBtn: {
     flex: 1,
@@ -237,7 +236,7 @@ const styles = StyleSheet.create({
   Text1: {
     fontSize: scale(11),
     fontWeight: '600',
-    color: 'black',
+    color: Color.Black,
   },
   SecCon: {
     height: verticalScale(50),
