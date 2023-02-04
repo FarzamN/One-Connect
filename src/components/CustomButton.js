@@ -35,8 +35,8 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
     shadowColor: '#EBDCF5',
     shadowOffset: {
-      width: 0,
-      height: 2,
+      width: 10,
+      height: 100,
     },
     shadowOpacity: 0.25,
     shadowRadius: 3.84,

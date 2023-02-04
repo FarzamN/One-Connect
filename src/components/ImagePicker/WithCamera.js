@@ -125,7 +125,10 @@ const WithCamera = () => {
           }}>
           <View style={styles.SecCon}>
             <TouchableOpacity
-              onPress={() => photosave()}
+              onPress={() => {
+                photosave();
+                setModalVisible(false);
+              }}
               style={styles.ModalBtn}>
               <Image
                 style={styles.tinyLogo}
@@ -149,7 +152,10 @@ const WithCamera = () => {
               <Entypo name={'cross'} size={20} color={'#fff'} />
             </TouchableOpacity>
             <TouchableOpacity
-              onPress={() => cameraLaunch()}
+              onPress={() => {
+                cameraLaunch();
+                setModalVisible(false);
+              }}
               style={styles.ModalBtn}>
               <Image
                 style={styles.tinyLogo2}

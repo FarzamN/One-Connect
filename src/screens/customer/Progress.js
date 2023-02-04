@@ -34,7 +34,7 @@ const Progress = ({navigation}) => {
       <ScrollView>
         <View style={styles.Live_Tracking_Box}>
           <Text style={styles.Live_Tracking_Text}>Live Tracking</Text>
-          <LiveTrackingCard />
+          <LiveTrackingCard onPress={() => navigation.navigate('ongoingjob')} />
         </View>
       </ScrollView>
     </SafeAreaView>

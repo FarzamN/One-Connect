@@ -12,8 +12,8 @@ const BottomTab = () => {
         alignSelf: 'center',
         height: verticalScale(80),
         backgroundColor: Color.White,
-        position: 'absolute',
-        bottom: 20,
+        // position: 'absolute',
+        // bottom: 20,
         borderRadius: 20,
         justifyContent: 'space-between',
         alignItems: 'center',
@@ -31,6 +31,7 @@ const BottomTab = () => {
           borderRadius: 10,
           justifyContent: 'center',
           alignItems: 'center',
+          elevation: 3,
         }}>
         <FontAwesome5 name="car-battery" color={Color.White} size={35} />
         <Text style={{color: Color.White, fontSize: scale(10)}}>Batteries</Text>
@@ -43,6 +44,7 @@ const BottomTab = () => {
           borderRadius: 10,
           justifyContent: 'center',
           alignItems: 'center',
+          elevation: 3,
         }}>
         <Image
           style={{width: 35, height: 35}}
@@ -65,6 +67,7 @@ const BottomTab = () => {
           borderRadius: 10,
           justifyContent: 'center',
           alignItems: 'center',
+          elevation: 3,
         }}>
         <Image
           style={{width: 35, height: 35}}

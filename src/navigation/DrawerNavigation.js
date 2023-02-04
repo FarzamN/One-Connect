@@ -12,9 +12,10 @@ import DrawerContainer from '../screens/DrawerContainer';
 import {Color} from '../utils/Colors';
 import Profile from '../screens/customer/Profile';
 import AddEditVehicles from '../screens/customer/AddEditVehicles';
-import OngoingJob from '../screens/customer/OngoingJob';
-import Summary from '../screens/customer/Summary';
+
 import Wallet from '../screens/customer/Wallet.js';
+import Progress from '../screens/customer/Progress';
+import Summary from '../screens/customer/Summary';
 
 // import {NavigationContainer} from '@react-navigation/native';
 export const DrawerNavigation = () => {
@@ -25,11 +26,15 @@ export const DrawerNavigation = () => {
       screenOptions={{
         headerShown: false,
         drawerActiveTintColor: '#1f1f1f',
-        drawerActiveBackgroundColor: 'white',
+        drawerActiveBackgroundColor: '#fff',
         drawerInactiveTintColor: '#1f1f1f',
         drawerInactiveBackgroundColor: 'white',
         drawerLabelStyle: {
           marginLeft: -15,
+        },
+        drawerStyle: {
+          borderBottomRightRadius: 50,
+          borderTopRightRadius: 50,
         },
       }}
       initialRouteName="home1"
@@ -75,8 +80,8 @@ export const DrawerNavigation = () => {
             />
           ),
         }}
-        name="Ongoing Jobs"
-        component={OngoingJob}
+        name="progress"
+        component={Progress}
       />
       <Drawer.Screen
         options={{
@@ -89,7 +94,7 @@ export const DrawerNavigation = () => {
             />
           ),
         }}
-        name="Summary"
+        name="summary"
         component={Summary}
       />
       <Drawer.Screen

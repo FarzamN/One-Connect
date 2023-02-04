@@ -5,6 +5,7 @@ import {
   Text,
   View,
   Image,
+  TouchableOpacity,
   ScrollView,
 } from 'react-native';
 import CheckBox from '@react-native-community/checkbox';
@@ -246,14 +247,18 @@ const Register = ({navigation}) => {
               value={toggleCheckBox}
               onValueChange={newValue => setToggleCheckBox(newValue)}
             />
-            <Text
-              style={{
-                color: Color.placeholderTextColor,
-                fontSize: scale(12),
-                paddingTop: moderateScale(5),
-              }}>
-              Accepting all the Terms and Conditions.
-            </Text>
+            <TouchableOpacity
+              onPress={() => navigation.navigate('termandcondition')}
+              activeOpacity={0.8}>
+              <Text
+                style={{
+                  color: Color.placeholderTextColor,
+                  fontSize: scale(12),
+                  paddingTop: moderateScale(5),
+                }}>
+                Accepting all the Terms and Conditions.
+              </Text>
+            </TouchableOpacity>
           </View>
           <CustomButton
             containerStyle={{width: '90%', marginTop: scale(10)}}

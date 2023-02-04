@@ -1,7 +1,6 @@
 import React from 'react';
 import {SafeAreaView, StyleSheet, Image, Text, View} from 'react-native';
 import Entypo from 'react-native-vector-icons/Ionicons';
-import LinearGradient from 'react-native-linear-gradient';
 import {
   DrawerContentScrollView,
   DrawerItemList,
@@ -14,7 +13,7 @@ import {useNavigation} from '@react-navigation/native';
 const DrawerContainer = props => {
   const navigation = useNavigation();
   return (
-    <SafeAreaView style={{flex: 1, backgroundColor: '#fff'}}>
+    <SafeAreaView style={{flex: 1, backgroundColor: '#fff', borderRadius: 100}}>
       <View style={styles.linearGradient}>
         <Image
           source={require('../assets/Images/mainlogo.png')}
@@ -36,7 +35,7 @@ const DrawerContainer = props => {
         style={{
           fontSize: 18,
           color: Color.placeholderTextColor,
-          fontWeight: '600',
+          fontWeight: '700',
           textTransform: 'capitalize',
           // marginBottom: scale(20),
           marginLeft: scale(10),
@@ -64,6 +63,7 @@ const styles = StyleSheet.create({
   linearGradient: {
     backgroundColor: Color.Main,
     borderBottomRightRadius: 50,
+    borderTopRightRadius: 50,
     paddingTop: 30,
     paddingBottom: 50,
   },

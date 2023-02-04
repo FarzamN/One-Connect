@@ -12,6 +12,9 @@ import EditVehicles from '../screens/customer/EditVehicles';
 import BankDetail from '../screens/customer/BankDetail';
 import MainTransactions from '../screens/customer/MainTransactions';
 import Notification from '../screens/customer/Notification.js';
+import OngoingJob from '../screens/customer/OngoingJob';
+import OGSummary from '../screens/customer/OGSummary';
+import TowLocation from '../screens/customer/TowLocation';
 
 const Stack = createNativeStackNavigator();
 const UserNavigation = () => {
@@ -29,6 +32,9 @@ const UserNavigation = () => {
       <Stack.Screen name="editvehicles" component={EditVehicles} />
       <Stack.Screen name="bankdetail" component={BankDetail} />
       <Stack.Screen name="maintransactions" component={MainTransactions} />
+      <Stack.Screen name="ongoingjob" component={OngoingJob} />
+      <Stack.Screen name="ogsummary" component={OGSummary} />
+      <Stack.Screen name="towlocation" component={TowLocation} />
     </Stack.Navigator>
   );
 };

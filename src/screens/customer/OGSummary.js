@@ -37,12 +37,9 @@ const DATA = [
     Timing: '03:15:10',
   },
 ];
-
-const OngoingJob = ({navigation}) => {
+const OGSummary = ({navigation}) => {
   const Item = ({title, Timing, type}) => (
-    <TouchableOpacity
-      onPress={() => navigation.navigate('ogsummary')}
-      style={styles.CardBox}>
+    <TouchableOpacity style={styles.CardBox}>
       <View style={{width: '80%'}}>
         <Text style={styles.Service}>{title}</Text>
         <Text style={styles.Service}>{type}</Text>
@@ -52,7 +49,7 @@ const OngoingJob = ({navigation}) => {
   );
   return (
     <SafeAreaView style={styles.Container}>
-      <BackAndName onPress={() => navigation.goBack()} title="Ongoing Jobs" />
+      <BackAndName onPress={() => navigation.goBack()} title="Summary" />
       <FlatList
         scrollEnabled={true}
         showsVerticalScrollIndicator={false}
@@ -92,4 +89,4 @@ const styles = StyleSheet.create({
     color: Color.Main,
   },
 });
-export default OngoingJob;
+export default OGSummary;

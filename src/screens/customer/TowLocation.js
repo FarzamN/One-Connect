@@ -7,15 +7,17 @@ import {
   PermissionsAndroid,
   Image,
   TouchableOpacity,
+  Text,
 } from 'react-native';
 import {Marker} from 'react-native-maps';
 import MapView, {PROVIDER_GOOGLE, Callout} from 'react-native-maps';
 import CustomButton from '../../components/CustomButton';
-import {moderateScale, scale} from 'react-native-size-matters';
+import {moderateScale, scale, verticalScale} from 'react-native-size-matters';
 import BackWithMenu from '../../components/BackWithMenu';
 import GooglePlacesInput from '../../components/MapFolder/GooglePlacesInput';
 import BottomTab from '../../components/BottomTab';
 import {Color} from '../../utils/Colors';
+import AntDesign from 'react-native-vector-icons/AntDesign';
 
 const requestCameraPermission = async () => {
   try {
@@ -41,7 +43,7 @@ const requestCameraPermission = async () => {
   }
 };
 
-const Home = ({navigation}) => {
+const TowLocation = ({navigation}) => {
   const [Pin, setPin] = useState({
     latitude: 37.78825,
     longitude: -122.4324,
@@ -55,10 +57,16 @@ const Home = ({navigation}) => {
           alignSelf: 'center',
           width: '100%',
         }}>
-        <BackWithMenu
-          onPress_back={() => navigation.navigate('notification')}
-          onPress={() => navigation.openDrawer()}
-        />
+        <View style={styles.Container}>
+          <TouchableOpacity
+            activeOpacity={0.8}
+            onPress={() => navigation.goBack()}
+            style={styles.Menu}>
+            <AntDesign name={'arrowleft'} size={30} color={Color.White} />
+          </TouchableOpacity>
+          <Text style={styles.font}>Tow Location</Text>
+          <AntDesign name={'arrowleft'} size={30} color={Color.Main} />
+        </View>
         <GooglePlacesInput
           style={styles.GooglePlacesInput}
           placeholder="location"
@@ -99,7 +107,7 @@ const Home = ({navigation}) => {
           alignSelf: 'center',
           width: '100%',
         }}>
-        <TouchableOpacity onPress={() => navigation.navigate('towlocation')}>
+        <TouchableOpacity>
           <Image
             style={styles.icon}
             source={require('../../assets/Images/location.png')}
@@ -114,7 +122,6 @@ const Home = ({navigation}) => {
           onPress={() => navigation.navigate('vehicalselection')}
           title="next"
         />
-        <BottomTab />
       </View>
     </SafeAreaView>
   );
@@ -126,6 +133,22 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: 'white',
+  },
+  Container: {
+    backgroundColor: Color.Main,
+    paddingHorizontal: scale(25),
+    height: verticalScale(90),
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    borderBottomEndRadius: 20,
+    borderBottomLeftRadius: 20,
+  },
+  font: {
+    color: Color.White,
+    fontSize: scale(18),
+    fontWeight: '700',
+    textTransform: 'capitalize',
   },
   mapStyle: {
     height: '100%',
@@ -146,4 +169,4 @@ const styles = StyleSheet.create({
     alignSelf: 'flex-end',
   },
 });
-export default Home;
+export default TowLocation;
