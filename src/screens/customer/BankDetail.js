@@ -164,7 +164,11 @@ const BankDetail = ({navigation}) => {
           placeholder="Phone Number"
           placeholderTextColor={'#32323266'}
         />
-        <CustomButton containerStyle={{width: '90%'}} title={'ADD'} />
+
+        <CustomButton
+          containerStyle={{width: '90%', marginTop: scale(10)}}
+          title={'ADD'}
+        />
       </ScrollView>
     </SafeAreaView>
   );

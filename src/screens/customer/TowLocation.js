@@ -71,6 +71,12 @@ const TowLocation = ({navigation}) => {
           style={styles.GooglePlacesInput}
           placeholder="location"
         />
+        <View style={{width: '85%', alignSelf: 'center'}}>
+          <Text
+            style={{color: Color.placeholderTextColor, fontSize: scale(14)}}>
+            Please enter the location for your vehicle to be towed to.
+          </Text>
+        </View>
       </View>
       <MapView
         onPress={requestCameraPermission}

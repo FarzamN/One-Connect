@@ -20,12 +20,12 @@ const EditVehicles = ({navigation}) => {
       <CustomButton
         title="Save changes"
         textStyle={{fontSize: scale(16)}}
-        containerStyle={{width: '90%'}}
+        containerStyle={{width: '90%', marginTop: scale(10)}}
       />
       <CustomButton
         title="DELETE VEHICLE"
         textStyle={{fontSize: scale(16)}}
-        containerStyle={{width: '90%'}}
+        containerStyle={{width: '90%', marginTop: scale(10)}}
       />
     </SafeAreaView>
   );

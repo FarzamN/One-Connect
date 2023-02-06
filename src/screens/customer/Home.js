@@ -102,8 +102,8 @@ const Home = ({navigation}) => {
           width: '100%',
         }}>
         <TouchableOpacity
-          style={{width: 0, alignSelf: 'flex-end'}}
-          onPress={() => navigation.navigate('towlocation')}>
+          onPress={() => navigation.navigate('towlocation')}
+          style={{width: 0, alignSelf: 'flex-end'}}>
           <Image
             style={styles.icon}
             source={require('../../assets/Images/location.png')}

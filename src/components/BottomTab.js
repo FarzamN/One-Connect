@@ -4,7 +4,7 @@ import {Color} from '../utils/Colors';
 import {moderateScale, scale, verticalScale} from 'react-native-size-matters';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
-const BottomTab = () => {
+const BottomTab = props => {
   return (
     <View
       style={{
@@ -12,15 +12,13 @@ const BottomTab = () => {
         alignSelf: 'center',
         height: verticalScale(80),
         backgroundColor: Color.White,
-        // position: 'absolute',
-        // bottom: 20,
         borderRadius: 20,
         justifyContent: 'space-between',
         alignItems: 'center',
         flexDirection: 'row',
-        paddingHorizontal: moderateScale(15),
+        paddingHorizontal: moderateScale(5),
       }}>
-      <TouchableOpacity>
+      <TouchableOpacity onPress={props.onPress}>
         <AntDesign name="caretleft" color={Color.Main} size={35} />
       </TouchableOpacity>
       <View
@@ -34,7 +32,7 @@ const BottomTab = () => {
           elevation: 3,
         }}>
         <FontAwesome5 name="car-battery" color={Color.White} size={35} />
-        <Text style={{color: Color.White, fontSize: scale(10)}}>Batteries</Text>
+        <Text style={{color: Color.White, fontSize: scale(8)}}>Batteries</Text>
       </View>
       <View
         style={{
@@ -54,7 +52,7 @@ const BottomTab = () => {
           style={{
             color: Color.Main,
             textAlign: 'center',
-            fontSize: scale(10),
+            fontSize: scale(8),
           }}>
           Clutch & Breaks
         </Text>
@@ -77,7 +75,7 @@ const BottomTab = () => {
           style={{
             color: Color.White,
             textAlign: 'center',
-            fontSize: scale(10),
+            fontSize: scale(8),
           }}>
           Tyres & Wheel
         </Text>

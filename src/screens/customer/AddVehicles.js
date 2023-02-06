@@ -19,7 +19,7 @@ const AddVehicles = ({navigation}) => {
         <CustomButton
           title="Add Vehicles"
           textStyle={{fontSize: scale(16)}}
-          containerStyle={{width: '90%'}}
+          containerStyle={{width: '90%', marginTop: scale(10)}}
         />
       </ScrollView>
     </SafeAreaView>

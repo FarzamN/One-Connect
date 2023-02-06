@@ -60,13 +60,13 @@ const styles = StyleSheet.create({
   Modal_Name: {
     fontSize: scale(20),
     color: Color.Black,
-    fontWeight: '700',
+    fontWeight: '800',
     textAlign: 'center',
   },
   Details: {
     fontSize: scale(20),
     color: Color.Black,
-    fontWeight: '600',
+    fontWeight: '800',
     textAlign: 'center',
   },
   Modal_Long_Text: {

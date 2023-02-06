@@ -78,13 +78,12 @@ const ForgetPass = ({navigation}) => {
           source={require('../../assets/Images/mainlogo.png')}
         />
       </View>
-      <View style={{marginTop: scale(50)}}>
+      <View style={{marginTop: scale(100)}}>
         <Text
           style={{
             color: Color.placeholderTextColor,
             fontSize: scale(14),
             alignSelf: 'center',
-            paddingTop: scale(8),
           }}>
           Wait {time} more seconds to resend the OTP
         </Text>
