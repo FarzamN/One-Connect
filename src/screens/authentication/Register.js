@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import {
   SafeAreaView,
   StyleSheet,
@@ -9,21 +9,21 @@ import {
   ScrollView,
 } from 'react-native';
 import CheckBox from '@react-native-community/checkbox';
-import {moderateScale, scale, verticalScale} from 'react-native-size-matters';
+import { moderateScale, scale, verticalScale } from 'react-native-size-matters';
 import CustomInput from '../../components/CustomInput';
-import {useForm} from 'react-hook-form';
-import {Color} from '../../utils/Colors';
+import { useForm } from 'react-hook-form';
+import { Color } from '../../utils/Colors';
 import CustomButton from '../../components/CustomButton';
 import CustomLoginButton from '../../components/CustomLoginButton';
 
-const Register = ({navigation}) => {
+const Register = ({ navigation }) => {
   const [toggleCheckBox, setToggleCheckBox] = useState(false);
   const [index, setIndex] = useState(99);
   const {
     control,
     handleSubmit,
-    formState: {errors, isValid},
-  } = useForm({mode: 'all'});
+    formState: { errors, isValid },
+  } = useForm({ mode: 'all' });
   return (
     <SafeAreaView style={styles.Container}>
       <ScrollView showsVerticalScrollIndicator={false}>
@@ -46,19 +46,19 @@ const Register = ({navigation}) => {
             style={
               index === 0
                 ? {
-                    borderTopWidth: 0,
-                    borderRightWidth: 0,
-                    borderLeftWidth: 0,
-                    borderBottomWidth: 1,
-                    borderBottomColor: Color.Main,
-                  }
+                  borderTopWidth: 0,
+                  borderRightWidth: 0,
+                  borderLeftWidth: 0,
+                  borderBottomWidth: 1,
+                  borderBottomColor: Color.Main,
+                }
                 : {
-                    borderTopWidth: 0,
-                    borderRightWidth: 0,
-                    borderLeftWidth: 0,
-                    borderBottomWidth: 1,
-                    borderBottomColor: Color.borderColor,
-                  }
+                  borderTopWidth: 0,
+                  borderRightWidth: 0,
+                  borderLeftWidth: 0,
+                  borderBottomWidth: 1,
+                  borderBottomColor: Color.borderColor,
+                }
             }
             control={control}
             keyboardType="email-address"
@@ -78,19 +78,19 @@ const Register = ({navigation}) => {
             style={
               index === 2
                 ? {
-                    borderTopWidth: 0,
-                    borderRightWidth: 0,
-                    borderLeftWidth: 0,
-                    borderBottomWidth: 1,
-                    borderBottomColor: Color.Main,
-                  }
+                  borderTopWidth: 0,
+                  borderRightWidth: 0,
+                  borderLeftWidth: 0,
+                  borderBottomWidth: 1,
+                  borderBottomColor: Color.Main,
+                }
                 : {
-                    borderTopWidth: 0,
-                    borderRightWidth: 0,
-                    borderLeftWidth: 0,
-                    borderBottomWidth: 1,
-                    borderBottomColor: Color.borderColor,
-                  }
+                  borderTopWidth: 0,
+                  borderRightWidth: 0,
+                  borderLeftWidth: 0,
+                  borderBottomWidth: 1,
+                  borderBottomColor: Color.borderColor,
+                }
             }
             control={control}
             keyboardType="email-address"
@@ -110,19 +110,19 @@ const Register = ({navigation}) => {
             style={
               index === 3
                 ? {
-                    borderTopWidth: 0,
-                    borderRightWidth: 0,
-                    borderLeftWidth: 0,
-                    borderBottomWidth: 1,
-                    borderBottomColor: Color.Main,
-                  }
+                  borderTopWidth: 0,
+                  borderRightWidth: 0,
+                  borderLeftWidth: 0,
+                  borderBottomWidth: 1,
+                  borderBottomColor: Color.Main,
+                }
                 : {
-                    borderTopWidth: 0,
-                    borderRightWidth: 0,
-                    borderLeftWidth: 0,
-                    borderBottomWidth: 1,
-                    borderBottomColor: Color.borderColor,
-                  }
+                  borderTopWidth: 0,
+                  borderRightWidth: 0,
+                  borderLeftWidth: 0,
+                  borderBottomWidth: 1,
+                  borderBottomColor: Color.borderColor,
+                }
             }
             control={control}
             keyboardType="email-address"
@@ -142,19 +142,19 @@ const Register = ({navigation}) => {
             style={
               index === 4
                 ? {
-                    borderTopWidth: 0,
-                    borderRightWidth: 0,
-                    borderLeftWidth: 0,
-                    borderBottomWidth: 1,
-                    borderBottomColor: Color.Main,
-                  }
+                  borderTopWidth: 0,
+                  borderRightWidth: 0,
+                  borderLeftWidth: 0,
+                  borderBottomWidth: 1,
+                  borderBottomColor: Color.Main,
+                }
                 : {
-                    borderTopWidth: 0,
-                    borderRightWidth: 0,
-                    borderLeftWidth: 0,
-                    borderBottomWidth: 1,
-                    borderBottomColor: Color.borderColor,
-                  }
+                  borderTopWidth: 0,
+                  borderRightWidth: 0,
+                  borderLeftWidth: 0,
+                  borderBottomWidth: 1,
+                  borderBottomColor: Color.borderColor,
+                }
             }
             control={control}
             keyboardType="email-address"
@@ -174,19 +174,20 @@ const Register = ({navigation}) => {
             style={
               index === 5
                 ? {
-                    borderTopWidth: 0,
-                    borderRightWidth: 0,
-                    borderLeftWidth: 0,
-                    borderBottomWidth: 1,
-                    borderBottomColor: Color.Main,
-                  }
+                  borderTopWidth: 0,
+                  borderRightWidth: 0,
+                  borderLeftWidth: 0,
+                  borderBottomWidth: 1,
+                  borderBottomColor: Color.Main,
+                }
                 : {
-                    borderTopWidth: 0,
-                    borderRightWidth: 0,
-                    borderLeftWidth: 0,
-                    borderBottomWidth: 1,
-                    borderBottomColor: Color.borderColor,
-                  }
+                  borderTopWidth: 0,
+                  borderRightWidth: 0,
+                  borderLeftWidth: 0,
+                  borderBottomWidth: 1,
+                  borderBottomColor: Color.borderColor,
+
+                }
             }
             control={control}
             keyboardType="email-address"
@@ -206,19 +207,19 @@ const Register = ({navigation}) => {
             style={
               index === 1
                 ? {
-                    borderTopWidth: 0,
-                    borderRightWidth: 0,
-                    borderLeftWidth: 0,
-                    borderBottomWidth: 1,
-                    borderBottomColor: Color.Main,
-                  }
+                  borderTopWidth: 0,
+                  borderRightWidth: 0,
+                  borderLeftWidth: 0,
+                  borderBottomWidth: 1,
+                  borderBottomColor: Color.Main,
+                }
                 : {
-                    borderTopWidth: 0,
-                    borderRightWidth: 0,
-                    borderLeftWidth: 0,
-                    borderBottomWidth: 1,
-                    borderBottomColor: Color.borderColor,
-                  }
+                  borderTopWidth: 0,
+                  borderRightWidth: 0,
+                  borderLeftWidth: 0,
+                  borderBottomWidth: 1,
+                  borderBottomColor: Color.borderColor,
+                }
             }
             control={control}
             name="password"
@@ -242,7 +243,7 @@ const Register = ({navigation}) => {
 
           <View style={styles.termAndConditionsBox}>
             <CheckBox
-              tintColors={{true: Color.Main, false: Color.Main}}
+              tintColors={{ true: Color.Main, false: Color.Main }}
               disabled={false}
               value={toggleCheckBox}
               onValueChange={newValue => setToggleCheckBox(newValue)}
@@ -254,14 +255,14 @@ const Register = ({navigation}) => {
                 style={{
                   color: Color.placeholderTextColor,
                   fontSize: scale(12),
-                  paddingTop: moderateScale(5),
+                  paddingTop: moderateScale(7),
                 }}>
                 Accepting all the Terms and Conditions.
               </Text>
             </TouchableOpacity>
           </View>
           <CustomButton
-            containerStyle={{width: '90%', marginTop: scale(10)}}
+            containerStyle={{ width: '90%', marginTop: scale(10) }}
             onPress={() => navigation.navigate('otp')}
             title={'Register'}
           />
@@ -279,7 +280,7 @@ const Register = ({navigation}) => {
             title={'Sign In'}
           />
         </View>
-        <View style={{height: verticalScale(50)}}></View>
+        <View style={{ height: verticalScale(50) }}></View>
       </ScrollView>
     </SafeAreaView>
   );
@@ -299,11 +300,12 @@ const styles = StyleSheet.create({
     height: scale(100),
   },
   WorkBox: {
-    height: '80%',
+    height: '100%',
     backgroundColor: '#fff',
     borderTopRightRadius: 50,
     borderTopLeftRadius: 50,
-    padding: moderateScale(20),
+    paddingHorizontal: moderateScale(20),
+    paddingVertical: 30
   },
   WelcomeText: {
     fontSize: scale(28),

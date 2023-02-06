@@ -1,16 +1,16 @@
 import React from 'react';
-import {SafeAreaView, StyleSheet, Text, View, Image} from 'react-native';
-import {scale, verticalScale, moderateScale} from 'react-native-size-matters';
+import { SafeAreaView, StyleSheet, Text, View, Image } from 'react-native';
+import { scale, verticalScale, moderateScale } from 'react-native-size-matters';
 
 import CustomButton from '../../components/CustomButton';
-import {Color} from '../../utils/Colors';
+import { Color } from '../../utils/Colors';
 
-const TermsAndCondition = ({navigation}) => {
+const TermsAndCondition = ({ navigation }) => {
   return (
     <SafeAreaView style={styles.mainView}>
       <View style={styles.firstView}>
         <Image
-          style={{alignSelf: 'center', marginTop: scale(20)}}
+          style={{ alignSelf: 'center', marginTop: scale(20) }}
           source={require('../../assets/Images/mainlogo.png')}
         />
         <Text style={styles.accept}>Terms and Condition</Text>
@@ -25,12 +25,14 @@ const TermsAndCondition = ({navigation}) => {
           passages, and more recently with desktop publishing software like
           Aldus PageMaker including versions of Lorem Ipsum.
         </Text>
-        <CustomButton
-          onPress={() => navigation.goBack()}
-          title="Accept and Continue"
-          textStyle={{textAlign: 'center', fontWeight: 'bold'}}
-          containerStyle={{marginTop: scale(15)}}
-        />
+        <View style={{ position: 'absolute', bottom: 20 }}>
+          <CustomButton
+            onPress={() => navigation.goBack()}
+            title="Accept and Continue"
+            textStyle={{ textAlign: 'center', fontWeight: 'bold' }}
+            containerStyle={{ marginTop: scale(15) }}
+          />
+        </View>
       </View>
     </SafeAreaView>
   );
@@ -52,8 +54,6 @@ const styles = StyleSheet.create({
     color: '#353535',
     fontFamily: 'Inter',
     fontWeight: 'bold',
-    // textDecorationLine: 'underline',
-    // textDecorationColor: Color.Main,
   },
 
   lorem: {

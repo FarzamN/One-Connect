@@ -1,5 +1,4 @@
-import React, {useState} from 'react';
-import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
+import React, { useState } from 'react';
 import {
   SafeAreaView,
   StyleSheet,
@@ -8,14 +7,15 @@ import {
   Image,
   TouchableOpacity,
 } from 'react-native';
-import {Marker} from 'react-native-maps';
-import MapView, {PROVIDER_GOOGLE, Callout} from 'react-native-maps';
+import { Marker } from 'react-native-maps';
+import MapView, { PROVIDER_GOOGLE, Callout } from 'react-native-maps';
 import CustomButton from '../../components/CustomButton';
-import {moderateScale, scale} from 'react-native-size-matters';
+import { moderateScale, scale } from 'react-native-size-matters';
 import BackWithMenu from '../../components/BackWithMenu';
 import GooglePlacesInput from '../../components/MapFolder/GooglePlacesInput';
 import BottomTab from '../../components/BottomTab';
-import {Color} from '../../utils/Colors';
+import { Color } from '../../utils/Colors';
+import { GooglePlacesAutocomplete } from 'react-native-google-places-autocomplete';
 
 const requestCameraPermission = async () => {
   try {
@@ -41,7 +41,7 @@ const requestCameraPermission = async () => {
   }
 };
 
-const Home = ({navigation}) => {
+const Home = ({ navigation }) => {
   const [Pin, setPin] = useState({
     latitude: 37.78825,
     longitude: -122.4324,
@@ -60,11 +60,35 @@ const Home = ({navigation}) => {
           onPress={() => navigation.openDrawer()}
         />
         <GooglePlacesInput
-          placeholderTextColor={Color.placeholderTextColor}
-          textStyle={{color: Color.Black}}
+          textStyle={{ color: Color.Black }}
           style={styles.GooglePlacesInput}
-          placeholder="location"
+          placeholder="Location"
         />
+        {/* <GooglePlacesAutocomplete
+          styles={{
+            textInputContainer: {
+              backgroundColor: 'grey',
+            },
+            textInput: {
+              height: 38,
+              color: '#000',
+              fontSize: 16,
+            },
+            predefinedPlacesDescription: {
+              color: '#1faadb',
+            },
+          }}
+          // placeholderTextColor="'#000'"
+          placeholder='Location'
+          onPress={(data, details = null) => {
+            // 'details' is provided when fetchDetails = true
+            console.log(data, details);
+          }}
+          query={{
+            key: 'AIzaSyCFiS3J95syNrmbl4JjQpWr8po9vXLzJvw',
+            language: 'en',
+          }}
+        /> */}
       </View>
       <MapView
         onPress={requestCameraPermission}
@@ -102,8 +126,11 @@ const Home = ({navigation}) => {
           width: '100%',
         }}>
         <TouchableOpacity
-          onPress={() => navigation.navigate('towlocation')}
-          style={{width: 0, alignSelf: 'flex-end'}}>
+          onPress={() => {
+            navigation.navigate('towlocation');
+            console.log('sakjdfh')
+          }}
+          style={{ width: 70, alignSelf: 'flex-end' }}>
           <Image
             style={styles.icon}
             source={require('../../assets/Images/location.png')}
@@ -139,16 +166,12 @@ const styles = StyleSheet.create({
   GooglePlacesInput: {
     marginHorizontal: scale(25),
     marginTop: scale(20),
+    color: Color.Black
   },
-  text: {
-    color: '#fff',
-    fontSize: 30,
-    fontWeight: 'bold',
-  },
+
   icon: {
     marginHorizontal: 20,
     alignSelf: 'flex-end',
-    // backgroundColor: 'red',
   },
 });
 export default Home;

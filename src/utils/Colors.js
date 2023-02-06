@@ -4,5 +4,5 @@ export const Color = {
   placeholderTextColor: '#838383',
   White: '#fff',
   Black: '#000',
-  greyfont: '  #414D5B',
+  greyfont: '#414D5B',
 };
