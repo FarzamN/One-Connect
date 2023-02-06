@@ -60,6 +60,8 @@ const Home = ({navigation}) => {
           onPress={() => navigation.openDrawer()}
         />
         <GooglePlacesInput
+          placeholderTextColor={Color.placeholderTextColor}
+          textStyle={{color: Color.Black}}
           style={styles.GooglePlacesInput}
           placeholder="location"
         />
@@ -99,7 +101,9 @@ const Home = ({navigation}) => {
           alignSelf: 'center',
           width: '100%',
         }}>
-        <TouchableOpacity onPress={() => navigation.navigate('towlocation')}>
+        <TouchableOpacity
+          style={{width: 0, alignSelf: 'flex-end'}}
+          onPress={() => navigation.navigate('towlocation')}>
           <Image
             style={styles.icon}
             source={require('../../assets/Images/location.png')}
@@ -144,6 +148,7 @@ const styles = StyleSheet.create({
   icon: {
     marginHorizontal: 20,
     alignSelf: 'flex-end',
+    // backgroundColor: 'red',
   },
 });
 export default Home;

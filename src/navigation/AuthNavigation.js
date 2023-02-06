@@ -9,7 +9,8 @@ import OTP from '../screens/authentication/OTP';
 import ForgetPass from '../screens/authentication/ForgetPass';
 
 import {DrawerNavigation} from './DrawerNavigation';
-import TermAndCondition from '../screens/authentication/TermAndCondition';
+import Splash from '../screens/authentication/Splash';
+import TermsAndCondition from '../screens/authentication/TermsAndCondition';
 
 const Stack = createNativeStackNavigator();
 
@@ -17,10 +18,11 @@ function AuthNavigation() {
   return (
     <NavigationContainer>
       <Stack.Navigator
-        initialRouteName="login"
+        initialRouteName="splash"
         screenOptions={{headerShown: false}}>
         <Stack.Screen name="login" component={Login} />
-        <Stack.Screen name="termandcondition" component={TermAndCondition} />
+        <Stack.Screen name="termandcondition" component={TermsAndCondition} />
+        <Stack.Screen name="splash" component={Splash} />
         <Stack.Screen name="register" component={Register} />
         <Stack.Screen name="otp" component={OTP} />
         <Stack.Screen name="forgetpass" component={ForgetPass} />

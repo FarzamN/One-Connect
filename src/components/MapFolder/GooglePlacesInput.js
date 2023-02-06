@@ -15,7 +15,7 @@ const GooglePlacesInput = props => {
         multiline={props.multiline}
         numberOfLines={props.numberOfLines}
         placeholder={props.placeholder}
-        placeholderTextColor={Color.placeholderTextColor}
+        placeholderTextColor={props.placeholderTextColor}
         style={[styles.input, props.textStyle]}
         keyboardType={props.keyboardType}
         textAlignVertical={props.textAlignVertical}
@@ -44,8 +44,7 @@ const styles = StyleSheet.create({
     resizeMode: 'contain',
   },
   input: {
-    // borderWidth: 1,
-    color: 'black',
+    color: 'red',
     fontWeight: '600',
     width: '100%',
     textInputContainer: {

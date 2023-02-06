@@ -52,10 +52,8 @@ const Item = ({task, Date, price}) => (
             width: 20,
             height: 20,
             borderRadius: 100,
-            justifyContent: 'center',
-            alignItems: 'center',
-            paddingLeft: 6,
-            paddingTop: 3,
+            textAlign: 'center',
+            textAlignVertical: 'center',
           }}
           name={'dollar'}
           color={'#36C2CF'}
@@ -95,7 +93,10 @@ const Wallet = ({navigation}) => {
   return (
     <SafeAreaView style={styles.Container}>
       <View style={styles.BackBtnBox}>
-        <TouchableOpacity activeOpacity={0.5} style={styles.arrow}>
+        <TouchableOpacity
+          onPress={() => navigation.goBack()}
+          activeOpacity={0.5}
+          style={styles.arrow}>
           <AntDesign name={'arrowleft'} size={25} color={Color.White} />
         </TouchableOpacity>
         <Text style={styles.font}>Wallet</Text>

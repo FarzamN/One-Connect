@@ -39,7 +39,7 @@ const Splash = ({navigation}) => {
         </View>
         <TouchableOpacity
           activeOpacity={1}
-          onPress={() => navigation.navigate('register')}>
+          onPress={() => navigation.navigate('login')}>
           <LinearGradient
             start={{x: 0, y: 0}}
             end={{x: 1, y: 0}}

@@ -230,7 +230,7 @@ const styles = StyleSheet.create({
     borderRadius: 100,
     alignSelf: 'center',
     borderWidth: 1,
-    borderColor: Color.Black,
+    borderColor: Color.Main,
   },
   ModalBtn: {
     flex: 1,
