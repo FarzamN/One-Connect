@@ -183,7 +183,7 @@ const Login = ({navigation}) => {
             title={'Create an accout'}
           />
         </View>
-        <View style={{height: verticalScale(20)}}></View>
+        <View style={{height: verticalScale(30)}}></View>
       </ScrollView>
     </SafeAreaView>
   );
