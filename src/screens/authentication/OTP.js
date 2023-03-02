@@ -68,7 +68,7 @@ const OTP = ({ navigation }) => {
       <CustomButton
         containerStyle={{ width: '100%', paddingVertical: moderateScale(15) }}
         onPress={() => navigation.navigate('login')}
-        title={'Conform'}
+        title={'Confirm'}
       />
       <View style={styles.ImageBox}>
         <Image
@@ -122,13 +122,15 @@ const styles = StyleSheet.create({
     textAlignVertical: 'center',
   },
   ImageBox: {
-    marginTop: scale(50),
+    marginTop: '25%',
     justifyContent: 'center',
     alignItems: 'center',
+    
   },
   Image: {
     width: scale(220),
     height: scale(170),
+    
   },
 });
 

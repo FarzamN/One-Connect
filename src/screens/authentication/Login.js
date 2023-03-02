@@ -128,7 +128,7 @@ const Login = ({ navigation }) => {
             onPress={() => navigation.navigate('forgetpass')}
             style={[
               styles.FPassCon,
-              { marginTop: scale(10), marginRight: scale(10) },
+              { marginTop: scale(5), marginRight: scale(10) },
             ]}>
             <Text
               style={{
@@ -137,8 +137,9 @@ const Login = ({ navigation }) => {
                 color: Color.Main,
                 fontStyle: 'normal',
                 textDecorationLine: 'underline',
+                
               }}>
-              Forget Password?
+              Forgot Password?
             </Text>
           </TouchableOpacity>
           <View>
@@ -147,9 +148,11 @@ const Login = ({ navigation }) => {
                 color: Color.placeholderTextColor,
                 fontSize: scale(12),
                 alignSelf: 'center',
-                paddingTop: scale(8),
+                paddingTop: scale(12),
+                marginBottom:scale(-8)
+              
               }}>
-              Or SignIn with
+              Or Signin with
             </Text>
 
             <TouchableOpacity style={styles.googleContainer}>
@@ -157,7 +160,7 @@ const Login = ({ navigation }) => {
                 style={styles.image}
                 source={require('../../assets/Images/google.png')}
               />
-              <Text style={styles.SigningText}>Sign In With Google</Text>
+              <Text style={styles.SigningText}>Login With Google</Text>
             </TouchableOpacity>
 
             <TouchableOpacity style={styles.googleContainer}>
@@ -165,7 +168,7 @@ const Login = ({ navigation }) => {
                 style={styles.image}
                 source={require('../../assets/Images/facebook.png')}
               />
-              <Text style={styles.SigningText}>Sign In With facebook</Text>
+              <Text style={styles.SigningText}>Login With facebook</Text>
             </TouchableOpacity>
           </View>
 
@@ -174,11 +177,14 @@ const Login = ({ navigation }) => {
               color: Color.placeholderTextColor,
               fontSize: scale(12),
               alignSelf: 'center',
-              paddingTop: scale(8),
+              paddingTop: scale(15),
+              
+              
             }}>
-            Don`t have an account
+            Don`t have an account?
           </Text>
           <CustomLoginButton
+            containerStyle = {{marginTop:0}}
             onPress={() => navigation.navigate('register')}
             title={'Create an accout'}
           />

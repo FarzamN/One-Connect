@@ -1,6 +1,6 @@
 import {StyleSheet, Text, TouchableOpacity} from 'react-native';
 import React from 'react';
-import {scale, moderateScale} from 'react-native-size-matters';
+import {scale, moderateScale, moderateVerticalScale} from 'react-native-size-matters';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import LinearGradient from 'react-native-linear-gradient';
 const CustomButton = props => {
@@ -26,6 +26,8 @@ export default CustomButton;
 
 const styles = StyleSheet.create({
   containerStyle: {
+    paddingVertical:moderateVerticalScale(15),
+    paddingHorizontal:scale(20),
     width: '80%',
     padding: moderateScale(12),
     alignItems: 'center',

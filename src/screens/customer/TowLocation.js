@@ -69,7 +69,7 @@ const TowLocation = ({navigation}) => {
         </View>
         <GooglePlacesInput
           style={styles.GooglePlacesInput}
-          placeholder="location"
+          placeholder="Location"
         />
         <View style={{width: '85%', alignSelf: 'center'}}>
           <Text
@@ -113,7 +113,13 @@ const TowLocation = ({navigation}) => {
           alignSelf: 'center',
           width: '100%',
         }}>
-        <TouchableOpacity>
+        <TouchableOpacity
+          style={{
+            width: 80,
+            alignSelf: 'flex-end',
+            marginBottom: scale(8),
+            marginHorizontal: scale(15),
+          }}>
           <Image
             style={styles.icon}
             source={require('../../assets/Images/location.png')}
@@ -164,6 +170,7 @@ const styles = StyleSheet.create({
   GooglePlacesInput: {
     marginHorizontal: scale(25),
     marginTop: scale(20),
+   
   },
   text: {
     color: '#fff',
@@ -171,8 +178,11 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
   },
   icon: {
-    marginHorizontal: 20,
+    marginHorizontal: scale(20),
     alignSelf: 'flex-end',
+    height: verticalScale(40),
+    width: verticalScale(40),
+    resizeMode: 'contain',
   },
 });
 export default TowLocation;

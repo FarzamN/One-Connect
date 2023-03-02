@@ -22,7 +22,7 @@ const VehicalSelection = ({navigation}) => {
           width: '90%',
           marginBottom: scale(10),
           marginTop: 0,
-          backgroundColor: 'pink',
+          // backgroundColor: 'pink',
         }}
         title={'Next'}
       />

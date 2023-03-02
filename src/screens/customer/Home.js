@@ -10,7 +10,7 @@ import {
 import { Marker } from 'react-native-maps';
 import MapView, { PROVIDER_GOOGLE, Callout } from 'react-native-maps';
 import CustomButton from '../../components/CustomButton';
-import { moderateScale, scale } from 'react-native-size-matters';
+import { moderateScale, scale, verticalScale } from 'react-native-size-matters';
 import BackWithMenu from '../../components/BackWithMenu';
 import GooglePlacesInput from '../../components/MapFolder/GooglePlacesInput';
 import BottomTab from '../../components/BottomTab';
@@ -115,7 +115,7 @@ const Home = ({ navigation }) => {
               latitude: e.nativeEvent.coordinate.latitude,
               longitude: e.nativeEvent.coordinate.longitude,
             });
-            console.log('helo map');
+            // console.log('helo map');
           }}></Marker>
       </MapView>
       <View
@@ -128,9 +128,9 @@ const Home = ({ navigation }) => {
         <TouchableOpacity
           onPress={() => {
             navigation.navigate('towlocation');
-            console.log('sakjdfh')
+          
           }}
-          style={{ width: 70, alignSelf: 'flex-end' }}>
+          style={{ width: 80, alignSelf: 'flex-end' ,marginBottom:scale(8 ),marginHorizontal:scale(15)}}>
           <Image
             style={styles.icon}
             source={require('../../assets/Images/location.png')}
@@ -143,7 +143,7 @@ const Home = ({ navigation }) => {
             marginVertical: scale(10),
           }}
           onPress={() => navigation.navigate('vehicalselection')}
-          title="next"
+          title="Next"
         />
         <BottomTab />
       </View>
@@ -164,14 +164,22 @@ const styles = StyleSheet.create({
     zIndex: -17,
   },
   GooglePlacesInput: {
+    width:'85%',
     marginHorizontal: scale(25),
     marginTop: scale(20),
-    color: Color.Black
+    color: Color.Black,
+  
+    
+    
   },
 
   icon: {
-    marginHorizontal: 20,
+    marginHorizontal: scale(20),
     alignSelf: 'flex-end',
+    height:verticalScale(40),
+    width:verticalScale(40),
+    resizeMode:'contain',
+            
   },
 });
 export default Home;

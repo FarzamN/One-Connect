@@ -78,7 +78,7 @@ const Item = ({
         <Text style={styles.Text}>{item.Name}</Text>
         <Text style={styles.Text}>{item.Km}</Text>
         <Text style={styles.Text}>{item.Price}</Text>
-        <View style={{width: '50%'}}>
+        <View style={{marginTop:scale(5)}}>
           <CustomStarRating starSize={20} />
         </View>
       </View>
@@ -127,7 +127,7 @@ const CustomMechanicCard = () => {
         textColor={color}
         onPressMore={() => {
           setShowModal(toggleModal());
-          console.log('modal Open');
+          // console.log('modal Open');
         }}
       />
     );
@@ -159,8 +159,8 @@ const CustomMechanicCard = () => {
 
 const styles = StyleSheet.create({
   mainBox: {
-    borderWidth: 1,
-    borderColor: Color.borderColor,
+    elevation:3,
+    backgroundColor:Color.White,
     marginVertical: scale(8),
     width: '90%',
     alignSelf: 'center',
@@ -172,6 +172,10 @@ const styles = StyleSheet.create({
   Text: {
     fontSize: scale(16),
     color: Color.Black,
+    lineHeight:30,
+    
+    
+  
   },
   btnText: {
     color: Color.Main,
@@ -182,6 +186,7 @@ const styles = StyleSheet.create({
     paddingVertical: moderateScale(5),
     textTransform: 'uppercase',
     textAlign: 'center',
+   
   },
 });
 export default CustomMechanicCard;

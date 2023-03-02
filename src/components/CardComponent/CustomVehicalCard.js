@@ -66,7 +66,7 @@ const Item = ({item, onPress, borderColor, props}) => (
         <Text style={styles.TextOne}>{item.Car}</Text>
         <Text style={styles.TextThree}>{item.Reg}</Text>
       </View>
-      <View style={{position: 'absolute', right: 0, top: scale(20)}}>
+      <View style={{position: 'absolute', right: 0, top: scale(10)}}>
         <Image style={styles.userImg} source={item.img} />
       </View>
     </View>
@@ -109,18 +109,20 @@ const CustomVehicalCard = props => {
       keyExtractor={item => item.id}
       extraData={selectedId}
     />
+    
   );
 };
 
 const styles = StyleSheet.create({
   TextOne: {
     fontSize: scale(16),
-    fontWeight: '600',
+    fontWeight: '700',
     color: Color.Black,
   },
   TextThree: {
-    fontSize: scale(15),
+    fontSize: scale(14),
     color: Color.placeholderTextColor,
+    fontWeight:'400'
   },
   mainBox: {
     borderWidth: 1,
@@ -128,10 +130,14 @@ const styles = StyleSheet.create({
     width: '90%',
     alignSelf: 'center',
     borderRadius: 15,
+    elevation:5,
+    backgroundColor:Color.White
   },
   userImg: {
-    width: scale(100),
-    height: scale(70),
+    width: scale(146),
+    height: scale(110),
+    resizeMode:'contain',
+
   },
 });
 export default CustomVehicalCard;

@@ -29,6 +29,7 @@ const styles = StyleSheet.create({
     borderRadius: 50,
     marginTop: scale(15),
     alignSelf: 'center',
+
   },
 
   font: {
