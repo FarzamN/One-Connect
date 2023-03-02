@@ -1,29 +1,29 @@
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 import {
   SafeAreaView,
   StyleSheet,
   Text,
   View,
   Image,
-  TouchableOpacity,
   ScrollView,
+  TouchableOpacity,
 } from 'react-native';
 import CheckBox from '@react-native-community/checkbox';
-import { moderateScale, scale, verticalScale } from 'react-native-size-matters';
+import {moderateScale, scale, verticalScale} from 'react-native-size-matters';
 import CustomInput from '../../components/CustomInput';
-import { useForm } from 'react-hook-form';
-import { Color } from '../../utils/Colors';
+import {useForm} from 'react-hook-form';
+import {Color} from '../../utils/Colors';
 import CustomButton from '../../components/CustomButton';
 import CustomLoginButton from '../../components/CustomLoginButton';
 
-const Register = ({ navigation }) => {
+const Register = ({navigation}) => {
   const [toggleCheckBox, setToggleCheckBox] = useState(false);
   const [index, setIndex] = useState(99);
   const {
     control,
     handleSubmit,
-    formState: { errors, isValid },
-  } = useForm({ mode: 'all' });
+    formState: {errors, isValid},
+  } = useForm({mode: 'all'});
   return (
     <SafeAreaView style={styles.Container}>
       <ScrollView showsVerticalScrollIndicator={false}>
@@ -34,31 +34,34 @@ const Register = ({ navigation }) => {
           />
         </View>
         <View style={styles.WorkBox}>
-          <Text style={styles.WelcomeText}>Create your account</Text>
-          <Text style={styles.LongText}>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor
-          </Text>
+          <View style={{paddingHorizontal: 20}}>
+            <Text style={styles.WelcomeText}>Create your account</Text>
+            <Text style={styles.LongText}>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor
+            </Text>
+          </View>
           <CustomInput
             onFocus={() => {
               setIndex(0);
             }}
+            Hello={{paddingVertical: 0}}
             style={
               index === 0
                 ? {
-                  borderTopWidth: 0,
-                  borderRightWidth: 0,
-                  borderLeftWidth: 0,
-                  borderBottomWidth: 1,
-                  borderBottomColor: Color.Main,
-                }
+                    borderTopWidth: 0,
+                    borderRightWidth: 0,
+                    borderLeftWidth: 0,
+                    borderBottomWidth: 1,
+                    borderBottomColor: Color.Main,
+                  }
                 : {
-                  borderTopWidth: 0,
-                  borderRightWidth: 0,
-                  borderLeftWidth: 0,
-                  borderBottomWidth: 1,
-                  borderBottomColor: Color.borderColor,
-                }
+                    borderTopWidth: 0,
+                    borderRightWidth: 0,
+                    borderLeftWidth: 0,
+                    borderBottomWidth: 1,
+                    borderBottomColor: Color.borderColor,
+                  }
             }
             control={control}
             keyboardType="email-address"
@@ -75,22 +78,23 @@ const Register = ({ navigation }) => {
             onFocus={() => {
               setIndex(2);
             }}
+            Hello={{paddingVertical: 0}}
             style={
               index === 2
                 ? {
-                  borderTopWidth: 0,
-                  borderRightWidth: 0,
-                  borderLeftWidth: 0,
-                  borderBottomWidth: 1,
-                  borderBottomColor: Color.Main,
-                }
+                    borderTopWidth: 0,
+                    borderRightWidth: 0,
+                    borderLeftWidth: 0,
+                    borderBottomWidth: 1,
+                    borderBottomColor: Color.Main,
+                  }
                 : {
-                  borderTopWidth: 0,
-                  borderRightWidth: 0,
-                  borderLeftWidth: 0,
-                  borderBottomWidth: 1,
-                  borderBottomColor: Color.borderColor,
-                }
+                    borderTopWidth: 0,
+                    borderRightWidth: 0,
+                    borderLeftWidth: 0,
+                    borderBottomWidth: 1,
+                    borderBottomColor: Color.borderColor,
+                  }
             }
             control={control}
             keyboardType="email-address"
@@ -107,22 +111,23 @@ const Register = ({ navigation }) => {
             onFocus={() => {
               setIndex(3);
             }}
+            Hello={{paddingVertical: 0}}
             style={
               index === 3
                 ? {
-                  borderTopWidth: 0,
-                  borderRightWidth: 0,
-                  borderLeftWidth: 0,
-                  borderBottomWidth: 1,
-                  borderBottomColor: Color.Main,
-                }
+                    borderTopWidth: 0,
+                    borderRightWidth: 0,
+                    borderLeftWidth: 0,
+                    borderBottomWidth: 1,
+                    borderBottomColor: Color.Main,
+                  }
                 : {
-                  borderTopWidth: 0,
-                  borderRightWidth: 0,
-                  borderLeftWidth: 0,
-                  borderBottomWidth: 1,
-                  borderBottomColor: Color.borderColor,
-                }
+                    borderTopWidth: 0,
+                    borderRightWidth: 0,
+                    borderLeftWidth: 0,
+                    borderBottomWidth: 1,
+                    borderBottomColor: Color.borderColor,
+                  }
             }
             control={control}
             keyboardType="email-address"
@@ -139,22 +144,23 @@ const Register = ({ navigation }) => {
             onFocus={() => {
               setIndex(4);
             }}
+            Hello={{paddingVertical: 0}}
             style={
               index === 4
                 ? {
-                  borderTopWidth: 0,
-                  borderRightWidth: 0,
-                  borderLeftWidth: 0,
-                  borderBottomWidth: 1,
-                  borderBottomColor: Color.Main,
-                }
+                    borderTopWidth: 0,
+                    borderRightWidth: 0,
+                    borderLeftWidth: 0,
+                    borderBottomWidth: 1,
+                    borderBottomColor: Color.Main,
+                  }
                 : {
-                  borderTopWidth: 0,
-                  borderRightWidth: 0,
-                  borderLeftWidth: 0,
-                  borderBottomWidth: 1,
-                  borderBottomColor: Color.borderColor,
-                }
+                    borderTopWidth: 0,
+                    borderRightWidth: 0,
+                    borderLeftWidth: 0,
+                    borderBottomWidth: 1,
+                    borderBottomColor: Color.borderColor,
+                  }
             }
             control={control}
             keyboardType="email-address"
@@ -171,23 +177,23 @@ const Register = ({ navigation }) => {
             onFocus={() => {
               setIndex(5);
             }}
+            Hello={{paddingVertical: 0}}
             style={
               index === 5
                 ? {
-                  borderTopWidth: 0,
-                  borderRightWidth: 0,
-                  borderLeftWidth: 0,
-                  borderBottomWidth: 1,
-                  borderBottomColor: Color.Main,
-                }
+                    borderTopWidth: 0,
+                    borderRightWidth: 0,
+                    borderLeftWidth: 0,
+                    borderBottomWidth: 1,
+                    borderBottomColor: Color.Main,
+                  }
                 : {
-                  borderTopWidth: 0,
-                  borderRightWidth: 0,
-                  borderLeftWidth: 0,
-                  borderBottomWidth: 1,
-                  borderBottomColor: Color.borderColor,
-
-                }
+                    borderTopWidth: 0,
+                    borderRightWidth: 0,
+                    borderLeftWidth: 0,
+                    borderBottomWidth: 1,
+                    borderBottomColor: Color.borderColor,
+                  }
             }
             control={control}
             keyboardType="email-address"
@@ -204,22 +210,23 @@ const Register = ({ navigation }) => {
             onFocus={() => {
               setIndex(1);
             }}
+            Hello={{paddingVertical: 0}}
             style={
               index === 1
                 ? {
-                  borderTopWidth: 0,
-                  borderRightWidth: 0,
-                  borderLeftWidth: 0,
-                  borderBottomWidth: 1,
-                  borderBottomColor: Color.Main,
-                }
+                    borderTopWidth: 0,
+                    borderRightWidth: 0,
+                    borderLeftWidth: 0,
+                    borderBottomWidth: 1,
+                    borderBottomColor: Color.Main,
+                  }
                 : {
-                  borderTopWidth: 0,
-                  borderRightWidth: 0,
-                  borderLeftWidth: 0,
-                  borderBottomWidth: 1,
-                  borderBottomColor: Color.borderColor,
-                }
+                    borderTopWidth: 0,
+                    borderRightWidth: 0,
+                    borderLeftWidth: 0,
+                    borderBottomWidth: 1,
+                    borderBottomColor: Color.borderColor,
+                  }
             }
             control={control}
             name="password"
@@ -234,7 +241,7 @@ const Register = ({ navigation }) => {
                 message: '*Password too long (maximum length is 16)',
               },
             }}
-            password={true}
+            secureTextEntry={true}
             keyboardType="default"
             placeholder="Password"
             maxLength={20}
@@ -243,26 +250,24 @@ const Register = ({ navigation }) => {
 
           <View style={styles.termAndConditionsBox}>
             <CheckBox
-              tintColors={{ true: Color.Main, false: Color.Main }}
+              tintColors={{true: Color.Main, false: Color.Main}}
               disabled={false}
               value={toggleCheckBox}
               onValueChange={newValue => setToggleCheckBox(newValue)}
             />
             <TouchableOpacity
-              onPress={() => navigation.navigate('termandcondition')}
-              activeOpacity={0.8}>
+              onPress={() => navigation.navigate('termsandcondition')}>
               <Text
                 style={{
                   color: Color.placeholderTextColor,
                   fontSize: scale(12),
-                  paddingTop: moderateScale(7),
                 }}>
                 Accepting all the Terms and Conditions.
               </Text>
             </TouchableOpacity>
           </View>
           <CustomButton
-            containerStyle={{ width: '90%', marginTop: scale(10) }}
+            containerStyle={{width: '85%', marginTop: scale(15)}}
             onPress={() => navigation.navigate('otp')}
             title={'Register'}
           />
@@ -271,16 +276,17 @@ const Register = ({ navigation }) => {
               color: Color.placeholderTextColor,
               fontSize: scale(12),
               alignSelf: 'center',
-              paddingTop: scale(8),
+              paddingTop: scale(20),
             }}>
             Already have an account?
           </Text>
           <CustomLoginButton
+            containerStyle={{width: '85%', marginTop: 0}}
             onPress={() => navigation.navigate('login')}
             title={'Sign In'}
           />
         </View>
-        <View style={{ height: verticalScale(50) }}></View>
+        <View style={{height: verticalScale(50)}}></View>
       </ScrollView>
     </SafeAreaView>
   );
@@ -304,8 +310,8 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     borderTopRightRadius: 50,
     borderTopLeftRadius: 50,
-    paddingHorizontal: moderateScale(20),
-    paddingVertical: 30
+    paddingHorizontal: moderateScale(10),
+    paddingVertical: moderateScale(30),
   },
   WelcomeText: {
     fontSize: scale(28),
@@ -329,9 +335,10 @@ const styles = StyleSheet.create({
     left: scale(15),
   },
   termAndConditionsBox: {
-    marginTop: scale(10),
+    marginTop: scale(15),
     flexDirection: 'row',
     paddingLeft: moderateScale(20),
+    alignItems: 'center',
   },
 });
 

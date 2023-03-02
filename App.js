@@ -5,8 +5,10 @@ import SplashScreen from 'react-native-splash-screen';
 
 const App = () => {
   useEffect(() => {
-    SplashScreen.hide();
-  }, [3000]);
+    setTimeout(() => {
+      SplashScreen.hide();
+    }, 3000);
+  }, []);
   return <AuthNavigation />;
 };
 

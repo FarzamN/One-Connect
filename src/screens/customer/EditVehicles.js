@@ -20,12 +20,12 @@ const EditVehicles = ({navigation}) => {
       <CustomButton
         title="Save changes"
         textStyle={{fontSize: scale(16)}}
-        containerStyle={{width: '90%', marginTop: scale(10)}}
+        containerStyle={{width: '90%', marginTop: scale(25)}}
       />
       <CustomButton
         title="DELETE VEHICLE"
         textStyle={{fontSize: scale(16)}}
-        containerStyle={{width: '90%', marginTop: scale(10)}}
+        containerStyle={{width: '90%', marginTop: scale(25)}}
       />
     </SafeAreaView>
   );
@@ -34,7 +34,7 @@ const EditVehicles = ({navigation}) => {
 const styles = StyleSheet.create({
   Container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: Color.White,
   },
 });
 

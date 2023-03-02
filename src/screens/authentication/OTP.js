@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, {useState, useRef, useEffect} from 'react';
 import {
   StyleSheet,
   Text,
@@ -7,9 +7,9 @@ import {
   Image,
   TouchableOpacity,
 } from 'react-native';
-import { Color } from '../../utils/Colors';
+import {Color} from '../../utils/Colors';
 import CustomButton from '../../components/CustomButton';
-import { moderateScale, scale, verticalScale } from 'react-native-size-matters';
+import {moderateScale, scale, verticalScale} from 'react-native-size-matters';
 import {
   CodeField,
   Cursor,
@@ -18,9 +18,9 @@ import {
 } from 'react-native-confirmation-code-field';
 
 const CELL_COUNT = 4;
-const OTP = ({ navigation }) => {
+const OTP = ({navigation}) => {
   const [value, setValue] = useState('');
-  const ref = useBlurOnFulfill({ value, cellCount: CELL_COUNT });
+  const ref = useBlurOnFulfill({value, cellCount: CELL_COUNT});
   const [props, getCellOnLayoutHandler] = useClearByFocusCell({
     value,
     setValue,
@@ -43,7 +43,7 @@ const OTP = ({ navigation }) => {
   }, []);
   return (
     <SafeAreaView style={styles.Container}>
-      <Text style={styles.WelcomeText}>Create your account</Text>
+      <Text style={styles.WelcomeText}>Enter your OTP</Text>
       <Text style={styles.LongText}>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
         tempor
@@ -56,7 +56,7 @@ const OTP = ({ navigation }) => {
         rootStyle={styles.codeFieldRoot}
         keyboardType="number-pad"
         textContentType="oneTimeCode"
-        renderCell={({ index, symbol, isFocused }) => (
+        renderCell={({index, symbol, isFocused}) => (
           <Text
             key={index}
             style={[styles.cell, isFocused && styles.focusCell]}
@@ -66,7 +66,7 @@ const OTP = ({ navigation }) => {
         )}
       />
       <CustomButton
-        containerStyle={{ width: '100%', paddingVertical: moderateScale(15) }}
+        containerStyle={{width: '100%', marginTop: 20}}
         onPress={() => navigation.navigate('login')}
         title={'Confirm'}
       />
@@ -76,7 +76,7 @@ const OTP = ({ navigation }) => {
           source={require('../../assets/Images/mainlogo.png')}
         />
       </View>
-      <View style={{ position: 'absolute', bottom: 10, alignSelf: 'center', }}>
+      <View style={{position: 'absolute', bottom: 10, alignSelf: 'center'}}>
         <Text
           style={{
             color: Color.placeholderTextColor,
@@ -93,14 +93,14 @@ const OTP = ({ navigation }) => {
 const styles = StyleSheet.create({
   Container: {
     flex: 1,
-    backgroundColor: '#fff',
-    paddingVertical: moderateScale(50),
+    backgroundColor: Color.White,
+    paddingTop: moderateScale(50),
     paddingHorizontal: moderateScale(20),
   },
   WelcomeText: {
     fontSize: scale(28),
     fontWeight: '700',
-    color: '#000',
+    color: Color.Black,
     marginBottom: scale(5),
   },
   LongText: {
@@ -109,10 +109,10 @@ const styles = StyleSheet.create({
     fontSize: scale(13),
     marginBottom: scale(5),
   },
-  codeFieldRoot: { marginVertical: scale(20) },
+  codeFieldRoot: {marginVertical: scale(20)},
   cell: {
-    width: scale(60),
-    height: scale(60),
+    width: scale(65),
+    height: scale(65),
     fontSize: scale(24),
     borderWidth: 2,
     borderRadius: 10,
@@ -122,15 +122,13 @@ const styles = StyleSheet.create({
     textAlignVertical: 'center',
   },
   ImageBox: {
-    marginTop: '25%',
-    justifyContent: 'center',
+    marginTop: '30%',
     alignItems: 'center',
-    
   },
   Image: {
     width: scale(220),
     height: scale(170),
-    
+    resizeMode: 'contain',
   },
 });
 

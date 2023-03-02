@@ -30,7 +30,7 @@ const BankDetail = ({navigation}) => {
           style={styles.arrow}>
           <AntDesign name={'arrowleft'} size={25} color={Color.White} />
         </TouchableOpacity>
-        <Text style={styles.font}>Wallet</Text>
+        <Text style={styles.font}>Bank Detail</Text>
         <View style={styles.Menu}>
           <Feather name={'menu'} size={30} color={Color.Main} />
         </View>
@@ -97,7 +97,7 @@ const BankDetail = ({navigation}) => {
             value: /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/,
             message: 'Enter a valid email',
           }}
-          placeholder="Last Name"
+          placeholder="IBAN/ACCOUNT Number"
           placeholderTextColor={'#32323266'}
         />
         <CustomInput
@@ -129,7 +129,7 @@ const BankDetail = ({navigation}) => {
             value: /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/,
             message: 'Enter a valid email',
           }}
-          placeholder="Email"
+          placeholder="Name of the account"
           placeholderTextColor={'#32323266'}
         />
         <CustomInput
@@ -161,14 +161,15 @@ const BankDetail = ({navigation}) => {
             value: /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/,
             message: 'Enter a valid email',
           }}
-          placeholder="Phone Number"
+          placeholder="Amount"
           placeholderTextColor={'#32323266'}
         />
 
         <CustomButton
-          containerStyle={{width: '90%', marginTop: scale(10)}}
+          containerStyle={{width: '90%', marginTop: scale(25)}}
           title={'ADD'}
         />
+        <View style={{height: 15}} />
       </ScrollView>
     </SafeAreaView>
   );

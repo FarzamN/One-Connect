@@ -129,6 +129,7 @@ const Wallet = ({navigation}) => {
           justifyContent: 'space-between',
           paddingHorizontal: moderateScale(20),
           marginTop: scale(20),
+          alignItems: 'center',
         }}>
         <Text style={styles.History}> Transactions History</Text>
         <TouchableOpacity
@@ -181,7 +182,7 @@ const styles = StyleSheet.create({
   myWalletText: {
     color: '#000',
     fontSize: scale(18),
-    fontWeight: '400',
+    fontWeight: '700',
     marginBottom: scale(20),
   },
   upperContainer: {
@@ -216,10 +217,11 @@ const styles = StyleSheet.create({
     color: Color.Main,
     fontSize: 22,
     lineHeight: 25,
+    fontWeight: '700',
   },
   containerStyle: {
     alignSelf: 'center',
-    width: '70%',
+    width: '90%',
     padding: moderateScale(10),
     alignItems: 'center',
     justifyContent: 'center',
@@ -231,7 +233,7 @@ const styles = StyleSheet.create({
   Btnfont: {
     color: '#fff',
     fontSize: scale(15),
-    textTransform: 'uppercase',
+    textTransform: 'capitalize',
   },
   History: {
     color: '#414D5B',

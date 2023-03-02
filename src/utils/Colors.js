@@ -5,4 +5,5 @@ export const Color = {
   White: '#fff',
   Black: '#000',
   greyfont: '#414D5B',
+  ImageBackgroundColor: '#F8F8F8',
 };

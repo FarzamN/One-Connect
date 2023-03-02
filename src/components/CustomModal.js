@@ -22,7 +22,7 @@ const CustomModal = props => {
         </Text>
         <View
           style={{
-            width: '60%',
+            width: '80%',
             alignSelf: 'center',
             marginTop: scale(10),
           }}>
@@ -33,7 +33,7 @@ const CustomModal = props => {
           {props.Long_Text}
         </Text>
         <CustomButton
-          containerStyle={{marginTop: scale(30), width: '85%'}}
+          containerStyle={{marginTop: scale(30), width: '100%'}}
           title="Book Now"
         />
       </View>
@@ -52,21 +52,21 @@ const styles = StyleSheet.create({
     paddingHorizontal: moderateScale(30),
   },
   Modal_Text: {
-    fontSize: scale(30),
+    fontSize: scale(25),
     color: Color.Black,
-    fontWeight: '600',
+    fontWeight: '700',
     textAlign: 'center',
   },
   Modal_Name: {
-    fontSize: scale(20),
+    fontSize: scale(30),
     color: Color.Black,
-    fontWeight: '800',
+    fontWeight: '900',
     textAlign: 'center',
   },
   Details: {
     fontSize: scale(20),
     color: Color.Black,
-    fontWeight: '800',
+    fontWeight: '700',
     textAlign: 'center',
   },
   Modal_Long_Text: {

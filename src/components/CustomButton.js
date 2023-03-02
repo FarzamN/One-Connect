@@ -1,11 +1,15 @@
 import {StyleSheet, Text, TouchableOpacity} from 'react-native';
 import React from 'react';
-import {scale, moderateScale, moderateVerticalScale} from 'react-native-size-matters';
+import {
+  scale,
+  moderateScale,
+  moderateVerticalScale,
+} from 'react-native-size-matters';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import LinearGradient from 'react-native-linear-gradient';
 const CustomButton = props => {
   return (
-    <TouchableOpacity activeOpacity={0.7} onPress={props.onPress}>
+    <TouchableOpacity activeOpacity={1} onPress={props.onPress}>
       <LinearGradient
         start={{x: 0, y: 0}}
         end={{x: 1, y: 0}}
@@ -26,8 +30,8 @@ export default CustomButton;
 
 const styles = StyleSheet.create({
   containerStyle: {
-    paddingVertical:moderateVerticalScale(15),
-    paddingHorizontal:scale(20),
+    paddingVertical: moderateVerticalScale(15),
+    paddingHorizontal: scale(20),
     width: '80%',
     padding: moderateScale(12),
     alignItems: 'center',
@@ -35,10 +39,10 @@ const styles = StyleSheet.create({
     borderRadius: 15,
     marginTop: scale(5),
     alignSelf: 'center',
-    shadowColor: '#EBDCF5',
+    shadowColor: '#000',
     shadowOffset: {
-      width: 10,
-      height: 100,
+      width: 0,
+      height: 2,
     },
     shadowOpacity: 0.25,
     shadowRadius: 3.84,

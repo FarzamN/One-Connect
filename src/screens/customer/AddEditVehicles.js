@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 import {
   StyleSheet,
   Text,
@@ -9,9 +9,9 @@ import {
   Image,
   FlatList,
 } from 'react-native';
-import { moderateScale, scale, verticalScale } from 'react-native-size-matters';
+import {moderateScale, scale, verticalScale} from 'react-native-size-matters';
 import BackAndName from '../../components/BackAndName';
-import { Color } from '../../utils/Colors';
+import {Color} from '../../utils/Colors';
 
 const DATA = [
   {
@@ -57,19 +57,19 @@ const DATA = [
     img: require('../../assets/Images/car.png'),
   },
 ];
-const Item = ({ item, onPress }) => (
+const Item = ({item, onPress}) => (
   <View style={styles.mainBox}>
     <View
       style={{
         flexDirection: 'row',
         paddingVertical: moderateScale(30),
       }}>
-      <View style={{ paddingHorizontal: moderateScale(20) }}>
+      <View style={{paddingHorizontal: moderateScale(20)}}>
         <Text style={styles.TextOne}>{item.Name}</Text>
         <Text style={styles.TextOne}>{item.Car}</Text>
         <Text style={styles.TextThree}>{item.Reg}</Text>
       </View>
-      <View style={{ position: 'absolute', right: 0, top: scale(20) }}>
+      <View style={{position: 'absolute', right: 0, top: scale(20)}}>
         <Image style={styles.userImg} source={item.img} />
       </View>
     </View>
@@ -89,8 +89,8 @@ const Item = ({ item, onPress }) => (
     </TouchableOpacity>
   </View>
 );
-const AddEditVehicles = ({ navigation }) => {
-  const renderItem = ({ item }) => {
+const AddEditVehicles = ({navigation}) => {
+  const renderItem = ({item}) => {
     return (
       <Item item={item} onPress={() => navigation.navigate('editvehicles')} />
     );
@@ -103,12 +103,16 @@ const AddEditVehicles = ({ navigation }) => {
         data={DATA}
         renderItem={renderItem}
         keyExtractor={item => item.id}
-      // extraData={selectedId}
+        // extraData={selectedId}
       />
       <View style={styles.AddBox}>
         <Text style={styles.Add}>Add Another Vehicle</Text>
         <View style={styles.row}>
-          <TextInput style={{ color: Color.Black }} placeholder="Registration ID..." placeholderTextColor={Color.placeholderTextColor} />
+          <TextInput
+            style={{color: Color.Black}}
+            placeholder="Registration ID..."
+            placeholderTextColor={Color.placeholderTextColor}
+          />
           <TouchableOpacity
             onPress={() => navigation.navigate('addvehicles')}
             style={styles.AddBtnBox}>
@@ -167,8 +171,16 @@ const styles = StyleSheet.create({
     color: Color.placeholderTextColor,
   },
   mainBox: {
-    borderWidth: 1,
-    borderColor: Color.borderColor,
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 3.84,
+
+    elevation: 5,
+    backgroundColor: Color.White,
     marginVertical: scale(8),
     width: '90%',
     alignSelf: 'center',

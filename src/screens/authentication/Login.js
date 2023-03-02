@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 import {
   SafeAreaView,
   StyleSheet,
@@ -10,20 +10,20 @@ import {
   Platform,
   KeyboardAvoidingView,
 } from 'react-native';
-import { moderateScale, scale, verticalScale } from 'react-native-size-matters';
+import {moderateScale, scale, verticalScale} from 'react-native-size-matters';
 import InputFields from '../../components/InputFields';
-import { useForm } from 'react-hook-form';
-import { Color } from '../../utils/Colors';
+import {useForm} from 'react-hook-form';
+import {Color} from '../../utils/Colors';
 import CustomButton from '../../components/CustomButton';
 import CustomLoginButton from '../../components/CustomLoginButton';
 
-const Login = ({ navigation }) => {
+const Login = ({navigation}) => {
   const [index, setIndex] = useState(99);
   const {
     control,
     handleSubmit,
-    formState: { errors, isValid },
-  } = useForm({ mode: 'all' });
+    formState: {errors, isValid},
+  } = useForm({mode: 'all'});
   return (
     <SafeAreaView style={styles.Container}>
       <ScrollView showsVerticalScrollIndicator={false}>
@@ -34,33 +34,36 @@ const Login = ({ navigation }) => {
           />
         </View>
         <View style={styles.WorkBox}>
-          <Text style={styles.WelcomeText}>Welcome back</Text>
-          <Text style={styles.LongText}>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor
-          </Text>
+          <View style={{paddingHorizontal: 20}}>
+            <Text style={styles.WelcomeText}>Welcome back</Text>
+            <Text style={styles.LongText}>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor
+            </Text>
+          </View>
           {/* <KeyboardAvoidingView
-          behavior={Platform.OS === 'ios' ? 'padding' : 'height'}> */}
+            behavior={Platform.OS === 'ios' ? 'padding' : 'height'}> */}
           <InputFields
             onFocus={() => {
               setIndex(0);
             }}
+            style={{color: Color.Black}}
             InputContainerStyle={
               index === 0
                 ? {
-                  borderTopWidth: 0,
-                  borderRightWidth: 0,
-                  borderLeftWidth: 0,
-                  borderBottomWidth: 1,
-                  borderBottomColor: Color.Main,
-                }
+                    borderTopWidth: 0,
+                    borderRightWidth: 0,
+                    borderLeftWidth: 0,
+                    borderBottomWidth: 2,
+                    borderBottomColor: Color.Main,
+                  }
                 : {
-                  borderTopWidth: 0,
-                  borderRightWidth: 0,
-                  borderLeftWidth: 0,
-                  borderBottomWidth: 1,
-                  borderBottomColor: Color.borderColor,
-                }
+                    borderTopWidth: 0,
+                    borderRightWidth: 0,
+                    borderLeftWidth: 0,
+                    borderBottomWidth: 2,
+                    borderBottomColor: Color.borderColor,
+                  }
             }
             control={control}
             IconName={'user'}
@@ -81,22 +84,23 @@ const Login = ({ navigation }) => {
               onFocus={() => {
                 setIndex(1);
               }}
+              style={{color: Color.Black}}
               InputContainerStyle={
                 index === 1
                   ? {
-                    borderTopWidth: 0,
-                    borderRightWidth: 0,
-                    borderLeftWidth: 0,
-                    borderBottomWidth: 1,
-                    borderBottomColor: Color.Main,
-                  }
+                      borderTopWidth: 0,
+                      borderRightWidth: 0,
+                      borderLeftWidth: 0,
+                      borderBottomWidth: 1,
+                      borderBottomColor: Color.Main,
+                    }
                   : {
-                    borderTopWidth: 0,
-                    borderRightWidth: 0,
-                    borderLeftWidth: 0,
-                    borderBottomWidth: 1,
-                    borderBottomColor: Color.borderColor,
-                  }
+                      borderTopWidth: 0,
+                      borderRightWidth: 0,
+                      borderLeftWidth: 0,
+                      borderBottomWidth: 1,
+                      borderBottomColor: Color.borderColor,
+                    }
               }
               IconName={'lock'}
               control={control}
@@ -120,7 +124,7 @@ const Login = ({ navigation }) => {
             />
           </KeyboardAvoidingView>
           <CustomButton
-            containerStyle={{ width: '90%', marginTop: scale(10) }}
+            containerStyle={{width: '90%', marginTop: scale(10)}}
             onPress={() => navigation.navigate('DrawerNavigation')}
             title={'Login'}
           />
@@ -128,7 +132,7 @@ const Login = ({ navigation }) => {
             onPress={() => navigation.navigate('forgetpass')}
             style={[
               styles.FPassCon,
-              { marginTop: scale(5), marginRight: scale(10) },
+              {marginTop: scale(10), marginRight: scale(10)},
             ]}>
             <Text
               style={{
@@ -137,7 +141,6 @@ const Login = ({ navigation }) => {
                 color: Color.Main,
                 fontStyle: 'normal',
                 textDecorationLine: 'underline',
-                
               }}>
               Forgot Password?
             </Text>
@@ -148,9 +151,7 @@ const Login = ({ navigation }) => {
                 color: Color.placeholderTextColor,
                 fontSize: scale(12),
                 alignSelf: 'center',
-                paddingTop: scale(12),
-                marginBottom:scale(-8)
-              
+                paddingTop: scale(8),
               }}>
               Or Signin with
             </Text>
@@ -178,18 +179,16 @@ const Login = ({ navigation }) => {
               fontSize: scale(12),
               alignSelf: 'center',
               paddingTop: scale(15),
-              
-              
             }}>
             Don`t have an account?
           </Text>
           <CustomLoginButton
-            containerStyle = {{marginTop:0}}
+            containerStyle={{marginTop: 0}}
             onPress={() => navigation.navigate('register')}
             title={'Create an accout'}
           />
         </View>
-        <View style={{ height: verticalScale(30) }}></View>
+        <View style={{height: verticalScale(30)}}></View>
       </ScrollView>
     </SafeAreaView>
   );
@@ -210,11 +209,11 @@ const styles = StyleSheet.create({
   },
   WorkBox: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: Color.White,
     borderTopRightRadius: 50,
     borderTopLeftRadius: 50,
-    paddingHorizontal: moderateScale(20),
-    paddingVertical: 30
+    paddingHorizontal: moderateScale(10),
+    paddingVertical: moderateScale(35),
   },
   WelcomeText: {
     fontSize: scale(28),
@@ -231,10 +230,11 @@ const styles = StyleSheet.create({
   FPassCon: {
     flexDirection: 'row',
     justifyContent: 'flex-end',
+    // marginTop: scale(5),
   },
   image: {
     width: scale(25),
-    height: verticalScale(25),
+    height: scale(25),
     left: scale(15),
   },
   googleContainer: {

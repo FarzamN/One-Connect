@@ -1,6 +1,6 @@
 import {StyleSheet, Text, View, SafeAreaView, ScrollView} from 'react-native';
 import React from 'react';
-import {moderateScale, scale} from 'react-native-size-matters';
+import {moderateScale, scale, verticalScale} from 'react-native-size-matters';
 import {useForm} from 'react-hook-form';
 import BackAndName from '../../components/BackAndName';
 import CustomInput from '../../components/CustomInput';
@@ -71,7 +71,7 @@ const Summary = ({navigation}) => {
             borderRightWidth: 0,
             borderLeftWidth: 0,
             borderBottomWidth: 1,
-            borderBottomColor: Color.Main,
+            borderBottomColor: Color.borderColor,
           }}
           control={control}
           keyboardType="email-address"
@@ -81,7 +81,7 @@ const Summary = ({navigation}) => {
             value: /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/,
             message: 'Enter a valid email',
           }}
-          placeholder="His/Her Comment"
+          placeholder="Comment"
           placeholderTextColor={'#32323266'}
         />
         <View style={{height: 10}}></View>
@@ -97,7 +97,8 @@ const styles = StyleSheet.create({
   },
   CardContainer: {
     backgroundColor: '#F0F0F0',
-    paddingVertical: moderateScale(25),
+    paddingTop: moderateScale(25),
+    paddingBottom: moderateScale(10),
     borderTopWidth: 1,
     borderBottomWidth: 1,
     borderBottomColor: Color.Main,
@@ -107,6 +108,7 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     color: Color.Black,
     fontSize: scale(18),
+    fontWeight: '700',
   },
   Price: {
     textAlign: 'center',
@@ -129,10 +131,11 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     paddingHorizontal: moderateScale(20),
+    marginVertical: verticalScale(5),
   },
   Details: {
     color: Color.Black,
-    fontWeight: '600',
+    fontWeight: '700',
     fontSize: scale(20),
     marginLeft: scale(20),
     marginVertical: scale(20),
@@ -161,7 +164,7 @@ const styles = StyleSheet.create({
   },
   CustomerID: {
     color: Color.Black,
-    fontWeight: '600',
+    fontWeight: '700',
     fontSize: scale(18),
     marginTop: scale(20),
     textAlign: 'center',

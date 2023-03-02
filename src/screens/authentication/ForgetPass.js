@@ -38,50 +38,50 @@ const ForgetPass = ({navigation}) => {
   }, []);
   return (
     <SafeAreaView style={styles.Container}>
-      <View style={{paddingVertical:scale(10)}}>
-        <Text style={styles.WelcomeText}>Password Recovery</Text>
-        <Text style={styles.LongText}>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor
-        </Text>
-        <CustomInput
-          style={{
-            width: '100%',
-            height: verticalScale(50),
-            borderWidth: 1,
-            borderColor: Color.Main,
-            borderRadius: 15,
-            marginBottom: scale(20),
-            marginTop: scale(20),
-            paddingHorizontal: moderateScale(10),
-          }}
-          control={control}
-          keyboardType="email-address"
-          name="forget_pass"
-          rules={{
-            required: 'email is required',
-            value: /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/,
-            message: 'Enter a valid email',
-          }}
-          placeholder="Enter your Email Address"
-          placeholderTextColor={'#32323266'}
-        />
-        <CustomButton
-          containerStyle={{
-            width: '100%',
-          }}
-          onPress={() => navigation.navigate('login')}
-          title={'Verify'}
-        />
-      </View>
-
+      <Text style={styles.WelcomeText}>Password Recovery</Text>
+      <Text style={styles.LongText}>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+        tempor
+      </Text>
+      <CustomInput
+        style={{
+          width: '100%',
+          height: verticalScale(55),
+          borderWidth: 1,
+          borderColor: Color.Main,
+          borderRadius: 20,
+          marginBottom: scale(20),
+          marginTop: scale(20),
+          paddingHorizontal: moderateScale(20),
+        }}
+        control={control}
+        keyboardType="email-address"
+        name="forget_pass"
+        rules={{
+          required: 'email is required',
+          value: /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/,
+          message: 'Enter a valid email',
+        }}
+        placeholder="Enter your Email Address"
+        placeholderTextColor={'#32323266'}
+      />
+      <CustomButton
+        containerStyle={{width: '100%', marginTop: scale(25)}}
+        onPress={() => navigation.navigate('login')}
+        title={'Verify'}
+      />
       <View style={styles.ImageBox}>
         <Image
           style={styles.Image}
           source={require('../../assets/Images/mainlogo.png')}
         />
       </View>
-      <View style={{position: 'absolute', bottom: 10, alignSelf: 'center'}}>
+      <View
+        style={{
+          position: 'absolute',
+          bottom: 10,
+          alignSelf: 'center',
+        }}>
         <Text
           style={{
             color: Color.placeholderTextColor,
@@ -127,7 +127,7 @@ const styles = StyleSheet.create({
     textAlignVertical: 'center',
   },
   ImageBox: {
-    marginTop: scale(50),
+    marginTop: scale(100),
     justifyContent: 'center',
     alignItems: 'center',
   },

@@ -184,8 +184,8 @@ const CustomVehiclesBox = props => {
 const styles = StyleSheet.create({
   New_Vehicle: {
     color: Color.Black,
-    fontSize: scale(20),
-    fontWeight: '600',
+    fontSize: scale(22),
+    fontWeight: '700',
     marginBottom: scale(10),
   },
   LongText: {

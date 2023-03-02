@@ -7,15 +7,15 @@ import {
   TouchableOpacity,
 } from 'react-native';
 import React from 'react';
-import { Color } from '../../utils/Colors';
+import {Color} from '../../utils/Colors';
 import LinearGradient from 'react-native-linear-gradient';
-import { moderateScale, scale } from 'react-native-size-matters';
-const Splash = ({ navigation }) => {
+import {moderateScale, scale} from 'react-native-size-matters';
+const Splash = ({navigation}) => {
   return (
     <SafeAreaView style={styles.container}>
       <LinearGradient
-        start={{ x: 0, y: 0 }}
-        end={{ x: 0, y: 1 }}
+        start={{x: 0, y: 0}}
+        end={{x: 0, y: 1}}
         colors={['#E80202', '#DE0101', '#C40101', '#BA0101']}
         style={styles.containerStyle}>
         <View style={styles.MainBox}>
@@ -38,11 +38,11 @@ const Splash = ({ navigation }) => {
           </View>
         </View>
         <TouchableOpacity
-          activeOpacity={0.5}
+          activeOpacity={1}
           onPress={() => navigation.navigate('login')}>
           <LinearGradient
-            start={{ x: 0, y: 0 }}
-            end={{ x: 1, y: 0 }}
+            start={{x: 0, y: 0}}
+            end={{x: 1, y: 0}}
             colors={['#E70100', '#DD0101', '#CA0101', '#BA0101']}
             style={styles.Btn}>
             <Text style={styles.font}>Get Started</Text>
@@ -95,6 +95,15 @@ const styles = StyleSheet.create({
     position: 'absolute',
     alignSelf: 'center',
     bottom: -25,
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 3.84,
+
+    elevation: 5,
   },
   Image: {
     marginTop: scale(15),
