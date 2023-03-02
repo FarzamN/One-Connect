@@ -73,23 +73,23 @@ const styles = StyleSheet.create({
     backgroundColor: '#f4f4f4',
     borderRadius: 20,
     width: '85%',
-    height:verticalScale(80),
+    height:verticalScale(70),
     alignSelf: 'center',
     paddingHorizontal: moderateScale(20),
-    paddingVertical: moderateScale(30),
+    paddingVertical: moderateScale(7),
     elevation: 3,
     marginBottom: scale(10),
     justifyContent:'center'
   },
   Service: {
-    fontSize: scale(13),
+    fontSize: scale(12),
     color: Color.Black,
     lineHeight: 20,
     
   },
 
   Timing: {
-    fontSize: scale(13),
+    fontSize: scale(11),
     color: Color.placeholderTextColor,
   },
 });
