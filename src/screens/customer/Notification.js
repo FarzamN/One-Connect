@@ -7,9 +7,10 @@ import {
   SafeAreaView,
 } from 'react-native';
 import React from 'react';
-import {moderateScale, scale} from 'react-native-size-matters';
+import {moderateScale, verticalScale,scale} from 'react-native-size-matters';
 import {Color} from '../../utils/Colors';
 import BackAndName from '../../components/BackAndName';
+
 const DATA = [
   {
     id: 'bd7acbea-c1b1-46c2-aed5-3ad53abb28ba',
@@ -40,7 +41,7 @@ const DATA = [
 const Notification = ({navigation}) => {
   const Item = ({title, Timing, type}) => (
     <TouchableOpacity style={styles.CardBox}>
-      <View style={{width: '80%'}}>
+      <View style={{alignContent:'center',paddingLeft:10}}>
         <Text style={styles.Service}>{title}</Text>
         <Text style={styles.Timing}>{type}</Text>
         <Text style={styles.Timing}>{Timing}</Text>
@@ -72,16 +73,19 @@ const styles = StyleSheet.create({
     backgroundColor: '#f4f4f4',
     borderRadius: 20,
     width: '85%',
+    height:verticalScale(80),
     alignSelf: 'center',
     paddingHorizontal: moderateScale(20),
     paddingVertical: moderateScale(30),
     elevation: 3,
     marginBottom: scale(10),
+    justifyContent:'center'
   },
   Service: {
-    fontSize: scale(17),
+    fontSize: scale(13),
     color: Color.Black,
-    lineHeight: 22,
+    lineHeight: 20,
+    
   },
 
   Timing: {

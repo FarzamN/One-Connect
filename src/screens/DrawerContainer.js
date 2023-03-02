@@ -33,7 +33,7 @@ const DrawerContainer = props => {
 
       <Text
         style={{
-          fontSize: 18,
+          fontSize: scale(18),
           color: Color.placeholderTextColor,
           fontWeight: '700',
           textTransform: 'capitalize',

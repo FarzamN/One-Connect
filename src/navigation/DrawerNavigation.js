@@ -51,7 +51,7 @@ export const DrawerNavigation = () => {
       />
       <Drawer.Screen
         options={{
-          title: 'Profile',
+          title: '  Profile',
           drawerIcon: () => (
             <FontAwesome name="user" size={20} color={Color.Main} />
           ),

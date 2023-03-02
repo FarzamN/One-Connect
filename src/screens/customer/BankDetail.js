@@ -36,147 +36,155 @@ const BankDetail = ({navigation}) => {
         </View>
       </View>
       <ScrollView showsVerticalScrollIndicator={false}>
-        <CustomInput
-          onFocus={() => {
-            setIndex(0);
-          }}
-          style={
-            index === 0
-              ? {
-                  borderTopWidth: 0,
-                  borderRightWidth: 0,
-                  borderLeftWidth: 0,
-                  borderBottomWidth: 1,
-                  borderBottomColor: Color.Main,
-                }
-              : {
-                  borderTopWidth: 0,
-                  borderRightWidth: 0,
-                  borderLeftWidth: 0,
-                  borderBottomWidth: 1,
-                  borderBottomColor: Color.borderColor,
-                }
-          }
-          control={control}
-          keyboardType="email-address"
-          name="bank_name"
-          rules={{
-            required: 'email is required',
-            value: /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/,
-            message: 'Enter a valid email',
-          }}
-          placeholder="Name of the bank"
-          placeholderTextColor={'#32323266'}
-        />
-        <CustomInput
-          onFocus={() => {
-            setIndex(2);
-          }}
-          style={
-            index === 2
-              ? {
-                  borderTopWidth: 0,
-                  borderRightWidth: 0,
-                  borderLeftWidth: 0,
-                  borderBottomWidth: 1,
-                  borderBottomColor: Color.Main,
-                }
-              : {
-                  borderTopWidth: 0,
-                  borderRightWidth: 0,
-                  borderLeftWidth: 0,
-                  borderBottomWidth: 1,
-                  borderBottomColor: Color.borderColor,
-                }
-          }
-          control={control}
-          keyboardType="email-address"
-          name="l_name"
-          rules={{
-            required: 'email is required',
-            value: /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/,
-            message: 'Enter a valid email',
-          }}
-          placeholder="IBAN/ACCOUNT Number"
-          placeholderTextColor={'#32323266'}
-        />
-        <CustomInput
-          onFocus={() => {
-            setIndex(3);
-          }}
-          style={
-            index === 3
-              ? {
-                  borderTopWidth: 0,
-                  borderRightWidth: 0,
-                  borderLeftWidth: 0,
-                  borderBottomWidth: 1,
-                  borderBottomColor: Color.Main,
-                }
-              : {
-                  borderTopWidth: 0,
-                  borderRightWidth: 0,
-                  borderLeftWidth: 0,
-                  borderBottomWidth: 1,
-                  borderBottomColor: Color.borderColor,
-                }
-          }
-          control={control}
-          keyboardType="email-address"
-          name="email"
-          rules={{
-            required: 'email is required',
-            value: /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/,
-            message: 'Enter a valid email',
-          }}
-          placeholder="Name of the account"
-          placeholderTextColor={'#32323266'}
-        />
-        <CustomInput
-          onFocus={() => {
-            setIndex(4);
-          }}
-          style={
-            index === 4
-              ? {
-                  borderTopWidth: 0,
-                  borderRightWidth: 0,
-                  borderLeftWidth: 0,
-                  borderBottomWidth: 1,
-                  borderBottomColor: Color.Main,
-                }
-              : {
-                  borderTopWidth: 0,
-                  borderRightWidth: 0,
-                  borderLeftWidth: 0,
-                  borderBottomWidth: 1,
-                  borderBottomColor: Color.borderColor,
-                }
-          }
-          control={control}
-          keyboardType="email-address"
-          name="phone_number"
-          rules={{
-            required: 'email is required',
-            value: /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/,
-            message: 'Enter a valid email',
-          }}
-          placeholder="Amount"
-          placeholderTextColor={'#32323266'}
-        />
+        <View style={{height:verticalScale(355)}}>
+          <CustomInput
+            onFocus={() => {
+              setIndex(0);
+            }}
+            style={
+              index === 0
+                ? {
+                    borderTopWidth: 0,
+                    borderRightWidth: 0,
+                    borderLeftWidth: 0,
+                    borderBottomWidth: 1,
+                    borderBottomColor: Color.Main,
+                  }
+                : {
+                    borderTopWidth: 0,
+                    borderRightWidth: 0,
+                    borderLeftWidth: 0,
+                    borderBottomWidth: 1,
+                    borderBottomColor: Color.borderColor,
+                  }
+            }
+            control={control}
+            keyboardType="email-address"
+            name="bank_name"
+            rules={{
+              required: 'email is required',
+              value: /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/,
+              message: 'Enter a valid email',
+            }}
+            placeholder="Name of the bank"
+            placeholderTextColor={'#32323266'}
+          />
+          <CustomInput
+            onFocus={() => {
+              setIndex(2);
+            }}
+            style={
+              index === 2
+                ? {
+                    borderTopWidth: 0,
+                    borderRightWidth: 0,
+                    borderLeftWidth: 0,
+                    borderBottomWidth: 1,
+                    borderBottomColor: Color.Main,
+                  }
+                : {
+                    borderTopWidth: 0,
+                    borderRightWidth: 0,
+                    borderLeftWidth: 0,
+                    borderBottomWidth: 1,
+                    borderBottomColor: Color.borderColor,
+                  }
+            }
+            control={control}
+            keyboardType="email-address"
+            name="l_name"
+            rules={{
+              required: 'email is required',
+              value: /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/,
+              message: 'Enter a valid email',
+            }}
+            placeholder="IBAN/ACCOUNT Number"
+            placeholderTextColor={'#32323266'}
+          />
+          <CustomInput
+            onFocus={() => {
+              setIndex(3);
+            }}
+            style={
+              index === 3
+                ? {
+                    borderTopWidth: 0,
+                    borderRightWidth: 0,
+                    borderLeftWidth: 0,
+                    borderBottomWidth: 1,
+                    borderBottomColor: Color.Main,
+                  }
+                : {
+                    borderTopWidth: 0,
+                    borderRightWidth: 0,
+                    borderLeftWidth: 0,
+                    borderBottomWidth: 1,
+                    borderBottomColor: Color.borderColor,
+                  }
+            }
+            control={control}
+            keyboardType="email-address"
+            name="email"
+            rules={{
+              required: 'email is required',
+              value: /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/,
+              message: 'Enter a valid email',
+            }}
+            placeholder="Name of the account"
+            placeholderTextColor={'#32323266'}
+          />
+          <CustomInput
+            onFocus={() => {
+              setIndex(4);
+            }}
+            style={
+              index === 4
+                ? {
+                    borderTopWidth: 0,
+                    borderRightWidth: 0,
+                    borderLeftWidth: 0,
+                    borderBottomWidth: 1,
+                    borderBottomColor: Color.Main,
+                  }
+                : {
+                    borderTopWidth: 0,
+                    borderRightWidth: 0,
+                    borderLeftWidth: 0,
+                    borderBottomWidth: 1,
+                    borderBottomColor: Color.borderColor,
+                  }
+            }
+            control={control}
+            keyboardType="email-address"
+            name="phone_number"
+            rules={{
+              required: 'email is required',
+              value: /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/,
+              message: 'Enter a valid email',
+            }}
+            placeholder="Amount"
+            placeholderTextColor={'#32323266'}
+           
+          />
 
-        <CustomButton
-          containerStyle={{width: '90%', marginTop: scale(25)}}
-          title={'ADD'}
-        />
-        <View style={{height: 15}} />
+          <CustomButton
+            containerStyle={{width: '90%', marginTop: scale(25)}}
+            title={'ADD'}
+            
+            
+          />
+        </View>
+
+    
       </ScrollView>
     </SafeAreaView>
   );
 };
 
 const styles = StyleSheet.create({
-  Container: {flex: 1, backgroundColor: Color.White},
+
+  Container:{flex:1},
+  
   BackBtnBox: {
     backgroundColor: Color.Main,
     padding: scale(15),

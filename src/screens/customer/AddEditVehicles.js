@@ -187,8 +187,11 @@ const styles = StyleSheet.create({
     borderRadius: 15,
   },
   userImg: {
-    width: scale(100),
-    height: scale(70),
+    width: scale(140),
+    height: scale(100),
+    resizeMode:'contain',
+    
+
   },
 });
 

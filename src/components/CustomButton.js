@@ -17,6 +17,7 @@ const CustomButton = props => {
         style={[
           styles.containerStyle,
           props.containerStyle,
+          props.buttonRestyle,
           {flexDirection: 'row', justifyContent: 'space-between'},
         ]}>
         <Text style={[styles.font, props.textStyle]}>{props.title}</Text>

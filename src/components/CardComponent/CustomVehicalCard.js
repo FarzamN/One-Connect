@@ -134,7 +134,7 @@ const styles = StyleSheet.create({
     backgroundColor:Color.White
   },
   userImg: {
-    width: scale(146),
+    width: scale(140),
     height: scale(110),
     resizeMode:'contain',
 
