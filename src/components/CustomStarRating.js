@@ -4,12 +4,12 @@ import {Color} from '../utils/Colors';
 import StarRating from 'react-native-star-rating';
 
 const CustomStarRating = props => {
-  const [rating, setRating] = useState(0);
+  const [rating, setRating] = useState(Math.random()*5+1)
   return (
     <StarRating
       fullStarColor={Color.Main}
       starSize={props.starSize}
-      disabled={false}
+      disabled={true}
       maxStars={5}
       rating={rating}
       selectedStar={setRating}

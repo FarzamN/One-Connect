@@ -12,6 +12,7 @@ import Feather from 'react-native-vector-icons/Feather';
 import {useController} from 'react-hook-form';
 import React, {forwardRef, useState} from 'react';
 import {Color} from '../utils/Colors';
+import { Font } from '../utils/font';
 
 const Input = forwardRef((props, ref) => {
   const {field} = useController({
@@ -55,6 +56,8 @@ const styles = StyleSheet.create({
     color: '#32323266',
     fontSize: 14,
     paddingHorizontal: 15,
+    fontFamily:Font.Lato400
+    
   },
   smallbox: {
     alignSelf: 'center',
@@ -73,5 +76,6 @@ const styles = StyleSheet.create({
     textAlignVertical: 'center',
     fontSize: 13,
     padding: 10,
+  
   },
 });

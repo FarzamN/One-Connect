@@ -1,6 +1,8 @@
 import {StyleSheet, Text, View} from 'react-native';
 import React from 'react';
 import {moderateScale, scale, verticalScale} from 'react-native-size-matters';
+import { Color } from '../../utils/Colors';
+import { Font } from '../../utils/font';
 
 const Transaction = props => {
   return (
@@ -38,15 +40,15 @@ const styles = StyleSheet.create({
   },
   Texts: {
     fontSize: 12,
-    fontStyle: 'normal',
     color: 'black',
     opacity: 0.6,
+    fontFamily: Font.Inter400
   },
   MRText: {
     fontSize: 12,
-    color: '#435CA8',
+    color: Color.Main,
     fontStyle: 'normal',
-    fontWeight: '700',
+    fontFamily: Font.Inter500,
   },
   BoxTwo: {
     width: '50%',
@@ -60,7 +62,7 @@ const styles = StyleSheet.create({
     color: '#17D85C',
     fontStyle: 'normal',
     fontSize: moderateScale(16),
-    fontWeight: '700',
+    fontFamily:Font.Lato700,
     flexWrap: 'wrap',
   },
 });

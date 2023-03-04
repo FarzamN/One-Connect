@@ -14,6 +14,7 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 import Fontisto from 'react-native-vector-icons/Fontisto';
 
 import {Color} from '../../utils/Colors';
+import {Font} from '../../utils/font';
 
 const DATA = [
   {
@@ -64,14 +65,15 @@ const Item = ({task, Date, price}) => (
           style={{
             color: Color.greyfont,
             fontSize: scale(15),
-            fontWeight: '600',
+            fontFamily: Font.Poppins600,
           }}>
           {task}
         </Text>
         <Text
           style={{
             color: Color.greyfont,
-            fontSize: scale(15),
+            fontSize: scale(12),
+            fontFamily:Font.Poppins400
           }}>
           {Date}
         </Text>
@@ -83,6 +85,8 @@ const Item = ({task, Date, price}) => (
           color: Color.greyfont,
           fontSize: scale(18),
           marginTop: scale(10),
+          fontFamily:Font.Poppins400
+          
         }}>
         {price}
       </Text>
@@ -161,7 +165,7 @@ const styles = StyleSheet.create({
   font: {
     color: Color.White,
     fontSize: scale(18),
-    fontWeight: '700',
+    fontFamily: Font.Lato700,
     textTransform: 'capitalize',
   },
   cardContainer: {
@@ -181,8 +185,8 @@ const styles = StyleSheet.create({
   },
   myWalletText: {
     color: '#000',
-    fontSize: scale(18),
-    fontWeight: '700',
+    fontSize: scale(16),
+    fontFamily: Font.Poppins500,
     marginBottom: scale(20),
   },
   upperContainer: {
@@ -217,7 +221,7 @@ const styles = StyleSheet.create({
     color: Color.Main,
     fontSize: 22,
     lineHeight: 25,
-    fontWeight: '700',
+    fontFamily: Font.Poppins600,
   },
   containerStyle: {
     alignSelf: 'center',
@@ -234,15 +238,17 @@ const styles = StyleSheet.create({
     color: '#fff',
     fontSize: scale(15),
     textTransform: 'capitalize',
+    fontFamily:Font.Poppins600
   },
   History: {
     color: '#414D5B',
     fontSize: scale(20),
+    fontFamily:Font.Poppins400
   },
   Show_all: {
     color: Color.Main,
     fontSize: scale(14),
-    fontWeight: '500',
+    fontFamily: Font.Inter400,
   },
   PriceCardBox: {
     width: '90%',

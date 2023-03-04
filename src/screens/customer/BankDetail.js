@@ -14,6 +14,7 @@ import {Color} from '../../utils/Colors';
 import CustomInput from '../../components/CustomInput';
 import {useForm} from 'react-hook-form';
 import CustomButton from '../../components/CustomButton';
+import { Font } from '../../utils/font';
 const BankDetail = ({navigation}) => {
   const [index, setIndex] = useState(99);
   const {
@@ -68,6 +69,7 @@ const BankDetail = ({navigation}) => {
             }}
             placeholder="Name of the bank"
             placeholderTextColor={'#32323266'}
+            placeholderStyle = {{fontFamily:Font.Lato400}}
           />
           <CustomInput
             onFocus={() => {
@@ -183,7 +185,7 @@ const BankDetail = ({navigation}) => {
 
 const styles = StyleSheet.create({
 
-  Container:{flex:1},
+  Container:{flex:1,backgroundColor:Color.White},
   
   BackBtnBox: {
     backgroundColor: Color.Main,

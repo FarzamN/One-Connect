@@ -9,6 +9,7 @@ import {
 import {Color} from '../utils/Colors';
 import {scale} from 'react-native-size-matters';
 import {useNavigation} from '@react-navigation/native';
+import { Font } from '../utils/font';
 
 const DrawerContainer = props => {
   const navigation = useNavigation();
@@ -35,7 +36,7 @@ const DrawerContainer = props => {
         style={{
           fontSize: scale(18),
           color: Color.placeholderTextColor,
-          fontWeight: '700',
+          fontFamily: Font.Poppins700,
           textTransform: 'capitalize',
           // marginBottom: scale(20),
           marginLeft: scale(10),
@@ -48,7 +49,7 @@ const DrawerContainer = props => {
         style={{
           fontSize: 14,
           color: Color.borderColor,
-          fontWeight: '600',
+          fontFamily: Font.Poppins400,
           textTransform: 'capitalize',
           marginBottom: scale(20),
           marginLeft: scale(10),

@@ -9,6 +9,7 @@ import {
 import React from 'react';
 import {Color} from '../../utils/Colors';
 import {moderateScale, scale} from 'react-native-size-matters';
+import { Font } from '../../utils/font';
 
 const DATA = [
   {
@@ -68,6 +69,7 @@ const styles = StyleSheet.create({
   },
   Service: {
     fontSize: scale(17),
+    fontFamily:Font.Lato400,
     color: Color.Black,
     lineHeight: 22,
   },
@@ -75,5 +77,7 @@ const styles = StyleSheet.create({
   Timing: {
     fontSize: scale(18),
     color: Color.Main,
+    lineHeight:30,
+    fontFamily:Font.Lato400
   },
 });

@@ -10,6 +10,7 @@ import React from 'react';
 import {moderateScale, verticalScale,scale} from 'react-native-size-matters';
 import {Color} from '../../utils/Colors';
 import BackAndName from '../../components/BackAndName';
+import { Font } from '../../utils/font';
 
 const DATA = [
   {
@@ -50,7 +51,7 @@ const Notification = ({navigation}) => {
   );
   return (
     <SafeAreaView style={styles.Container}>
-      <BackAndName onPress={() => navigation.goBack()} title="Notification" />
+      <BackAndName onPress={() => navigation.goBack()} title="Notifications" />
       <FlatList
         scrollEnabled={true}
         showsVerticalScrollIndicator={false}
@@ -85,12 +86,14 @@ const styles = StyleSheet.create({
     fontSize: scale(12),
     color: Color.Black,
     lineHeight: 20,
+    fontFamily:Font.Inter500
     
   },
 
   Timing: {
     fontSize: scale(11),
     color: Color.placeholderTextColor,
+    fontFamily:Font.Inter400
   },
 });
 export default Notification;

@@ -7,11 +7,12 @@ import {
   Image,
   ScrollView,
 } from 'react-native';
-import {moderateScale, scale} from 'react-native-size-matters';
+import {moderateScale, scale, verticalScale} from 'react-native-size-matters';
 import BackAndName from '../../components/BackAndName';
 import LiveTrackingCard from '../../components/CardComponent/LiveTrackingCard';
 import CustomStarRating from '../../components/CustomStarRating';
 import {Color} from '../../utils/Colors';
+import { Font } from '../../utils/font';
 
 const Progress = ({navigation}) => {
   return (
@@ -26,7 +27,7 @@ const Progress = ({navigation}) => {
         <View style={styles.CardBox}>
           <Text style={styles.Text}>Name of Mechanic</Text>
           <Text style={styles.Text}>Location</Text>
-          <View style={{width: '60%'}}>
+          <View style={{width: '60%',paddingVertical:verticalScale(5)}}>
             <CustomStarRating starSize={18} />
           </View>
         </View>
@@ -34,7 +35,7 @@ const Progress = ({navigation}) => {
       <ScrollView>
         <View style={styles.Live_Tracking_Box}>
           <Text style={styles.Live_Tracking_Text}>Live Tracking</Text>
-          <LiveTrackingCard onPress={() => navigation.navigate('ongoingjob')} />
+          <LiveTrackingCard onPress={() => navigation.navigate('bill')} />
         </View>
       </ScrollView>
     </SafeAreaView>
@@ -63,15 +64,15 @@ const styles = StyleSheet.create({
   Text: {
     color: Color.placeholderTextColor,
     fontSize: scale(15),
-    lineHeight: 20,
-    fontWeight: '600',
+    lineHeight: 25,
+    fontFamily: Font.Roborto700,
   },
   Live_Tracking_Box: {
     marginTop: scale(20),
   },
   Live_Tracking_Text: {
     color: Color.Main,
-    fontWeight: '700',
+    fontFamily: Font.Lato700,
     fontSize: scale(22),
     marginLeft: scale(20),
     marginBottom: scale(10),

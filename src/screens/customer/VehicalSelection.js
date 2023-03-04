@@ -4,6 +4,7 @@ import BackAndName from '../../components/BackAndName';
 import CustomButton from '../../components/CustomButton';
 import {scale} from 'react-native-size-matters';
 import {Color} from '../../utils/Colors';
+import {Font} from '../../utils/font';
 import CustomVehicalCard from '../../components/CardComponent/CustomVehicalCard';
 
 const VehicalSelection = ({navigation}) => {

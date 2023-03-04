@@ -12,30 +12,19 @@ import CustomButton from '../../components/CustomButton';
 import {moderateScale, scale, verticalScale} from 'react-native-size-matters';
 import CustomInput from '../../components/CustomInput';
 import {useForm} from 'react-hook-form';
+import {Font} from '../../utils/font';
 
 const ForgetPass = ({navigation}) => {
-  const [time, setTime] = useState(30);
-  const timerRef = useRef(time);
-
   const {
     control,
     handleSubmit,
     formState: {errors, isValid},
   } = useForm({mode: 'all'});
-
+  const [time, setTime] = useState(40);
   useEffect(() => {
-    const timerId = setInterval(() => {
-      timerRef.current -= 1;
-      if (timerRef.current < 0) {
-        clearInterval(timerId);
-      } else {
-        setTime(timerRef.current);
-      }
-    }, 1000);
-    return () => {
-      clearInterval(timerId);
-    };
-  }, []);
+    const timer = time > 0 && setInterval(() => setTime(time - 1), 1000);
+    return () => clearInterval(timer);
+  }, [time]);
   return (
     <SafeAreaView style={styles.Container}>
       <Text style={styles.WelcomeText}>Password Recovery</Text>
@@ -49,7 +38,7 @@ const ForgetPass = ({navigation}) => {
           height: verticalScale(55),
           borderWidth: 1,
           borderColor: Color.Main,
-          borderRadius: 20,
+          borderRadius: 10,
           marginBottom: scale(20),
           marginTop: scale(20),
           paddingHorizontal: moderateScale(20),
@@ -76,20 +65,38 @@ const ForgetPass = ({navigation}) => {
           source={require('../../assets/Images/mainlogo.png')}
         />
       </View>
-      <View
-        style={{
-          position: 'absolute',
-          bottom: 10,
-          alignSelf: 'center',
-        }}>
-        <Text
-          style={{
-            color: Color.placeholderTextColor,
-            fontSize: scale(14),
-            alignSelf: 'center',
-          }}>
-          Wait {time} more seconds to resend the OTP
-        </Text>
+      <View style={{position: 'absolute', bottom: 10, alignSelf: 'center'}}>
+        {time == 0 ? (
+          <TouchableOpacity
+            style={{
+              backgroundColor: Color.Main,
+              paddingHorizontal: 10,
+              paddingVertical: 5,
+              justifyContent: 'center',
+              alignItems: 'center',
+              borderRadius: 5,
+            }}
+            onPress={() => setTime(40)}>
+            <Text
+              style={{
+                color: Color.White,
+                fontSize: scale(15),
+                fontFamily: Font.Lato400,
+              }}>
+              Resend
+            </Text>
+          </TouchableOpacity>
+        ) : (
+          <Text
+            style={{
+              color: Color.placeholderTextColor,
+              fontSize: scale(14),
+              alignSelf: 'center',
+              fontFamily: Font.Lato400,
+            }}>
+            Wait {time} more seconds to resend the OTP
+          </Text>
+        )}
       </View>
     </SafeAreaView>
   );
@@ -104,15 +111,15 @@ const styles = StyleSheet.create({
   },
   WelcomeText: {
     fontSize: scale(28),
-    fontWeight: '700',
+    fontFamily: Font.Lato700,
     color: '#000',
     marginBottom: scale(5),
   },
   LongText: {
     color: 'rgba(0, 0, 0, 0.7)',
-    fontWeight: '400',
     fontSize: scale(13),
     marginBottom: scale(5),
+    fontFamily: Font.Lato400,
   },
   codeFieldRoot: {marginVertical: scale(20)},
   cell: {
@@ -125,6 +132,7 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     color: Color.Main,
     textAlignVertical: 'center',
+    fontFamily: Font.Poppins800,
   },
   ImageBox: {
     marginTop: scale(100),

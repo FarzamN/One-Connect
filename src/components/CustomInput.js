@@ -12,6 +12,7 @@ import {
 import {moderateScale, scale, verticalScale} from 'react-native-size-matters';
 import Zocial from 'react-native-vector-icons/Zocial';
 import Fontisto from 'react-native-vector-icons/Fontisto';
+import { Font } from '../utils/font';
 
 const CustomInput = forwardRef((props, ref) => {
   const {field} = useController({
@@ -21,7 +22,7 @@ const CustomInput = forwardRef((props, ref) => {
     rules: props.rules,
   });
   return (
-    <View style={[styles.smallbox, props.style, props.Hello]}>
+    <View style={[styles.smallbox, props.style,] }>
       <TextInput
         onFocus={props.onFocus}
         textContentType={props.textContentType}
@@ -38,7 +39,7 @@ const CustomInput = forwardRef((props, ref) => {
         textAlignVertical={props.textAlignVertical}
         pattern={props.pattern}
         label={props.label}
-        placeholderStyle={props.placeholderStyle}
+        placeholderStyle={{fontFamily : Font.Lato400}}
         fontSize={props.fontSize}
         maxLength={props.maxLength}
       />
@@ -49,11 +50,15 @@ const CustomInput = forwardRef((props, ref) => {
 const styles = StyleSheet.create({
   InputStyles: {
     width: '100%',
-    height: scale(40),
+    height: verticalScale(35),
     borderRadius: 12,
     alignItems: 'center',
     backgroundColor: '#FFF',
     color: 'black',
+    top:scale(5),
+    fontFamily:Font.Lato400,
+    
+    
   },
   smallbox: {
     alignSelf: 'center',
@@ -64,7 +69,7 @@ const styles = StyleSheet.create({
     width: '85%',
     padding: 5,
     backgroundColor: 'white',
-    borderWidth: 2,
+    // borderWidth: 2,
   },
 });
 export default CustomInput;

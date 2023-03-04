@@ -6,6 +6,7 @@ import BackAndName from '../../components/BackAndName';
 import CustomInput from '../../components/CustomInput';
 import CustomStarRating from '../../components/CustomStarRating';
 import {Color} from '../../utils/Colors';
+import { Font } from '../../utils/font';
 
 const Summary = ({navigation}) => {
   const {
@@ -16,18 +17,14 @@ const Summary = ({navigation}) => {
   return (
     <SafeAreaView style={styles.Container}>
       <ScrollView>
-        <BackAndName onPress={() => navigation.goBack()} title="Summaries" />
+        <BackAndName onPress={() => navigation.goBack()} title="Summary" />
         <View style={styles.CardContainer}>
           <Text style={styles.Service}>SERVICE NAME</Text>
           <Text style={styles.Price}>$30.89</Text>
-          <View style={styles.DateBox}>
-            <View style={{flexDirection: 'row'}}>
-              <Text style={styles.Text}></Text>
-              <Text style={styles.Num}></Text>
-            </View>
-            <View style={{flexDirection: 'row'}}>
-              <Text style={styles.Text}>Date :</Text>
-              <Text style={styles.Num}>2022-1-09</Text>
+          <View style={styles.DateBox1}>
+            <View style={{flexDirection: 'row',top:scale(8)}}>
+              <Text style={styles.DateText}>Date :</Text>
+              <Text style={styles.Num}> 2022-1-09</Text>
             </View>
           </View>
         </View>
@@ -58,7 +55,7 @@ const Summary = ({navigation}) => {
         <Text
           style={[
             styles.CustomerID,
-            {textAlign: 'left', marginLeft: scale(20)},
+            {textAlign: 'left', marginLeft: scale(20),fontFamily:Font.Poppins700},
           ]}>
           Feedback from Customer
         </Text>
@@ -108,34 +105,53 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     color: Color.Black,
     fontSize: scale(18),
-    fontWeight: '700',
+    fontFamily: Font.Poppins500  ,
+  
   },
   Price: {
     textAlign: 'center',
     color: Color.Main,
     fontSize: scale(30),
-    fontWeight: '700',
+    fontFamily:Font.Poppins600,
     paddingVertical: moderateScale(10),
   },
   Num: {
     color: Color.Main,
     fontSize: scale(16),
-    fontWeight: '600',
+    fontFamily: Font.Poppins600,
+    
   },
   Text: {
     color: Color.Black,
     fontSize: scale(16),
-    fontWeight: '600',
+    fontFamily:Font.Lato400,
+    
+  },
+  DateBox1: {
+    flexDirection: 'row',
+    justifyContent: 'flex-end',
+    paddingHorizontal: moderateScale(20),
+    // marginVertical: verticalScale(5),
+    
+    
   },
   DateBox: {
     flexDirection: 'row',
     justifyContent: 'space-between',
     paddingHorizontal: moderateScale(20),
     marginVertical: verticalScale(5),
+    
   },
+  DateText:{
+
+    fontFamily:Font.Poppins700,
+    color: Color.Black,
+    fontSize: scale(16)
+  },
+
   Details: {
     color: Color.Black,
-    fontWeight: '700',
+    fontFamily: Font.Poppins700,
     fontSize: scale(20),
     marginLeft: scale(20),
     marginVertical: scale(20),
@@ -153,18 +169,18 @@ const styles = StyleSheet.create({
   },
   Total: {
     color: Color.Black,
-    fontWeight: '600',
+    fontFamily: Font.Poppins700,
     fontSize: scale(20),
-    marginHorizontal: scale(20),
     marginTop: scale(15),
   },
   ServiceText: {
     color: Color.placeholderTextColor,
     fontSize: scale(15),
+    fontFamily:Font.Poppins400
   },
   CustomerID: {
     color: Color.Black,
-    fontWeight: '700',
+    fontFamily: Font.Poppins700,
     fontSize: scale(18),
     marginTop: scale(20),
     textAlign: 'center',

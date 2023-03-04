@@ -15,7 +15,9 @@ import AddEditVehicles from '../screens/customer/AddEditVehicles';
 
 import Wallet from '../screens/customer/Wallet.js';
 import Progress from '../screens/customer/Progress';
-import Summary from '../screens/customer/Summary';
+import OGSummary from '../screens/customer/OGSummary';
+import { Font } from '../utils/font';
+import OngoingJob from '../screens/customer/OngoingJob';
 
 // import {NavigationContainer} from '@react-navigation/native';
 export const DrawerNavigation = () => {
@@ -31,6 +33,7 @@ export const DrawerNavigation = () => {
         drawerInactiveBackgroundColor: 'white',
         drawerLabelStyle: {
           marginLeft: -15,
+          fontFamily:Font.Poppins600
         },
         drawerStyle: {
           borderBottomRightRadius: 50,
@@ -80,8 +83,8 @@ export const DrawerNavigation = () => {
             />
           ),
         }}
-        name="progress"
-        component={Progress}
+        name="ongoingjobs"
+        component={OngoingJob}
       />
       <Drawer.Screen
         options={{
@@ -94,8 +97,8 @@ export const DrawerNavigation = () => {
             />
           ),
         }}
-        name="summary"
-        component={Summary}
+        name="ogsummary"
+        component={OGSummary}
       />
       <Drawer.Screen
         options={{

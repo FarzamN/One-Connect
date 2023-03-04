@@ -17,7 +17,9 @@ import BackWithMenu from '../../components/BackWithMenu';
 import GooglePlacesInput from '../../components/MapFolder/GooglePlacesInput';
 import BottomTab from '../../components/BottomTab';
 import {Color} from '../../utils/Colors';
+import {Font} from '../../utils/font';
 import AntDesign from 'react-native-vector-icons/AntDesign';
+
 
 const requestCameraPermission = async () => {
   try {
@@ -73,7 +75,7 @@ const TowLocation = ({navigation}) => {
         />
         <View style={{width: '85%', alignSelf: 'center'}}>
           <Text
-            style={{color: Color.placeholderTextColor, fontSize: scale(14)}}>
+            style={{color: Color.placeholderTextColor, fontSize: scale(14),fontFamily:Font.Poppins400}}>
             Please enter the location for your vehicle to be towed to.
           </Text>
         </View>
@@ -159,7 +161,7 @@ const styles = StyleSheet.create({
   font: {
     color: Color.White,
     fontSize: scale(18),
-    fontWeight: '700',
+    fontFamily:Font.Lato700,
     textTransform: 'capitalize',
   },
   mapStyle: {

@@ -15,7 +15,7 @@ import Notification from '../screens/customer/Notification.js';
 import OngoingJob from '../screens/customer/OngoingJob';
 import OGSummary from '../screens/customer/OGSummary';
 import TowLocation from '../screens/customer/TowLocation';
-
+import Summary from '../screens/customer/Summary';
 const Stack = createNativeStackNavigator();
 const UserNavigation = () => {
   return (
@@ -33,7 +33,7 @@ const UserNavigation = () => {
       <Stack.Screen name="bankdetail" component={BankDetail} />
       <Stack.Screen name="maintransactions" component={MainTransactions} />
       <Stack.Screen name="ongoingjob" component={OngoingJob} />
-      <Stack.Screen name="ogsummary" component={OGSummary} />
+      <Stack.Screen name="summary" component={Summary} />
       <Stack.Screen name="towlocation" component={TowLocation} />
     </Stack.Navigator>
   );

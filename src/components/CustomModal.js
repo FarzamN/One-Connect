@@ -4,6 +4,7 @@ import Modal from 'react-native-modal';
 import {verticalScale, scale, moderateScale} from 'react-native-size-matters';
 import CustomStarRating from './CustomStarRating';
 import {Color} from '../utils/Colors';
+import {Font} from '../utils/font';
 import CustomButton from './CustomButton';
 
 const CustomModal = props => {
@@ -35,7 +36,8 @@ const CustomModal = props => {
         <CustomButton
           containerStyle={{marginTop: scale(30), width: '100%'}}
           title="Book Now"
-        />
+          onPress = {props.onPress} 
+         />
       </View>
     </Modal>
   );
@@ -54,19 +56,19 @@ const styles = StyleSheet.create({
   Modal_Text: {
     fontSize: scale(25),
     color: Color.Black,
-    fontWeight: '700',
+    fontFamily:Font.Lato700,
     textAlign: 'center',
   },
   Modal_Name: {
     fontSize: scale(30),
     color: Color.Black,
-    fontWeight: '900',
+    fontFamily: Font.Lato700,
     textAlign: 'center',
   },
   Details: {
     fontSize: scale(20),
     color: Color.Black,
-    fontWeight: '700',
+    fontFamily: Font.Poppins700,
     textAlign: 'center',
   },
   Modal_Long_Text: {
@@ -74,6 +76,7 @@ const styles = StyleSheet.create({
     color: Color.placeholderTextColor,
     paddingTop: verticalScale(10),
     textAlign: 'center',
+    fontFamily:Font.Lato400
   },
   image: {
     width: scale(130),

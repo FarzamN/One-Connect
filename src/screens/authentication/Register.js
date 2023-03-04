@@ -15,6 +15,7 @@ import {useForm} from 'react-hook-form';
 import {Color} from '../../utils/Colors';
 import CustomButton from '../../components/CustomButton';
 import CustomLoginButton from '../../components/CustomLoginButton';
+import {Font} from '../../utils/font';
 
 const Register = ({navigation}) => {
   const [toggleCheckBox, setToggleCheckBox] = useState(false);
@@ -45,7 +46,7 @@ const Register = ({navigation}) => {
             onFocus={() => {
               setIndex(0);
             }}
-            Hello={{paddingVertical: 0}}
+            Hello={{paddingVertical: 0, marginTop: 5}}
             style={
               index === 0
                 ? {
@@ -64,7 +65,7 @@ const Register = ({navigation}) => {
                   }
             }
             control={control}
-            keyboardType="email-address"
+            keyboardType="default"
             name="f_name"
             rules={{
               required: 'email is required',
@@ -78,7 +79,7 @@ const Register = ({navigation}) => {
             onFocus={() => {
               setIndex(2);
             }}
-            Hello={{paddingVertical: 0}}
+            Hello={{paddingVertical: 0, marginTop: 5}}
             style={
               index === 2
                 ? {
@@ -97,7 +98,7 @@ const Register = ({navigation}) => {
                   }
             }
             control={control}
-            keyboardType="email-address"
+            keyboardType="default"
             name="l_name"
             rules={{
               required: 'email is required',
@@ -111,7 +112,7 @@ const Register = ({navigation}) => {
             onFocus={() => {
               setIndex(3);
             }}
-            Hello={{paddingVertical: 0}}
+            Hello={{paddingVertical: 0, marginTop: 5}}
             style={
               index === 3
                 ? {
@@ -144,7 +145,7 @@ const Register = ({navigation}) => {
             onFocus={() => {
               setIndex(4);
             }}
-            Hello={{paddingVertical: 0}}
+            Hello={{paddingVertical: 0, marginTop: 5}}
             style={
               index === 4
                 ? {
@@ -163,7 +164,7 @@ const Register = ({navigation}) => {
                   }
             }
             control={control}
-            keyboardType="email-address"
+            keyboardType="numeric"
             name="phone_number"
             rules={{
               required: 'email is required',
@@ -177,7 +178,7 @@ const Register = ({navigation}) => {
             onFocus={() => {
               setIndex(5);
             }}
-            Hello={{paddingVertical: 0}}
+            Hello={{paddingVertical: 0, marginTop: 5}}
             style={
               index === 5
                 ? {
@@ -196,7 +197,7 @@ const Register = ({navigation}) => {
                   }
             }
             control={control}
-            keyboardType="email-address"
+            keyboardType="default"
             name="state"
             rules={{
               required: 'email is required',
@@ -210,7 +211,8 @@ const Register = ({navigation}) => {
             onFocus={() => {
               setIndex(1);
             }}
-            Hello={{paddingVertical: 0}}
+            // restyle={{height: verticalScale(30)}}
+            Hello={{paddingVertical: 0, marginTop: 5}}
             style={
               index === 1
                 ? {
@@ -261,6 +263,7 @@ const Register = ({navigation}) => {
                 style={{
                   color: Color.placeholderTextColor,
                   fontSize: scale(12),
+                  fontFamily: Font.Lato400,
                 }}>
                 Accepting all the Terms and Conditions.
               </Text>
@@ -277,6 +280,7 @@ const Register = ({navigation}) => {
               fontSize: scale(12),
               alignSelf: 'center',
               paddingTop: scale(20),
+              fontFamily: Font.Lato400,
             }}>
             Already have an account?
           </Text>
@@ -315,13 +319,13 @@ const styles = StyleSheet.create({
   },
   WelcomeText: {
     fontSize: scale(28),
-    fontWeight: '700',
+    fontFamily: Font.Lato700,
     color: '#000',
     marginBottom: scale(5),
   },
   LongText: {
     color: 'rgba(0, 0, 0, 0.7)',
-    fontWeight: '400',
+    fontFamily: Font.Lato400,
     fontSize: scale(13),
     marginBottom: scale(5),
   },

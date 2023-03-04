@@ -7,6 +7,7 @@ import {moderateScale, scale, verticalScale} from 'react-native-size-matters';
 import {useForm} from 'react-hook-form';
 import CustomButton from '../../components/CustomButton';
 import ImagePicker from '../../components/ImagePicker/WithCamera';
+import { Font } from '../../utils/font';
 
 const Profile = ({navigation}) => {
   const [index, setIndex] = useState(99);
@@ -80,6 +81,7 @@ const Profile = ({navigation}) => {
           }}
           placeholder="Last Name"
           placeholderTextColor={'#32323266'}
+          
         />
         <CustomInput
           onFocus={() => {
@@ -110,7 +112,7 @@ const Profile = ({navigation}) => {
           placeholderTextColor={'#32323266'}
         />
         <CustomButton
-          textStyle={{fontSize: scale(18)}}
+          textStyle={{fontSize: scale(18),fontFamily:Font.Lato700}}
           containerStyle={{
             width: '85%',
             padding: moderateScale(12),

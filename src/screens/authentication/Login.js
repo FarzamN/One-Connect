@@ -16,6 +16,7 @@ import {useForm} from 'react-hook-form';
 import {Color} from '../../utils/Colors';
 import CustomButton from '../../components/CustomButton';
 import CustomLoginButton from '../../components/CustomLoginButton';
+import {Font} from '../../utils/font';
 
 const Login = ({navigation}) => {
   const [index, setIndex] = useState(99);
@@ -47,7 +48,6 @@ const Login = ({navigation}) => {
             onFocus={() => {
               setIndex(0);
             }}
-            style={{color: Color.Black}}
             InputContainerStyle={
               index === 0
                 ? {
@@ -84,21 +84,20 @@ const Login = ({navigation}) => {
               onFocus={() => {
                 setIndex(1);
               }}
-              style={{color: Color.Black}}
               InputContainerStyle={
                 index === 1
                   ? {
                       borderTopWidth: 0,
                       borderRightWidth: 0,
                       borderLeftWidth: 0,
-                      borderBottomWidth: 1,
+                      borderBottomWidth: 2,
                       borderBottomColor: Color.Main,
                     }
                   : {
                       borderTopWidth: 0,
                       borderRightWidth: 0,
                       borderLeftWidth: 0,
-                      borderBottomWidth: 1,
+                      borderBottomWidth: 2,
                       borderBottomColor: Color.borderColor,
                     }
               }
@@ -136,10 +135,9 @@ const Login = ({navigation}) => {
             ]}>
             <Text
               style={{
-                fontSize: scale(16),
-                fontWeight: '500',
+                fontSize: scale(15),
+                fontFamily: Font.Lato400,
                 color: Color.Main,
-                fontStyle: 'normal',
                 textDecorationLine: 'underline',
               }}>
               Forgot Password?
@@ -152,6 +150,7 @@ const Login = ({navigation}) => {
                 fontSize: scale(12),
                 alignSelf: 'center',
                 paddingTop: scale(8),
+                fontFamily: Font.Lato400,
               }}>
               Or Signin with
             </Text>
@@ -179,8 +178,9 @@ const Login = ({navigation}) => {
               fontSize: scale(12),
               alignSelf: 'center',
               paddingTop: scale(15),
+              fontFamily: Font.Lato400,
             }}>
-            Don`t have an account?
+            Don't have an account?
           </Text>
           <CustomLoginButton
             containerStyle={{marginTop: 0}}
@@ -213,24 +213,24 @@ const styles = StyleSheet.create({
     borderTopRightRadius: 50,
     borderTopLeftRadius: 50,
     paddingHorizontal: moderateScale(10),
-    paddingVertical: moderateScale(35),
+    paddingTop: moderateScale(35),
+    paddingBottom: moderateScale(50),
   },
   WelcomeText: {
     fontSize: scale(28),
-    fontWeight: '700',
+    fontFamily: Font.Lato700,
     color: '#000',
     marginBottom: scale(5),
   },
   LongText: {
     color: 'rgba(0, 0, 0, 0.7)',
-    fontWeight: '400',
+    fontFamily: Font.Lato400,
     fontSize: scale(13),
     marginBottom: scale(5),
   },
   FPassCon: {
     flexDirection: 'row',
     justifyContent: 'flex-end',
-    // marginTop: scale(5),
   },
   image: {
     width: scale(25),
@@ -255,6 +255,7 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     textAlignVertical: 'center',
     paddingHorizontal: scale(30),
+    fontFamily: Font.Lato400,
   },
 });
 

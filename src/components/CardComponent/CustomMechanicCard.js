@@ -10,8 +10,10 @@ import {
 import {moderateScale, scale} from 'react-native-size-matters';
 import {Alert} from 'react-native/Libraries/Alert/Alert';
 import {Color} from '../../utils/Colors';
+import {Font} from '../../utils/font';
 import CustomModal from '../CustomModal';
 import CustomStarRating from '../CustomStarRating';
+import { useNavigation } from '@react-navigation/native';
 
 const DATA = [
   {
@@ -109,6 +111,7 @@ const Item = ({
   </View>
 );
 const CustomMechanicCard = () => {
+  const navigation = useNavigation();
   const [showModal, setShowModal] = useState(false);
   const [selectedId, setSelectedId] = useState();
   const [isModalVisible, setModalVisible] = useState(false);
@@ -149,6 +152,7 @@ const CustomMechanicCard = () => {
           Modal_Text="Profile"
           isVisible={isModalVisible}
           onBackdropPress={() => setModalVisible(false)}
+          onPress ={()=>navigation.navigate('progress')}
         />
       ) : (
         setShowModal(false)
@@ -173,11 +177,12 @@ const styles = StyleSheet.create({
     fontSize: scale(16),
     color: Color.Black,
     lineHeight: 30,
+    fontFamily:Font.Roborto700
   },
   btnText: {
     color: Color.Main,
     fontSize: scale(22),
-    fontWeight: '700',
+    fontFamily:Font.Roborto500,
     borderTopWidth: 1,
     borderColor: Color.borderColor,
     paddingVertical: moderateScale(5),

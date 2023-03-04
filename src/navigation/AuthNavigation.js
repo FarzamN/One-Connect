@@ -21,7 +21,7 @@ function AuthNavigation() {
         initialRouteName="splash"
         screenOptions={{headerShown: false}}>
         <Stack.Screen name="login" component={Login} />
-        <Stack.Screen name="termandcondition" component={TermsAndCondition} />
+        <Stack.Screen name="termsandcondition" component={TermsAndCondition} />
         <Stack.Screen name="splash" component={Splash} />
         <Stack.Screen name="register" component={Register} />
         <Stack.Screen name="otp" component={OTP} />

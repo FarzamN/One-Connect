@@ -16,6 +16,7 @@ import {
   useBlurOnFulfill,
   useClearByFocusCell,
 } from 'react-native-confirmation-code-field';
+import {Font} from '../../utils/font';
 
 const CELL_COUNT = 4;
 const OTP = ({navigation}) => {
@@ -25,22 +26,13 @@ const OTP = ({navigation}) => {
     value,
     setValue,
   });
-  const [time, setTime] = useState(30);
-  const timerRef = useRef(time);
 
+  const [time, setTime] = useState(40);
   useEffect(() => {
-    const timerId = setInterval(() => {
-      timerRef.current -= 1;
-      if (timerRef.current < 0) {
-        clearInterval(timerId);
-      } else {
-        setTime(timerRef.current);
-      }
-    }, 1000);
-    return () => {
-      clearInterval(timerId);
-    };
-  }, []);
+    const timer = time > 0 && setInterval(() => setTime(time - 1), 1000);
+    return () => clearInterval(timer);
+  }, [time]);
+
   return (
     <SafeAreaView style={styles.Container}>
       <Text style={styles.WelcomeText}>Enter your OTP</Text>
@@ -77,14 +69,36 @@ const OTP = ({navigation}) => {
         />
       </View>
       <View style={{position: 'absolute', bottom: 10, alignSelf: 'center'}}>
-        <Text
-          style={{
-            color: Color.placeholderTextColor,
-            fontSize: scale(14),
-            alignSelf: 'center',
-          }}>
-          Wait {time} more seconds to resend the OTP
-        </Text>
+        {time == 0 ? (
+          <TouchableOpacity
+            style={{
+              backgroundColor: Color.Main,
+              padding: 7,
+              justifyContent: 'center',
+              alignItems: 'center',
+              borderRadius: 10,
+            }}
+            onPress={() => setTime(40)}>
+            <Text
+              style={{
+                color: Color.White,
+                fontSize: scale(15),
+                fontFamily: Font.Lato400,
+              }}>
+              Resend
+            </Text>
+          </TouchableOpacity>
+        ) : (
+          <Text
+            style={{
+              color: Color.placeholderTextColor,
+              fontSize: scale(14),
+              alignSelf: 'center',
+              fontFamily: Font.Lato400,
+            }}>
+            Wait {time} more seconds to resend the OTP
+          </Text>
+        )}
       </View>
     </SafeAreaView>
   );
@@ -99,13 +113,13 @@ const styles = StyleSheet.create({
   },
   WelcomeText: {
     fontSize: scale(28),
-    fontWeight: '700',
+    fontFamily: Font.Lato700,
     color: Color.Black,
     marginBottom: scale(5),
   },
   LongText: {
     color: 'rgba(0, 0, 0, 0.7)',
-    fontWeight: '400',
+    fontFamily: Font.Lato400,
     fontSize: scale(13),
     marginBottom: scale(5),
   },
@@ -119,6 +133,7 @@ const styles = StyleSheet.create({
     borderColor: Color.Main,
     textAlign: 'center',
     color: Color.Main,
+    fontFamily: Font.Poppins400,
     textAlignVertical: 'center',
   },
   ImageBox: {

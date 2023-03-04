@@ -7,6 +7,7 @@ import {
 } from 'react-native-size-matters';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import LinearGradient from 'react-native-linear-gradient';
+import { Font } from '../utils/font';
 const CustomButton = props => {
   return (
     <TouchableOpacity activeOpacity={1} onPress={props.onPress}>
@@ -32,7 +33,7 @@ export default CustomButton;
 const styles = StyleSheet.create({
   containerStyle: {
     paddingVertical: moderateVerticalScale(15),
-    paddingHorizontal: scale(20),
+    paddingHorizontal: scale(25),
     width: '80%',
     padding: moderateScale(12),
     alignItems: 'center',
@@ -55,5 +56,6 @@ const styles = StyleSheet.create({
     color: '#fff',
     fontSize: scale(15),
     textTransform: 'uppercase',
+    fontFamily: Font.Lato700
   },
 });

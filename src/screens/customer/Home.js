@@ -15,6 +15,7 @@ import BackWithMenu from '../../components/BackWithMenu';
 import GooglePlacesInput from '../../components/MapFolder/GooglePlacesInput';
 import BottomTab from '../../components/BottomTab';
 import {Color} from '../../utils/Colors';
+import {Font} from '../../utils/font';
 
 const requestCameraPermission = async () => {
   try {
@@ -59,7 +60,7 @@ const Home = ({navigation}) => {
           onPress={() => navigation.openDrawer()}
         />
         <GooglePlacesInput
-          textStyle={{color: Color.Black}}
+          textStyle={{color: Color.White,fontFamily:Font.Lato700}}
           style={styles.GooglePlacesInput}
           placeholder="Location"
         />

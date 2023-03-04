@@ -10,6 +10,7 @@ import React from 'react';
 import {moderateScale, scale} from 'react-native-size-matters';
 import {Color} from '../../utils/Colors';
 import BackAndName from '../../components/BackAndName';
+import { Font } from '../../utils/font';
 
 const DATA = [
   {
@@ -41,7 +42,7 @@ const DATA = [
 const OngoingJob = ({navigation}) => {
   const Item = ({title, Timing, type}) => (
     <TouchableOpacity
-      onPress={() => navigation.navigate('ogsummary')}
+      onPress={() => navigation.navigate('progress')}
       style={styles.CardBox}>
       <View style={{width: '80%'}}>
         <Text style={styles.Service}>{title}</Text>
@@ -77,19 +78,23 @@ const styles = StyleSheet.create({
     width: '85%',
     alignSelf: 'center',
     paddingHorizontal: moderateScale(20),
-    paddingVertical: moderateScale(30),
+    paddingVertical: moderateScale(15),
     elevation: 3,
     marginBottom: scale(10),
+    marginTop:scale(5)
   },
   Service: {
     fontSize: scale(17),
     color: Color.Black,
     lineHeight: 22,
+    fontFamily:Font.Lato400
   },
 
   Timing: {
     fontSize: scale(18),
     color: Color.Main,
+    fontFamily:Font.Lato400,
+    lineHeight:25
   },
 });
 export default OngoingJob;

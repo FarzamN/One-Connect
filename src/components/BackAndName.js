@@ -6,6 +6,7 @@ import Feather from 'react-native-vector-icons/Feather';
 
 import {Color} from '../utils/Colors';
 
+import {Font} from '../utils/font';
 const BackAndName = props => {
   return (
     <View style={[styles.Container, props.ContainerRestyle]}>
@@ -35,7 +36,7 @@ const styles = StyleSheet.create({
   font: {
     color: Color.Black,
     fontSize: scale(18),
-    fontWeight: '700',
+    fontFamily: Font.Lato700,
     textTransform: 'capitalize',
   },
 });

@@ -9,7 +9,7 @@ import {
 } from 'react-native';
 import {moderateScale, scale} from 'react-native-size-matters';
 import {Color} from '../../utils/Colors';
-
+import {Font} from '../../utils/font';
 const DATA = [
   {
     id: '1',
@@ -76,7 +76,7 @@ const Item = ({item, onPress, borderColor, props}) => (
           color: Color.Main,
           textAlign: 'center',
           fontSize: scale(22),
-          fontWeight: '700',
+          fontFamily : Font.Roborto500,
           borderTopWidth: 1,
           borderColor: Color.borderColor,
           paddingVertical: moderateScale(3),
@@ -116,13 +116,13 @@ const CustomVehicalCard = props => {
 const styles = StyleSheet.create({
   TextOne: {
     fontSize: scale(16),
-    fontWeight: '700',
+    fontFamily : Font.Lato700,
     color: Color.Black,
   },
   TextThree: {
     fontSize: scale(14),
     color: Color.placeholderTextColor,
-    fontWeight:'400'
+    fontFamily : Font.Roborto400
   },
   mainBox: {
     borderWidth: 1,

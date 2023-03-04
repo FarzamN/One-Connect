@@ -10,6 +10,7 @@ import React from 'react';
 import {Color} from '../../utils/Colors';
 import LinearGradient from 'react-native-linear-gradient';
 import {moderateScale, scale} from 'react-native-size-matters';
+import {Font} from '../../utils/font';
 const Splash = ({navigation}) => {
   return (
     <SafeAreaView style={styles.container}>
@@ -74,17 +75,18 @@ const styles = StyleSheet.create({
     fontSize: scale(13),
     color: Color.Black,
     textAlign: 'center',
-    fontWeight: '400',
+    fontFamily: Font.Lato700,
   },
   textBox: {
     paddingHorizontal: moderateScale(35),
     marginTop: scale(20),
   },
   font: {
-    color: '#fff',
+    color: Color.White,
     fontSize: scale(15),
     textTransform: 'uppercase',
     textAlign: 'center',
+    fontFamily: Font.Lato700,
   },
   Btn: {
     paddingVertical: moderateScale(15),
@@ -95,14 +97,6 @@ const styles = StyleSheet.create({
     position: 'absolute',
     alignSelf: 'center',
     bottom: -25,
-    shadowColor: '#000',
-    shadowOffset: {
-      width: 0,
-      height: 2,
-    },
-    shadowOpacity: 0.25,
-    shadowRadius: 3.84,
-
     elevation: 5,
   },
   Image: {
