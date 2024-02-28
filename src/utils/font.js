@@ -1,0 +1,22 @@
+export const Font = {
+    Poppins300: 'Poppins-Light',
+    Poppins400: 'Poppins-Regular',
+    Poppins500: 'Poppins-Medium',
+    Poppins600: 'Poppins-SemiBold',
+    Poppins700: 'Poppins-Bold',
+    Poppins800: 'Poppins-ExtraBold',
+    Poppins900: 'Poppins-Black',
+    Lato300: 'Lato-Light',
+    Lato400: 'Lato-Regular',
+    Lato700: 'Lato-Bold',
+    Lato900: 'Lato-Black',
+    Roborto400: 'Roboto-Regular',
+    Roborto500: 'Roboto-Medium',
+    Roborto700: 'Roboto-Bold',
+    Roborto900: 'Roboto-Black',
+    Inter400: 'Inter-Regular ',
+    Inter500: 'Inter-Medium',
+    Mulish500: 'Mulish-Medium',
+    Mulish400: 'Mulish-Regular',
+    Mulish700: 'Mulist-SemiBold'
+  };
